@@ -60,9 +60,10 @@ html {
 }
 
 footer {
-  background-color: #3f3f3f;
-  color: #d5d5d5;
-  padding-top: 1rem;
+  /* background-color: #3f3f3f;
+  color: #d5d5d5; */
+  padding-top: 0.5rem;
+  border-top: 1px solid #e4e4e4;
 }
 hr.light {
   border-top: 1px solid #d5d5d5;
@@ -74,13 +75,13 @@ hr.light {
 .blog-footer {
   padding-bottom: 0.5rem;
   text-align: center;
-  background-color: #3f3f3f;
-  color: #d5d5d5;
+  /* background-color: #65fc79; */
+  /* color: #242424; */
 }
-.footer-social a,
+/* .footer-social a,
 .footer-social i {
   color: rgb(100, 100, 100);
-}
+} */
 .blog-footer hr {
   border-top: 1px solid #d5d5d5;
   width: 75%;
