@@ -4,23 +4,32 @@
 
 	<title>{{ page.title }}</title>
 	
+	<!-- Examples of title and description for SEO -->
+	<!-- <title>FINNOMENA - ซื้อขายกองทุนรวม พร้อมแหล่งความรู้การลงทุน</title> -->
+	<!-- <title>Investor Base ความรู้ลงทุนระดับ World-Class ส่งตรงถึงคนไทย | FINNOMENA Franklin Templeton - FINNOMENA</title> -->
+
+	<!-- <meta data-react-helmet="true" name="description" content="ค้นหาร้านอาหาร เมนูอาหาร สูตรอาหารและวิธีทำ โรงแรม ที่พัก สถานที่ท่องเที่ยว ร้านเสริมสวย สปา พร้อมที่อยู่ เบอร์โทรศัพท์ รูปภาพ ราคา ส่วนลด และรีวิวจากผู้ใช้งานจริง ใน กรุงเทพและปริมณฑล - Wongnai"> -->
+	<!-- <meta name="description" content="ลงทุนกองทุนรวมผ่าน FINNOMENA สะดวกครบจบในที่เดียว พร้อมแหล่งรวมข้อมูลกองทุนรวมที่ดีที่สุด ด้วยคำแนะนำจากกูรูชั้นนำระดับประเทศ"> -->
+	<!-- <meta name="description" content="อ่านกระทู้และร่วมพูดคุยเกี่ยวกับ หุ้น เศรษฐกิจ การลงทุน LTF RMF ธนาคาร เงินตราต่างประเทศ"> -->
+	<!-- <meta name="description" content="หลายคนเชื่อว่าการ DCA เป็นการออมที่จะช่วยให้เราเป็นอิสระทางการเงิน โดยไม่จำเป็นต้องมีความรู้ด้านการลงทุน ซึ่งเป็นความเชื่อที่น่ากลัวมาก มาดูกันว่าทำไม?"> -->
+
 	<!-- Bootstrap -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-	
-	<!-- Fonts -->
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
-	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+		integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
 	<!-- CSS -->
 	<link rel="stylesheet" href="{{ site.baseurl }}/static/css/main.css">
 
-	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
 	<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-	ga('create', '{{ site.google_analytics }}', 'auto');
-	ga('send', 'pageview');
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', '{{ site.google_analytics }}');   
 	</script>
+
+	<!-- Not an ideal way to specify content-language but leave it for now -->
+	<meta http-equiv="content-language" content="th, en">
 </head>
