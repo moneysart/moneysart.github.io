@@ -1,7 +1,8 @@
 title: เรื่องเงิน สำคัญ (Money Matters)
 description: To be written
 
-url: https://moneymattersthailand.github.io/
+name: moneymattersthailand
+url: "https://moneymattersthailand.github.io/"
 baseurl: ""
 permalink: 
 
@@ -9,4 +10,4 @@ social:
    github: moneymattersthailand
    email: chatdanai.l@gmail.com
 
-google_analytics: ""
+google_analytics: "G-5TM412H7V9"
