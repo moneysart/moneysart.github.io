@@ -5,15 +5,15 @@
 <!-- Fontawesome kit code -->
 <script src="https://kit.fontawesome.com/c94fe05323.js" crossorigin="anonymous"></script>
 
-<!-- Update nav -->
+<!-- Set .active to .nav-item -->
 <script>
     // get nav-item and url
     let navItems = Array.from(document.querySelectorAll(".nav-item"))
     let url = window.location.href
     // loop nav-item except Home -- set active if it is in use, remove active from Home
     for (let item of navItems.slice(1)) {
-        console.log(item.innerText)
-        if (url.includes(item.innerText)) {
+        // check if url includes last word in lowercase format
+        if (url.includes(item.innerText.split(/[\s,]+/).pop().toLowerCase())) {
             item.classList.add("active")
             navItems[0].classList.remove("active")
             break
