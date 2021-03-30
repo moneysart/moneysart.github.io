@@ -7,15 +7,13 @@
 
 <!-- Set .active to .nav-item -->
 <script>
-    // get nav-item and url
+    // get all .nav-item
     let navItems = Array.from(document.querySelectorAll(".nav-item"))
-    let url = window.location.href
-    // loop nav-item except Home -- set active if it is in use, remove active from Home
-    for (let item of navItems.slice(1)) {
-        // check if url includes last word in lowercase format
-        if (url.includes(item.innerText.split(/[\s,]+/).pop().toLowerCase())) {
+    // loop .nav-item -- set .active if it is in use
+    for (let item of navItems) {
+        // check if {{ page.category }} === last word of item's text in lowercase format
+        if ("{{ page.category }}" === item.innerText.split(/[\s,]+/).pop().toLowerCase()) {
             item.classList.add("active")
-            navItems[0].classList.remove("active")
             break
         }
     }
