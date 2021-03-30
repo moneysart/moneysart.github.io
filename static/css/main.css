@@ -64,6 +64,7 @@ footer {
   color: #d5d5d5; */
   padding-top: 0.5rem;
   border-top: 1px solid #e4e4e4;
+  border-bottom: 1px solid #e4e4e4;
 }
 hr.light {
   border-top: 1px solid #d5d5d5;
