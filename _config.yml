@@ -4,6 +4,7 @@ description: website ช่วยวางแผนทางการเงิ�
 name: moneymattersthailand
 url: "https://www.moneymattersthailand.com"
 baseurl: ""
+base_canonical: "https://www.moneymattersthailand.com"
 permalink: 
 
 social:
