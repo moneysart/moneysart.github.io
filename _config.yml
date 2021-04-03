@@ -7,7 +7,9 @@ baseurl: ""
 permalink: 
 
 social:
-   github: moneymattersthailand
+   facebook: https://www.facebook.com/moneymattersthailand
+   line:
+   github: https://github.com/moneymattersthailand/moneymattersthailand.github.io
    email: chatdanai.l@gmail.com
 
 google_analytics: "G-5TM412H7V9"
