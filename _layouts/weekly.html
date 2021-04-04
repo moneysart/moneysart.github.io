@@ -2,7 +2,24 @@
 layout: base
 ---
 
-<p>{{ page.title }} - Written by {{ page.author }}</p>
-<p>{{ page.date }} </p>
+<div class="container">
 
-{{ content }}
+    <div class="my-4">
+        <h2 class="text-success">
+            {% capture title_full %}{{ page.title }}{% endcapture %}
+    
+            {% assign title_lines = title_full | split: ", " %}
+            {{title_lines[0]}} <i class="fas fa-comments-dollar"></i> <br>
+            {{title_lines[1]}}
+        </h2>
+    </div>
+
+
+    {{ content }}
+
+    
+    <h5 class="text-secondary text-right mt-4">
+        -ขอให้มีความสุขกับการลงทุนครับ <i class="far fa-smile-wink"></i>
+    </h5>
+
+</div>
