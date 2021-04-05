@@ -17,6 +17,7 @@
 - Outline style for articles in Weekly Summary
 - Redirect `.github.io` to `.com` domain
 
-## v.1-filling
+## v.1-niwes
+*Named after Dr.Niwes Hemvachiravarakorn (ดร.นิเวศน์ เหมวชิรวรากร). Arguably the most influential Thai investor.*
 - Backfill `weekly/summary/`
 - Loop posts in `weekly/summary/` with `Liquid tags`
