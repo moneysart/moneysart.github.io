@@ -45,7 +45,7 @@ canonical_url: /weekly/
                                 <li class="list-group-item">
                                     {% capture title_full %}{{ post.title }}{% endcapture %}
                                     {% assign title_lines = title_full | split: ", " %}
-                                    Release {{ post.date | date_to_string }} <i class="fas fa-angle-double-right"></i>
+                                    {{ post.date | date_to_string }} <i class="fas fa-angle-double-right"></i>
                                     สรุป{{ title_lines[1] }} --
                                     <a href="{{ post.permalink | prepend: site.baseurl }}">
                                         link <i class="far fa-file-alt"></i>
@@ -82,7 +82,7 @@ canonical_url: /weekly/
                                 <li class="list-group-item">
                                     {% capture title_full %}{{ post.title }}{% endcapture %}
                                     {% assign title_lines = title_full | split: ", " %}
-                                    Release {{ post.date | date_to_string }} <i class="fas fa-angle-double-right"></i>
+                                    {{ post.date | date_to_string }} <i class="fas fa-angle-double-right"></i>
                                     สรุป{{ title_lines[1] }} --
                                     <a href="{{ post.permalink | prepend: site.baseurl }}">
                                         link <i class="far fa-file-alt"></i>
