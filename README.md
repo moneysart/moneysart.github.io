@@ -16,3 +16,7 @@
 - Outline style for articles in Planning Tools
 - Outline style for articles in Weekly Summary
 - Redirect `.github.io` to `.com` domain
+
+## v.1-filling
+- Backfill `weekly/summary/`
+- Loop posts in `weekly/summary/` with `Liquid tags`
