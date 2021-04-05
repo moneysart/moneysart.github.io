@@ -1,8 +1,8 @@
-# About moneymattersthailand.com :moneybag:
+# About [moneymattersthailand.com](https://www.moneymattersthailand.com/) :moneybag:
 
-ยินดีต้อนรับสู่ website ช่วยวางแผนทางการเงิน. <br>
-เรามีเครื่องมือที่ช่วยคุณวางแผนทางการเงิน การลงทุน การเกษียณ ได้ง่ายขึ้น. <br>
-รวมถึงมีสรุปข้อมูลข่าวสารการลงทุนรายสัปดาห์.
+ยินดีต้อนรับสู่ [website](https://www.moneymattersthailand.com/) ช่วยวางแผนทางการเงิน. <br>
+เรามีเครื่องมือที่ช่วยคุณวางแผนทางการเงิน การลงทุน การเกษียณ ได้ง่ายขึ้น ([ที่นี่](https://www.moneymattersthailand.com/tools/)). <br>
+รวมถึงมีสรุปข้อมูลข่าวสารการลงทุนรายสัปดาห์ ([ที่นี่](https://www.moneymattersthailand.com/weekly/)).
 
 # Changelog
 ## v.0-skeleton
