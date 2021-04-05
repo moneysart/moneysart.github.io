@@ -1,0 +1,34 @@
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>{{ site.title }}, {{ page.title }}</title>
+
+	<meta name="description" content="{{ page.description }}">
+
+	<!-- add canonical -->
+	<link rel="canonical" href="{{ page.canonical_url | prepend: site.base_canonical }}">
+
+	<!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ "/static/img/favicon.ico" | prepend: site.baseurl }}">
+	
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+		integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="{{ site.baseurl }}/static/css/main.css">
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', '{{ site.google_analytics }}');   
+	</script>
+
+	<!-- Not an ideal way to specify content-language but leave it for now -->
+	<meta http-equiv="content-language" content="th, en">
+</head>
