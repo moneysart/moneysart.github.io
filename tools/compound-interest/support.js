@@ -12,9 +12,24 @@ function getElement() {
 }
 
 
+function validateVal() {
+
+    // console.log(this.id)
+    let lableText = document.getElementById(this.id).labels[0].textContent
+    // console.log(lableText)
+    if (!this.value) { this.value = 0 }
+
+    if (this.min && Number(this.value) < Number(this.min)) {
+        alert(lableText + " has to be >= " + this.min)
+        this.value = this.min
+    }
+
+}
+
+
 function calculate(elements) {
 
-    let capital = elements[0].value
+    let capital = Number(elements[0].value)
     let r = 1 + Number(elements[1].value) / 100.0;
     let period = parseInt(elements[2].value);
     let elementFinal = elements[3]
