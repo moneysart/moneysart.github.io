@@ -21,3 +21,4 @@
 *Named after Dr.Niwes Hemvachiravarakorn (ดร.นิเวศน์ เหมวชิรวรากร). Arguably the most influential Thai investor.*
 - Backfill `weekly/summary/`
 - Loop posts in `weekly/summary/` with `Liquid tags`
+- Add section to explain calculation in tools
