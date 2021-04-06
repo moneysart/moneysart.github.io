@@ -1,0 +1,77 @@
+---
+title: คำนวณ ดอกเบี้ยทบต้น, compound interest calculator
+layout: tool
+description: คำนวณ ดอกเบี้ยทบต้น, compound interest calculator
+category: tools
+canonical_url: /tools/compound-interest/
+date: 2021-04-06
+---
+
+
+<div class="container">
+    <!-- chart -->
+    <div class="mt-4">
+        <h2 class="text-primary">คำนวณ ดอกเบี้ยทบต้น</h2>
+        <canvas id="canvas" class="canvas-chart"></canvas>
+    </div>
+
+    <!-- form for user's input -->
+    <div class="row">
+
+        <div class="col-12 my-2 text-primary py-0">
+            <h5>ตัวแปร และ ผลลัพธ์</h5>
+        </div>
+
+        <div class="col-3 form-group pt-0">
+            <label for="capital">เงินต้น</label>
+            <input id="capital" placeholder="เช่น 100 บาท, 100000 บาท."
+                        class="form-control" type="number" min="0" value="100">
+            <small id="capitalHelp" class="form-text text-muted">เช่น 100 บาท, 100000 บาท.</small>
+        </div>
+
+        <div class="col-3 form-group pt-0">
+            <label for="returnRate">*ผลตอบแทนรายปี (%)</label>
+            <input id="returnRate" placeholder="เช่น 3%, 5%, 10%."
+                        class="form-control" type="number" min="0" value="5">
+            <small id="capitalHelp" class="form-text text-muted">เช่น 3%, 5%, 10%.</small>
+        </div>
+
+        <div class="col-3 form-group pt-0">
+            <label for="period">*ระยะเวลา (ปี)</label>
+            <input id="period" placeholder="เช่น 5 ปี, 10 ปี."
+                        class="form-control" type="number" min="0" value="10">
+            <small id="periodHelp" class="form-text text-muted">เช่น 5 ปี, 10 ปี.</small>
+        </div>
+
+        <div class="col-3 form-group pt-0">
+            <label for="final" class="text-success"><b>เงินสะสมสิ้นงวด</b></label>
+            <input id="final" class="form-control" type="number" readonly>
+        </div>
+
+    <p class="text-muted">
+        *เปลี่ยนเป็นระยะเวลาอื่นที่สัมพันธ์กันได้ เช่น ใช้ 
+        <code class="text-info">ผลตอบแทนรายเดือน (%)</code> คู่กับ 
+        <code class="text-info">ระยะเวลา (เดือน)</code>.
+    </p>
+
+    </div>
+
+</div>
+
+
+<!-- load supporting js -->
+<script type="text/javascript" src="{{ site.baseurl }}/tools/compound-interest/support.js"></script>
+<!-- js -->
+<script>
+    let time, values, final
+    let ctx = document.getElementById("canvas")
+    let elements = getElement() 
+
+    // no need to track change of elementFinal
+    // elements.slice(0, -1).map(e => e.addEventListener("change", validateVal))
+    elements.slice(0, -1).map(e => e.addEventListener("change", rePlot))
+
+    let range = (start, stop, step) => Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + (i * step))
+
+    init()
+</script>
