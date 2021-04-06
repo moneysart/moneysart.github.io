@@ -11,7 +11,7 @@ date: 2021-04-06
 <div class="container">
     <!-- chart -->
     <div class="mt-4">
-        <h2 class="text-primary">คำนวณ ดอกเบี้ยทบต้น</h2>
+        <h2 class="text-primary">คำนวณ ดอกเบี้ยทบต้น*</h2>
         <canvas id="canvas" class="canvas-chart"></canvas>
     </div>
 
@@ -30,16 +30,16 @@ date: 2021-04-06
         </div>
 
         <div class="col-3 form-group pt-0">
-            <label for="returnRate">*ผลตอบแทนรายปี (%)</label>
+            <label for="returnRate">ผลตอบแทนรายปี (%)**</label>
             <input id="returnRate" placeholder="เช่น 3%, 5%, 10%."
-                        class="form-control" type="number" min="0" value="5">
+                        class="form-control" type="number" value="5">
             <small id="capitalHelp" class="form-text text-muted">เช่น 3%, 5%, 10%.</small>
         </div>
 
         <div class="col-3 form-group pt-0">
-            <label for="period">*ระยะเวลา (ปี)</label>
+            <label for="period">ระยะเวลา (ปี)**</label>
             <input id="period" placeholder="เช่น 5 ปี, 10 ปี."
-                        class="form-control" type="number" min="0" value="10">
+                        class="form-control" type="number" min="1" value="10">
             <small id="periodHelp" class="form-text text-muted">เช่น 5 ปี, 10 ปี.</small>
         </div>
 
@@ -49,7 +49,10 @@ date: 2021-04-06
         </div>
 
     <p class="text-muted">
-        *เปลี่ยนเป็นระยะเวลาอื่นที่สัมพันธ์กันได้ เช่น ใช้ 
+        * ในทำนองเดียวกัน หากลองปรับผลตอบแทนให้ติดลบ ก็จะได้ผลของการขาดทุนทบต้น <i class="far fa-sad-cry"></i>.
+    </p>
+    <p class="text-muted">
+        ** เปลี่ยนเป็นระยะเวลาอื่นที่สัมพันธ์กันได้ เช่น ใช้ 
         <code class="text-info">ผลตอบแทนรายเดือน (%)</code> คู่กับ 
         <code class="text-info">ระยะเวลา (เดือน)</code>.
     </p>
@@ -68,7 +71,7 @@ date: 2021-04-06
     let elements = getElement() 
 
     // no need to track change of elementFinal
-    // elements.slice(0, -1).map(e => e.addEventListener("change", validateVal))
+    elements.slice(0, -1).map(e => e.addEventListener("change", validateVal))
     elements.slice(0, -1).map(e => e.addEventListener("change", rePlot))
 
     let range = (start, stop, step) => Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + (i * step))
