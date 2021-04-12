@@ -13,7 +13,8 @@ canonical_url: /
         <div class="col-12">
             <p class="lead">
                 ยินดีต้อนรับสู่ <a href="{{ site.baseurl }}">website</a> ช่วยวางแผนทางการเงิน. <br>
-                เรามีเครื่องมือที่ช่วยคุณวางแผนทางการเงิน การลงทุน การเกษียณ ได้ง่ายขึ้น (<a href="{{ site.baseurl }}/tools/">ที่นี่</a>). <br>
+                เรามีเครื่องมือที่ช่วยคุณวางแผนทางการเงิน การลงทุน การเกษียณ ได้ง่ายขึ้น (<a
+                    href="{{ site.baseurl }}/tools/">ที่นี่</a>). <br>
                 รวมถึงมีสรุปข้อมูลข่าวสารการลงทุนรายสัปดาห์ (<a href="{{ site.baseurl }}/weekly/">ที่นี่</a>).
             </p>
         </div>
@@ -29,7 +30,7 @@ canonical_url: /
     <!-- title -->
     <div class="text-left">
         <h4 class="d-inline-block mb-2 text-black">
-            สรุปประเด็นล่าสุดในรอบเดือน 
+            สรุปประเด็นล่าสุดในรอบเดือน
             <a href="{{ site.baseurl }}/weekly/">(ดูทั้งหมด)</a>
         </h4>
     </div>
@@ -39,15 +40,15 @@ canonical_url: /
         <div class="col-12 p-0">
             <ul class="list-group-flush px-0">
                 {% for post in site.tags.summary limit: 4 %}
-                    <li class="list-group-item">
-                        {% capture title_full %}{{ post.title }}{% endcapture %}
-                        {% assign title_lines = title_full | split: ", " %}
-                        {{ post.date | date_to_string }} <i class="fas fa-angle-double-right"></i>
-                        สรุป{{ title_lines[1] }} --
-                        <a href="{{ post.permalink | prepend: site.baseurl }}">
-                            link <i class="far fa-file-alt"></i>
-                        </a>
-                    </li>
+                <li class="list-group-item">
+                    {% capture title_full %}{{ post.title }}{% endcapture %}
+                    {% assign title_lines = title_full | split: ", " %}
+                    {{ post.date | date_to_string }} <i class="fas fa-angle-double-right"></i>
+                    สรุป{{ title_lines[1] }} --
+                    <a href="{{ post.permalink | prepend: site.baseurl }}">
+                        link <i class="far fa-file-alt"></i>
+                    </a>
+                </li>
                 {% endfor %}
             </ul>
         </div>
@@ -62,18 +63,18 @@ canonical_url: /
             <a href="{{ site.baseurl }}/tools/">(ดูทั้งหมด)</a>
         </h4>
     </div>
-    
+
     <!-- list -->
     <div class="row mb-2">
 
         <!-- Tool #1 -->
-        <div class="card mb-3">
+        <!-- <div class="card mb-3">
             <div class="row no-gutters">
                 <div class="col-6 my-auto">
                     <div class="card-body">
                         <h5 class="card-title">ตัวช่วยวางแผนเกษียณ แบบง่าย <br>(simple retirement planning tool)</h5>
                         <p class="card-text">
-                            คำนวณสินทรัพย์สะสม โดยใช้อายุเป้าหมาย เงินตั้งต้น รายรับ รายจ่าย และผลตอบแทนคาดหวัง. -- 
+                            คำนวณสินทรัพย์สะสม โดยใช้อายุเป้าหมาย เงินตั้งต้น รายรับ รายจ่าย และผลตอบแทนคาดหวัง. --
                             <a href="{{ site.baseurl}}/tools/retirement-plan-simple/">
                                 ลองดูกันเลย. <i class="fas fa-calculator"></i>
                             </a>
@@ -81,20 +82,20 @@ canonical_url: /
                     </div>
                 </div>
                 <div class="col-6 my-auto">
-                    <img class="card-img card-img-fill" alt="Card image cap" 
-                    src="{{ site.baseurl}}/tools/retirement-plan-simple/cover.png">
+                    <img class="card-img card-img-fill" alt="Card image cap"
+                        src="{{ site.baseurl}}/tools/retirement-plan-simple/cover.png">
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <!-- Tool #2 -->
-        <div class="card mb-3">
+        <!-- <div class="card mb-3">
             <div class="row no-gutters">
                 <div class="col-6 my-auto">
                     <div class="card-body">
                         <h5 class="card-title">คำนวณ ดอกเบี้ยทบต้น<br>(compound interest calculator)</h5>
                         <p class="card-text">
-                            คำนวณการเติบโตของเงินต้น ตามระยะเวลา และผลตามผลตอบแทนคาดหวัง. -- 
+                            คำนวณการเติบโตของเงินต้น ตามระยะเวลา และผลตามผลตอบแทนคาดหวัง. --
                             <a href="{{ site.baseurl}}/tools/compound-interest/">
                                 ลองดูกันเลย. <i class="fas fa-calculator"></i>
                             </a>
@@ -102,20 +103,20 @@ canonical_url: /
                     </div>
                 </div>
                 <div class="col-6 my-auto">
-                    <img class="card-img card-img-fill" alt="Card image cap" 
-                    src="{{ site.baseurl}}/tools/compound-interest/cover.png">
+                    <img class="card-img card-img-fill" alt="Card image cap"
+                        src="{{ site.baseurl}}/tools/compound-interest/cover.png">
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <!-- Tool #3 -->
-        <div class="card mb-3">
+        <!-- <div class="card mb-3">
             <div class="row no-gutters">
                 <div class="col-6 my-auto">
                     <div class="card-body">
                         <h5 class="card-title">ตัวช่วยจัดสรรสินทรัพย์<br>(asset allocation)</h5>
                         <p class="card-text">
-                            คำนวณส่วนแบ่งการลงทุน ตามเงินลงทุน และสัดส่วนเป้าหมาย. -- 
+                            คำนวณส่วนแบ่งการลงทุน ตามเงินลงทุน และสัดส่วนเป้าหมาย. --
                             <a href="{{ site.baseurl}}/tools/asset-allocation/">
                                 ลองดูกันเลย. <i class="fas fa-calculator"></i>
                             </a>
@@ -123,11 +124,49 @@ canonical_url: /
                     </div>
                 </div>
                 <div class="col-6 my-auto">
-                    <img class="card-img card-img-fill" alt="Card image cap" 
-                    src="{{ site.baseurl}}/tools/asset-allocation/cover.png">
+                    <img class="card-img card-img-fill" alt="Card image cap"
+                        src="{{ site.baseurl}}/tools/asset-allocation/cover.png">
+                </div>
+            </div>
+        </div> -->
+
+        <!-- <div class="card-deck"> -->
+        <div class="col-md-4">
+            <div class="card mb-4 box-shadow h-100 flex-column">
+                <div class="card-header text-center pb-2">
+                    <h5>คำนวณ ดอกเบี้ยทบต้น (compound interest calculator)</h5>
+                </div>
+                <img class="card-img-top border-bottom" src="{{ site.baseurl}}/tools/compound-interest/cover.png" alt="Card image cap">
+                <div class="card-body d-flex flex-column pb-0">
+                    <p class="card-text mb-0">
+                        แสดงการเติบโตของเงินต้น ตามระยะเวลา และผลตามผลตอบแทนคาดหวัง.
+                    </p>
+                    <button type="button" class="btn btn-lg btn-block btn-success mt-auto mb-4">ลองดูกันเลย. <i class="fas fa-calculator"></i></button>
                 </div>
             </div>
         </div>
+
+
+        <div class="col-md-4">
+            <div class="card mb-4 box-shadow h-100 flex-column">
+                <div class="card-header text-center pb-2">
+                    <h5>ตัวช่วย จัดสรรสินทรัพย์ <br>(asset allocation)</h5>
+                </div>
+                <img class="card-img-top border-bottom" src="{{ site.baseurl}}/tools/asset-allocation/cover.png" alt="Card image cap">
+                <div class="card-body d-flex flex-column pb-0">
+                    <p class="card-text mb-0">
+                        คำนวณส่วนแบ่งการลงทุน ตามเงินลงทุน และสัดส่วนเป้าหมาย.
+                    </p>
+                    <button type="button" class="btn btn-lg btn-block btn-success mt-auto mb-4">ลองดูกันเลย. <i class="fas fa-calculator"></i></button>
+                </div>                
+            </div>
+        </div>
+        <!-- </div> -->
+
+
+
+
+
 
     </div>
 
