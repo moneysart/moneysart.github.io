@@ -7,6 +7,7 @@ function getElement() {
     let elementMonthInc = document.getElementById("mIncome")
     let elementGrowthInc = document.getElementById("gIncome")
     let elementMonthExp = document.getElementById("mExpenses")
+    let elementMonthExpRet = document.getElementById("mExpensesRet")
     let elementInflation = document.getElementById("inflation")
     let elementReturnRate = document.getElementById("returnRate")
     let elementReturnRateRetired = document.getElementById("returnRateRetired")
@@ -18,6 +19,7 @@ function getElement() {
       elementMonthInc,
       elementGrowthInc,
       elementMonthExp,
+      elementMonthExpRet,
       elementInflation,
       elementReturnRate,
       elementReturnRateRetired]
@@ -76,20 +78,22 @@ function updateRec(elements) {
     let inc = 12 * parseInt(elements[4].value)
     let gInc = 1 + Number(elements[5].value) / 100.0
     let exp = 12 * parseInt(elements[6].value)
-    let inflation = 1 + Number(elements[7].value) / 100.0
-    let r = 1 + Number(elements[8].value) / 100.0
-    let r_saving = 1 + Number(elements[8].value) / 100.0 / 2  // average return for monthly saving over the year ~ annualReturn / 2
-    let r_retired = 1 + Number(elements[9].value) / 100.0
+    let expRet = 12 * parseInt(elements[7].value)
+    let inflation = 1 + Number(elements[8].value) / 100.0
+    let r = 1 + Number(elements[9].value) / 100.0
+    let r_saving = 1 + Number(elements[9].value) / 100.0 / 2  // average return for monthly saving over the year ~ annualReturn / 2
+    let r_retired = 1 + Number(elements[10].value) / 100.0
 
     let ageWork = range(ageNow, ageRetired, 1)
     let ageSpend = range(ageRetired + 1, ageUntil, 1)
 
-    ageRec = ageWork.concat(ageSpend)
-    incRec = ageWork.map(e => inc * Math.pow(gInc, e - ageNow)).slice(0, -1)    // incRec continues until the year before retirement
-    expRec = ageRec.map(e => exp * Math.pow(inflation, e - ageNow))
+    // income by year
+    incRec = range(ageNow, ageRetired - 1, 1).map(e => inc * Math.pow(gInc, e - ageNow))             // incRec continues until the year before retirement
 
-    expWorkRec = expRec.slice(0, ageWork.length - 1)                            // same as incRec
-    expRetiRec = expRec.slice(ageWork.length - 1)
+    // expenses by year
+    expWorkRec = range(ageNow, ageRetired - 1, 1).map(e => exp * Math.pow(inflation, e - ageNow))    // same as incRec
+    expRetiRec = range(ageRetired, ageUntil, 1).map(e => expRet * Math.pow(inflation, e - ageNow))
+
 
     let wealthWork = Array.from({ length: ageWork.length })
     wealthWork[0] = seed
@@ -111,8 +115,9 @@ function updateRec(elements) {
       wealthSpend[i + 1] = remainGrowth
     })
 
-    
+    ageRec = ageWork.concat(ageSpend)
     wealthRec = wealthWork.concat(wealthSpend)
+    expRec = expWorkRec.concat(expRetiRec)
     // console.log(ageWork)
     // console.log(ageSpend)
     // console.log(ageRec)
