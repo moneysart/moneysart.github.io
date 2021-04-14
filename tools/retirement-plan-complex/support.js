@@ -136,8 +136,8 @@ function rePlot() {
     updateRec(elements)
     chart.data.labels = ageRec
     chart.data.datasets[0].data = wealthRec
-    chart.data.datasets[1].data = incRec
-    chart.data.datasets[2].data = expRec
+    chart.data.datasets[1].data = incRec.map(e => e/12)
+    chart.data.datasets[2].data = expRec.map(e => e/12)
     chart.update()
 
 }
@@ -156,19 +156,22 @@ function init() {
           data: wealthRec,
           label: "Wealth (สินทรัพย์)",
           backgroundColor: 'rgba(0, 255, 0, 0.2)',
-          fill: true
+          fill: true,
+          yAxisID: 'y'
         },
         {
-            data: incRec,
-            label: "income",
-            backgroundColor: 'rgba(0, 0, 255, 0.2)',
-            fill: false
+          data: incRec.map(e => e / 12),
+          label: "รายได้/เดือน",
+          backgroundColor: 'rgba(0, 0, 255, 0.5)',
+          fill: false,
+          yAxisID: 'y2'
         },
         {
-            data: expRec,
-            label: "expenses",
-            backgroundColor: 'rgba(255, 0, 0, 0.2)',
-            fill: false
+          data: expRec.map(e => e / 12),
+          label: "รายจ่าย/เดือน",
+          backgroundColor: 'rgba(255, 0, 0, 0.5)',
+          fill: false,
+          yAxisID: 'y2'
         }]
       },
       options: {
@@ -180,10 +183,10 @@ function init() {
             //     }
             // },
             y: {
-                // title: {
-                //     display: true,
-                //     text: "Net Worth"
-                // },
+                title: {
+                    display: true,
+                    text: "สินทรัพย์"
+                },
                 ticks: {
                     // Re-label tick
                     callback: function(value, index, values) {
@@ -200,6 +203,33 @@ function init() {
                         return Number(value).toFixed(0)
                     }
                 }
+            },
+            y2: {
+              title: {
+                  display: true,
+                  text: "รายได้, รายจ่าย"
+              },
+              position: 'right',
+              ticks: {
+                  // Re-label tick
+                  callback: function(value, index, values) {
+                      let mil = 1000000
+                      if (Math.abs(value) >= mil) {
+                      return Number(value / mil) + 'Mil'
+                      }
+
+                      let k = 1000
+                      if (Math.abs(value) >= k) {
+                      return Number(value / k) + 'k'
+                      }
+                      
+                      return Number(value).toFixed(0)
+                  }
+              },
+              // grid line settings
+              grid: {
+                drawOnChartArea: false, // only want the grid lines for one axis to show up
+              }
             }
         },
         plugins: {
