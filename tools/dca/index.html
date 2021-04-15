@@ -1,0 +1,116 @@
+---
+title: คำนวณการเติบโต ของการลงทุนแบบถัวเฉลี่ยต้นทุน, dollar-cost averaging (DCA)
+layout: tool
+description: คำนวณการเติบโต ของการลงทุนแบบถัวเฉลี่ยต้นทุน, dollar-cost averaging (DCA)
+category: tools
+canonical_url: /tools/dca/
+date: 2021-04-15
+---
+
+
+<div class="container">
+    <!-- chart -->
+    <div class="mt-4">
+        <h2 class="text-primary">คำนวณการเติบโต ของการลงทุนแบบถัวเฉลี่ยต้นทุน (DCA)</h2>
+        <canvas id="canvas" class="canvas-chart"></canvas>
+    </div>
+
+    <!-- form for user's input -->
+    <div class="row">
+
+        <div class="col-12 my-2 text-primary py-0">
+            <h5>ตัวแปร และ ผลลัพธ์</h5>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3 form-group py-0">
+            <label for="capital">เงินต้น</label>
+            <input id="capital" placeholder="เช่น 10000 บาท, 100000 บาท."
+                        class="form-control" type="number" min="0" value="10000" step="1000">
+            <small id="capitalHelp" class="form-text text-muted">เช่น 10000 บาท, 100000 บาท.</small>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3 form-group py-0">
+            <label for="saving">เงินออม/เดือน</label>
+            <input id="saving" placeholder="เช่น 1000 บาท, 5000 บาท."
+                        class="form-control" type="number" min="0" value="1000" step="100">
+            <small id="savingHelp" class="form-text text-muted">เช่น 1000 บาท, 5000 บาท.</small>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3 form-group py-0">
+            <label for="returnRate">ผลตอบแทนรายปี (%)</label>
+            <input id="returnRate" placeholder="เช่น 3%, 5%, 10%."
+                        class="form-control" type="number" value="8">
+            <small id="returnRateHelp" class="form-text text-muted">เช่น 3%, 5%, 10%.</small>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3 form-group py-0">
+            <label for="period">ระยะเวลา (ปี)</label>
+            <input id="period" placeholder="เช่น 5 ปี, 10 ปี."
+                        class="form-control" type="number" min="1" value="20">
+            <small id="periodHelp" class="form-text text-muted">เช่น 5 ปี, 10 ปี.</small>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3 form-group py-0">
+            <label for="final" class="text-success"><b>เงินสะสมสิ้นงวด</b></label>
+            <input id="final" class="form-control" type="number" readonly>
+        </div>
+
+    </div>
+
+    <!-- info -->
+    <div class="text-center">
+
+        <p class="lead text-muted pt-4">
+            DCA เป็นรูปแบบการลงทุนที่เป็นสามารถทำได้ง่าย เพียงเลือกสินทรัพย์ที่ต้องการลงทุน แล้วออมเงินเป็นประจำทุกเดือน.
+            <br>
+            วินัยการออม, พลังของดอกเบี้ยทบต้น, และระยะเวลา ก็จะช่วยให้เงินออมสามารถเติบโตได้. 
+            <br>
+            มากกว่าที่หลายคนคาดคิด.
+            <br>
+            <small class="font-italic">* บนข้อแม้ว่า สินทรัพย์ที่เลือกลงทุน ควรคาดหวังผลตอบแทนที่สม่ำเสมอได้ ในช่วงระยะเวลาเป้าหมาย.</small>
+        </p>
+
+    </div>
+
+    <!-- Behind the scene -->
+    <div class="row">
+        <div class="col-12 accordion px-0" id="accordion">
+            <div class="card">
+                <div class="card-header" id="headingBehindScene">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#behindScene"
+                            aria-expanded="true" aria-controls="behindScene">
+                            กดเพื่ออ่านคำอธิบาย
+                        </button>
+                    </h2>
+                </div>
+                <div id="behindScene" class="collapse" aria-labelledby="headingBehindScene" data-parent="#accordion">
+                    <div class="card-body">
+
+                        อยู่ระหว่างจัดทำ. โปรดติดตาม.
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- load supporting js -->
+<script type="text/javascript" src="{{ site.baseurl }}/tools/dca/support.js"></script>
+<!-- js -->
+<script>
+    let time, values, final
+    let ctx = document.getElementById("canvas")
+    let elements = getElement() 
+
+    // no need to track change of elementFinal
+    elements.slice(0, -1).map(e => e.addEventListener("change", validateVal))
+    elements.slice(0, -1).map(e => e.addEventListener("change", rePlot))
+
+    let range = (start, stop, step) => Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + (i * step))
+
+    init()
+</script>
