@@ -1,19 +1,22 @@
 ---
-title: เครื่องมือวางแผนเกษียณ แบบง่าย, simple retirement planning tool
+title: เครื่องมือวางแผนเกษียณ แบบละเอียด, complex retirement planning tool
 layout: tool
-description: เครื่องมือวางแผนเกษียณ แบบง่าย, simple retirement planning tool
+description: เครื่องมือวางแผนเกษียณ แบบละเอียด, complex retirement planning tool
 category: tools
-canonical_url: /tools/retirement-plan-simple/
-date: 2021-04-03
+canonical_url: /tools/retirement-plan-complex/
+date: 2021-04-13
 ---
 
 
 <div class="container">
     <!-- chart -->
     <div class="mt-4">
-        <h2 class="text-primary">เครื่องมือวางแผนเกษียณ แบบง่าย</h2>
+        <h2 class="text-primary">เครื่องมือวางแผนเกษียณ แบบละเอียด</h2>
         <small class="font-italic text-muted">แนะนำใช้หน้าจอแนวนอน สำหรับมือถือจอเล็ก</small>
         <canvas id="canvas" class="canvas-chart"></canvas>
+        <small class="text-muted">
+            * คลิกที่คำอธิบายกราฟ (legend) เพื่อเลือกการแสดง/ซ่อนผล.
+        </small>
     </div>
 
     <!-- form for user's input -->
@@ -54,14 +57,31 @@ date: 2021-04-03
                 </div>
                 <label for="mIncome" class="col-5 col-form-label py-0 my-auto">รายได้/เดือน</label>
                 <div class="col-7 py-0 my-0">
-                    <input id="mIncome" placeholder="รวมรายได้ เช่น เงินเดือน ค่าเช่า ค่าโฆษณา" class="form-control"
-                        type="number" min="0" value="30000" step="1000" />
+                    <input id="mIncome" placeholder="รวมรายได้ เช่น เงินเดือน ค่าเช่า ค่าโฆษณา" 
+                    class="form-control" type="number" min="0" value="30000" step="1000" />
                 </div>
+                <label for="gIncome" class="col-5 col-form-label py-0 my-auto">รายได้โต (%)</label>
+                <div class="col-7 py-0 my-0">
+                    <input id="gIncome" placeholder="เช่น การปรับขึ้นเงินเดือนต่อปี (%)" class="form-control"
+                        type="number" min="0" value="3" />
+                </div>
+
                 <label for="mExpenses" class="col-5 col-form-label py-0 my-auto">รายจ่าย/เดือน</label>
                 <div class="col-7 py-0 my-0">
                     <input id="mExpenses"
                         placeholder="รวมรายจ่าย เช่น ค่าเช่า ค่าอาหาร ค่าเดินทาง ค่าท่องเที่ยวที่เฉลี่ยเป็นรายเดือน"
                         class="form-control" type="number" min="0" value="25000" step="1000" />
+                </div>
+                <label for="mExpensesRet" class="col-5 col-form-label py-0 my-auto">หลังเกษียณ/เดือน</label>
+                <div class="col-7 py-0 my-0">
+                    <input id="mExpensesRet"
+                        placeholder="รวมรายจ่ายหลังเกษียณ เช่น ค่าอาหาร ค่าท่องเที่ยวที่เฉลี่ยเป็นรายเดือน"
+                        class="form-control" type="number" min="0" value="20000" step="1000" />
+                </div>
+                <label for="inflation" class="col-5 col-form-label py-0 my-auto">เงินเฟ้อ (%)</label>
+                <div class="col-7 py-0 my-0">
+                    <input id="inflation" placeholder="ประมาณเงินเฉลี่ยเฟ้อต่อปี (%)" class="form-control"
+                        type="number" min="0" value="2" />
                 </div>
             </div>
         </div>
@@ -102,38 +122,28 @@ date: 2021-04-03
                     <div class="card-body">
 
                         <!-- อยู่ระหว่างจัดทำ. โปรดติดตาม. -->
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
-                                <code>1.</code> สำหรับช่วงอายุ ปัจจุบันถึงอายุเกษียณ.
-                                <br>
-                                <br>
-                                กรณีรายได้ >= รายจ่าย: สินทรัพย์สิ้นปี = สินทรัพย์สิ้นปีก่อนหน้า * (1 + ผลตอบแทนก่อนเกษียณ) + 12 * (รายได้ - รายจ่าย) * (1 + ผลตอบแทนก่อนเกษียณ/2)
-                                <small class="font-italic text-muted">
-                                    สินทรัพย์ ณ สิ้นปีก่อนหน้า เพิ่มมูลค่าตามผลตอบแทนคาดหวัง, ส่วนเงินออมระหว่างปีเพิ่มมูลค่าด้วยอัตราครึ่งนึงของผลตอบแทนคาดหวังทั้งปี.
-                                </small>
-                                <br>
-                                <br>
-                                กรณีรายได้ < รายจ่าย: สินทรัพย์สิ้นปี = (สินทรัพย์สิ้นปีก่อนหน้า - 12 * (รายจ่าย - รายได้)) * (1 + ผลตอบแทนก่อนเกษียณ)
-                                <br>
-                                <small class="font-italic text-muted">
-                                    สินทรัพย์ ณ สิ้นปีก่อนหน้า จะถูกหักสำรองค่าใช้จ่ายส่วนเกินที่จะเกิดขึ้น, จากนั้นส่วนที่เหลือจึงปรับเพิ่มมูลค่าตามผลตอบแทนคาดหวัง.
-                                </small>
-                            </li>
+                        <p class="my-4">
+                                ใช้หลักการเดียวกันกับ 
+                            <a href="{{ site.baseurl}}/tools/retirement-plan-simple/">
+                                เครื่องมือ วางแผนเกษียณ แบบง่าย (simple retirement planning).
+                            </a>
+                            <br>
+                            เราแนะนำให้อ่านคำอธิบายของเครื่องมือแบบง่ายก่อน.
+                        </p>
 
-                            <li class="list-group-item">
-                                <code>2.</code> สำหรับช่วงอายุ มากกว่าอายุเกษียณ.
-                                <br>
-                                <br>
-                                สินทรัพย์สิ้นปี = (สินทรัพย์สิ้นปีก่อนหน้า - 12 * รายจ่าย) * (1 + ผลตอบแทนหลังเกษียณ)
-                                <br>
-                                <small class="font-italic text-muted">
-                                    สินทรัพย์ ณ สิ้นปีก่อนหน้า จะถูกหักสำรองค่าใช้จ่ายที่จะเกิดขึ้น, จากนั้นส่วนที่เหลือจึงปรับเพิ่มมูลค่าตามผลตอบแทนคาดหวัง.
-                                </small>
-                            </li>
-                        </ul>
-
-                        <p class="pt-4">
-                            * สินทรัพย์ ณ สิ้นปีก่อนหน้า หลังหักสำรองค่าใช้จ่าย จะไม่เติบโต(หรือถูกลดค่า) ตามผลตอบแทนคาดหวัง หากมูลค่าคงเหลือติดลบ.
+                        <p class="mt-4">
+                            จากนั้น เพิ่มปัจจัยด้าน การเติบโตของรายได้ เงินเฟ้อ และรายจ่ายหลังเกษียณ ในการปรับค่ารายได้ และรายจ่าย ในแต่ละปี ดังนี้.
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <code>1.</code> รายได้ เพิ่มขึ้นเทียบกับปีปัจจุบัน ตามอัตราการเติบโต จนถึงหนึ่งปีก่อนอายุเกษียณ จากนั้นไม่มีรายได้.
+                                </li>
+                                <li class="list-group-item">
+                                    <code>2.</code> รายจ่าย เพิ่มขึ้นเทียบกับปีปัจจุบัน ตามอัตราเงินเฟ้อ จนถึงหนึ่งปีก่อนอายุเกษียณ จากนั้นเปลี่ยนไปใช้รายจ่ายหลังเกษียณ.
+                                </li>
+                                <li class="list-group-item">
+                                    <code>3.</code> รายจ่ายหลังเกษียณ หลังปรับตามอัตราเงินเฟ้อ ถูกเริ่มใช้ตั้งแต่อายุเกษียณ จนถึงอายุเป้าหมาย.
+                                </li>
+                            </ul>
                         </p>
                         
                     </div>
@@ -146,10 +156,10 @@ date: 2021-04-03
 
 
 <!-- load supporting js -->
-<script type="text/javascript" src="{{ site.baseurl }}/tools/retirement-plan-simple/support.js"></script>
+<script type="text/javascript" src="{{ site.baseurl }}/tools/retirement-plan-complex/support.js"></script>
 <!-- js -->
 <script>
-    let ageRec, wealthRec, chart
+    let ageRec, wealthRec, incRec, expRec, chart
     let ctx = document.getElementById("canvas")
     let elements = getElement()
     elements.map(e => e.addEventListener("change", validateVal))
