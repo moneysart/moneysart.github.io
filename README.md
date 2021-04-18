@@ -19,6 +19,7 @@
 
 ## v.1-niwes
 *Named after Dr.Niwes Hemvachiravarakorn (ดร.นิเวศน์ เหมวชิรวรากร). Arguably the most influential Thai investor.*
+### v.1.0
 - Backfill `weekly/summary/`
 - Loop posts in `weekly/summary/` with `Liquid tags`
 - Update card format to showcase tools
