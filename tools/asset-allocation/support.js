@@ -10,6 +10,7 @@ let UIController = (function () {
         assetItem: '.asset__item',
         percentItem: '.pct__item',
         amountItem: '.amt__item',
+        percentSum: '#pct-sum',
         allocateButton: '#allocate'
     }
 
@@ -30,12 +31,21 @@ let UIController = (function () {
         event.target.value = roundNum
     }
 
+    let sumPct = function () {
+        let pctElements = document.querySelectorAll(DOMStrings.percentItem)
+        let pctSum = Array.from(pctElements).map(e => parseInt(e.value)).reduce((acc, cur) => acc + cur)
+        
+        document.querySelector(DOMStrings.percentSum).value = pctSum
+    }
+
     return {
         DOMStrings,
 
         getNumAsset,
 
         roundPct,
+
+        sumPct,
 
         addAsset: function () {
 
@@ -81,8 +91,9 @@ let UIController = (function () {
                     document.querySelector(parentElement[i]).insertAdjacentHTML('beforeend', newHtml)
                 }
 
-                // add addEventListener (roundPct) to new #pct-id
+                // add addEventListener (roundPct and sumPct) to new #pct-id
                 document.querySelector('#pct-' + id).addEventListener('change', roundPct)
+                document.querySelector('#pct-' + id).addEventListener('change', sumPct)
 
                 // update number of assets
                 document.querySelector(DOMStrings.assetNum).value = id
@@ -111,6 +122,9 @@ let UIController = (function () {
 
                 // update number of assets
                 document.querySelector(DOMStrings.assetNum).value = id - 1
+
+                // update #pct-sum
+                sumPct()
             }
         }
     }
@@ -119,11 +133,9 @@ let UIController = (function () {
 
 let allocationCalculator = (function () {
 
-    // function to sum target allocation
-    let sumAllocation = function (DOMpercentItem) {
-        let items = document.querySelectorAll(DOMpercentItem)
-        let itemsVal = Array.from(items).map(i => parseInt(i.value))
-        let sumAlct = itemsVal.reduce((acc, cur) => acc + cur)
+    // function to get sum of target allocation
+    let getSumAllocation = function (DOMpercentSum) {
+        let sumAlct = parseInt(document.querySelector(DOMpercentSum).value)
 
         return sumAlct
     }
@@ -147,9 +159,9 @@ let allocationCalculator = (function () {
     }
 
     return {
-        allocateAsset: function (DOMpercentItem, DOMSamountItem, lastID) {
+        allocateAsset: function (DOMpercentSum, DOMSamountItem, lastID) {
             // get sum of target allocation
-            let sumAlct = sumAllocation(DOMpercentItem)
+            let sumAlct = getSumAllocation(DOMpercentSum)
 
             // alert if total pct allocation !== 100, then exist calculation
             if (sumAlct !== 100) {
@@ -184,7 +196,7 @@ let controller = (function (UICtrl, allocationCal) {
 
     // allocate assets according to target % allocation
     let allocateAssets = function () {
-        allocationCal.allocateAsset(UICtrl.DOMStrings.percentItem, UICtrl.DOMStrings.amountItem, UICtrl.getNumAsset())
+        allocationCal.allocateAsset(UICtrl.DOMStrings.percentSum, UICtrl.DOMStrings.amountItem, UICtrl.getNumAsset())
     }
 
     // function to add event listeners to HTML elements
@@ -198,8 +210,9 @@ let controller = (function (UICtrl, allocationCal) {
         let elementAllocate = document.querySelector(UICtrl.DOMStrings.allocateButton)
 
         // add listeners
-        // roundPct for initial .pct__item
+        // roundPct and sumPct for initial .pct__item
         elementPctVal.forEach(e => e.addEventListener('change', UICtrl.roundPct))
+        elementPctVal.forEach(e => e.addEventListener('change', UICtrl.sumPct))
         // add/remove asset
         elementAssetAdd.addEventListener('click', UICtrl.addAsset)
         elementAssetRemove.addEventListener('click', UICtrl.removeAsset)
