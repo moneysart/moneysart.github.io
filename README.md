@@ -24,6 +24,6 @@
 - Loop posts in `weekly/summary/` with `Liquid tags`
 - Update card format to showcase tools
 - Add section to explain calculation in tools
-- Add cross links between /home, /tools, /weekly, and their childern
+- Add cross links between `/home/`, `/tools/`, `/weekly/`, and their childern
 ### v.1.1
 - Add Facebook Messenger Plugin
