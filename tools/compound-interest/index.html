@@ -13,6 +13,10 @@ date: 2021-04-06
     <div class="mt-4">
         <h2 class="text-primary">คำนวณ ดอกเบี้ยทบต้น*</h2>
         <small class="font-italic text-muted">แนะนำใช้หน้าจอแนวนอน สำหรับมือถือจอเล็ก</small>
+        <span class="fb-share-button ml-1" data-href="{{ page.canonical_url | prepend: site.base_canonical }}"
+            data-layout="button" data-size="small"><a target="_blank"
+                href="{{ page.canonical_url | prepend: site.base_canonical }}"
+                class="fb-xfbml-parse-ignore">Share</a></span>
         <canvas id="canvas" class="canvas-chart"></canvas>
     </div>
 
@@ -25,22 +29,20 @@ date: 2021-04-06
 
         <div class="col-12 col-md-6 col-lg-3 form-group py-0">
             <label for="capital">เงินต้น</label>
-            <input id="capital" placeholder="เช่น 100 บาท, 100000 บาท."
-                        class="form-control" type="number" min="0" value="100">
+            <input id="capital" placeholder="เช่น 100 บาท, 100000 บาท." class="form-control" type="number" min="0"
+                value="100">
             <small id="capitalHelp" class="form-text text-muted">เช่น 100 บาท, 100000 บาท.</small>
         </div>
 
         <div class="col-12 col-md-6 col-lg-3 form-group py-0">
             <label for="returnRate">ผลตอบแทนรายปี (%)**</label>
-            <input id="returnRate" placeholder="เช่น 3%, 5%, 10%."
-                        class="form-control" type="number" value="8">
+            <input id="returnRate" placeholder="เช่น 3%, 5%, 10%." class="form-control" type="number" value="8">
             <small id="returnRateHelp" class="form-text text-muted">เช่น 3%, 5%, 10%.</small>
         </div>
 
         <div class="col-12 col-md-6 col-lg-3 form-group py-0">
             <label for="period">ระยะเวลา (ปี)**</label>
-            <input id="period" placeholder="เช่น 5 ปี, 10 ปี."
-                        class="form-control" type="number" min="1" value="20">
+            <input id="period" placeholder="เช่น 5 ปี, 10 ปี." class="form-control" type="number" min="1" value="20">
             <small id="periodHelp" class="form-text text-muted">เช่น 5 ปี, 10 ปี.</small>
         </div>
 
@@ -53,8 +55,8 @@ date: 2021-04-06
             * ในทำนองเดียวกัน หากลองปรับผลตอบแทนให้ติดลบ ก็จะได้ผลของการขาดทุนทบต้น <i class="far fa-sad-cry"></i>.
         </p>
         <p class="text-muted">
-            ** เปลี่ยนเป็นระยะเวลาอื่นที่สัมพันธ์กันได้ เช่น ใช้ 
-            <code class="text-info">ผลตอบแทนรายเดือน (%)</code> คู่กับ 
+            ** เปลี่ยนเป็นระยะเวลาอื่นที่สัมพันธ์กันได้ เช่น ใช้
+            <code class="text-info">ผลตอบแทนรายเดือน (%)</code> คู่กับ
             <code class="text-info">ระยะเวลา (เดือน)</code>.
         </p>
 
@@ -66,7 +68,7 @@ date: 2021-04-06
             <a href="{{ site.baseurl }}/tools/" class="btn btn-info btn-lg">ALL TOOLS</a>
         </p>
     </div>
-    
+
     <!-- Behind the scene -->
     <div class="row">
         <div class="col-12 accordion px-0" id="accordion">
@@ -83,7 +85,7 @@ date: 2021-04-06
                     <div class="card-body">
 
                         อยู่ระหว่างจัดทำ. โปรดติดตาม.
-                        
+
                     </div>
                 </div>
             </div>
@@ -99,7 +101,7 @@ date: 2021-04-06
 <script>
     let time, values, final
     let ctx = document.getElementById("canvas")
-    let elements = getElement() 
+    let elements = getElement()
 
     // no need to track change of elementFinal
     elements.slice(0, -1).map(e => e.addEventListener("change", validateVal))
