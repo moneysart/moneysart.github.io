@@ -26,4 +26,6 @@
 - Add section to explain calculation in tools
 - Add cross links between `home/`, `tools/`, `weekly/`, and their childern
 ### v.1.1
-- Add Facebook `Like` button
+- Add Facebook `Like` and `Share` buttons
+- Add open graph tags to customize link previews
+<!-- - Add Facebook Messenger Plugin -->
