@@ -65,7 +65,19 @@ canonical_url: /weekly/
 
                         <!-- others -->
                         <h5 class="text-success py-2 mt-4">ประกาศอื่นๆ</h5>
-                        <li class="list-group-item">ยังไม่มีประกาศอื่น</li>
+                        <!-- <li class="list-group-item">ยังไม่มีประกาศอื่น</li> -->
+                        {% for post in site.tags.Y2021Q2 %}
+                            {% if post.tag contains "announcement" %}
+                                <li class="list-group-item">
+                                    {% capture title_full %}{{ post.title }}{% endcapture %}
+                                    {{ post.date | date_to_string }} <i class="fas fa-angle-double-right"></i>
+                                    {{ title_full }} --
+                                    <a href="{{ post.permalink | prepend: site.baseurl }}">
+                                        link <i class="far fa-file-alt"></i>
+                                    </a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
                         
                     </div>
                 </div>
