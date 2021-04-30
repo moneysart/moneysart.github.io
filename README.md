@@ -28,4 +28,5 @@
 ### v.1.1
 - Add Facebook `Like` and `Share` buttons
 - Add open graph tags to customize link previews
+- Add Facebook's Pixel base code
 <!-- - Add Facebook Messenger Plugin -->
