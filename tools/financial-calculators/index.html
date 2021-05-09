@@ -26,10 +26,10 @@ date: 2021-05-08
         <div class="col-12 pb-0">
             หาความสัมพันธ์ ของ มูลค่าตามเวลา: 
             <ul>
-                <li>มูลค่าปัจจุบัน (Present Value)</li> 
-                <li>มูลค่าอนาคต (Future Value)</li>
-                <li>อัตราผลตอบแทน หรือ อัตราคิดลด (Interest Rate หรือ Discount rate)</li>
-                <li>จำนวนครั้งของการทบต้น (Periods)</li>
+                <li>มูลค่าปัจจุบัน (Present Value: PV)</li> 
+                <li>มูลค่าอนาคต (Future Value: FV)</li>
+                <li>อัตราผลตอบแทน หรือ อัตราคิดลด (Interest Rate หรือ Discount rate: R)</li>
+                <li>จำนวนครั้งของการทบต้น (Periods: P)</li>
             </ul>
         </div>
 
@@ -335,7 +335,8 @@ date: 2021-05-08
                     data-parent="#accordion">
                     <div class="card-body">
 
-                        อยู่ระหว่างจัดทำ. โปรดติดตาม.
+                        <!-- อยู่ระหว่างจัดทำ. โปรดติดตาม. -->
+                        $$ FV = PV * \biggl( 1 + \frac{R}{100} \biggr)^{P} $$
 
                     </div>
                 </div>
@@ -362,3 +363,6 @@ date: 2021-05-08
     // add event on click
     Object.keys(elementsGroups).forEach(key => elementsGroups[key]['button'].addEventListener("click", reCalculate))
 </script>
+<!-- MathJax -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
