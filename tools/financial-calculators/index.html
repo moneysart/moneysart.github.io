@@ -1,0 +1,181 @@
+---
+title: เครื่องคิดเลขการเงิน, financial calculators
+layout: tool
+description: เครื่องคิดเลขการเงิน, financial calculators
+category: tools
+canonical_url: /tools/financial-calculators/
+date: 2021-05-08
+---
+
+
+<div class="container">
+
+    <!-- chart -->
+    <div class="mt-4">
+        <h2 class="text-primary">เครื่องคิดเลขการเงิน (Financial Calculators)</h2>
+        <span class="fb-share-button ml-1" data-href="{{ page.canonical_url | prepend: site.base_canonical }}"
+        data-layout="button" data-size="small"><a target="_blank"
+            href="{{ page.canonical_url | prepend: site.base_canonical }}"
+            class="fb-xfbml-parse-ignore">Share</a></span>
+        <!-- <canvas id="canvas" class="canvas-chart"></canvas> -->
+    </div>
+
+    <!-- form for user's input -->
+    <div class="row my-2">
+
+        <div class="col-12 pb-0">
+            <p>XXXXX</p>
+        </div>
+
+        <!-- tabs navigator -->
+        <div class="col-12 pb-0">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="futureVal-tab" data-toggle="tab" href="#futureVal" role="tab" aria-controls="futureVal"
+                        aria-selected="true">Future Value</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="presentVal-tab" data-toggle="tab" href="#presentVal" role="tab" aria-controls="presentVal"
+                        aria-selected="false">Present Value</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="intRate-tab" data-toggle="tab" href="#intRate" role="tab" aria-controls="intRate"
+                        aria-selected="true">Interest Rate (%)</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="period-tab" data-toggle="tab" href="#period" role="tab" aria-controls="period"
+                        aria-selected="true">Period</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- tab content -->
+        <div class="col-12 my-2">
+            <div class="tab-content">
+
+                <!-- tab for Future Value calculation -->
+                <div class="tab-pane fade show active" id="futureVal" role="tabpanel" aria-labelledby="futureVal-tab">
+                    <div class="row">
+                
+                        <div class="col-sm-6 col-lg-4">
+                            <div class="card border-0 text-center mb_2">
+                
+                                <div class="input-group my-1">
+                                    <div class="input-group-prepend">
+                                        <code class="input-group-text">
+                                            <small>Present Value</small>
+                                        </code>
+                                    </div>
+                                    <input type="number" class="form-control form-control-lg text-center" id="fv_pv" placeholder="3"
+                                        value=3>
+                                </div>
+                
+                                <div class="input-group my-1">
+                                    <div class="input-group-prepend">
+                                        <code class="input-group-text">
+                                            <small>Period&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</small>
+                                        </code>
+                                    </div>
+                                    <input type="number" class="form-control form-control-lg text-center" id="fv_p" placeholder="3"
+                                        value=3>
+                                </div>
+                
+                                <div class="input-group my-1">
+                                    <div class="input-group-prepend">
+                                        <code class="input-group-text">
+                                            <small>Int. Rate (%)</small>
+                                        </code>
+                                    </div>
+                                    <input type="number" class="form-control form-control-lg text-center" id="fv_r" placeholder="3"
+                                        value=3>
+                                </div>
+                
+                                <div class="card border-0 text-center mt-2">
+                                    <button type="button" class="btn btn-success">
+                                        <h5 class="my-auto">คำนวณ</h5>
+                                    </button>
+                                </div>
+                
+                                <div class="input-group my-1">
+                                    <div class="input-group-prepend">
+                                        <code class="input-group-text">
+                                            <small><b>Future Value&nbsp;</b></small>
+                                        </code>
+                                    </div>
+                                    <input type="number" class="form-control form-control-lg text-center" id="fv_r" placeholder="???"
+                                        readonly>
+                                </div>
+                
+                            </div>
+                        </div>
+                
+                        <div class="col-sm-6 col-lg-8">
+                            <canvas id="canvas" class="canvas-chart"></canvas>
+                        </div>
+                    </div>
+                
+                </div>
+
+                <!-- tab for Future Value calculation -->
+                <div class="tab-pane fade" id="presentVal" role="tabpanel" aria-labelledby="presentVal-tab">
+                    Present Val
+                </div>
+
+                <!-- tab for Interest Rate (%) calculation -->
+                <div class="tab-pane fade" id="intRate" role="tabpanel" aria-labelledby="intRate-tab">
+                    Interest Rate
+                </div>
+
+                <!-- tab for Period calculation -->
+                <div class="tab-pane fade" id="period" role="tabpanel" aria-labelledby="period-tab">
+                    Period
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- back to /tools -->
+    <div class="align-items-center">
+        <p class="text-center mt-4">
+            <a href="{{ site.baseurl }}/tools/" class="btn btn-info btn-lg">ALL TOOLS</a>
+        </p>
+    </div>
+    
+    <!-- Behind the scene -->
+    <div class="row">
+        <div class="col-12 accordion px-0" id="accordion">
+            <div class="card">
+                <div class="card-header" id="headingBehindScene">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#behindScene"
+                            aria-expanded="true" aria-controls="behindScene">
+                            กดเพื่ออ่านคำอธิบาย
+                        </button>
+                    </h2>
+                </div>
+                <div id="behindScene" class="collapse" aria-labelledby="headingBehindScene"
+                    data-parent="#accordion">
+                    <div class="card-body">
+
+                        อยู่ระหว่างจัดทำ. โปรดติดตาม.
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- load supporting js -->
+<script type="text/javascript" src="{{ site.baseurl }}/tools/compound-interest/support.js"></script>
+<!-- js -->
+<script>
+    let ctx = document.getElementById("canvas")
+
+    // let range = (start, stop, step) => Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + (i * step))
+
+    // init()
+</script>
