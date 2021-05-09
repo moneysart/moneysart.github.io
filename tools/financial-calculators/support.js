@@ -31,6 +31,7 @@ function reCalculate() {
 
 
     let pv, p, r, fv 
+
     // calculate selected key
     if (key==='fv') {
         pv = Number(elementsGroups[key]['pv'].value)
@@ -47,14 +48,14 @@ function reCalculate() {
         elementsGroups[key][key].value = pv.toFixed(2)
     }
     if (key==='r') {
-        pv = Number(elementsGroups[key]['fv'].value)
+        pv = Number(elementsGroups[key]['pv'].value)
         fv = Number(elementsGroups[key]['fv'].value)
         p  = Number(elementsGroups[key]['p'].value)
-        r  = 100 * (Math.pow( fv / pv, 1/p ) - 1)
-        elementsGroups[key][key].value = r.toFixed(2)
+        r  = Math.pow( fv / pv, 1/p ) - 1
+        elementsGroups[key][key].value = (100 * r).toFixed(2)
     }
     if (key==='p') {
-        pv = Number(elementsGroups[key]['fv'].value)
+        pv = Number(elementsGroups[key]['pv'].value)
         fv = Number(elementsGroups[key]['fv'].value)
         r  = Number(elementsGroups[key]['r'].value) / 100
         p  = Math.log( fv / pv ) / Math.log( 1 + r )
