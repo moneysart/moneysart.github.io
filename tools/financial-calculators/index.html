@@ -242,7 +242,64 @@ date: 2021-05-08
 
                 <!-- tab for Period calculation -->
                 <div class="tab-pane fade" id="period" role="tabpanel" aria-labelledby="period-tab">
-                    Period
+                    <div class="row">
+                
+                        <div class="col-sm-6 col-lg-4">
+                            <div class="card border-0 text-center mb_2">
+                
+                                <div class="input-group my-1">
+                                    <div class="input-group-prepend">
+                                        <code class="input-group-text">
+                                            <small>Present Value</small>
+                                        </code>
+                                    </div>
+                                    <input type="number" class="form-control form-control-lg text-center" id="p_pv" placeholder="100"
+                                        value=100>
+                                </div>
+                                
+                                <div class="input-group my-1">
+                                    <div class="input-group-prepend">
+                                        <code class="input-group-text">
+                                            <small>Future Value&nbsp;</small>
+                                        </code>
+                                    </div>
+                                    <input type="number" class="form-control form-control-lg text-center" id="p_fv" placeholder="110"
+                                        value=110>
+                                </div>
+                
+                                <div class="input-group my-1">
+                                    <div class="input-group-prepend">
+                                        <code class="input-group-text">
+                                            <small>Int. Rate (%)</small>
+                                        </code>
+                                    </div>
+                                    <input type="number" class="form-control form-control-lg text-center" id="p_r" placeholder="1"
+                                        value=1>
+                                </div>
+                
+                                <div class="card border-0 text-center mt-2">
+                                    <button type="button" class="btn btn-success" id="p_button">
+                                        <h5 class="my-auto">คำนวณ</h5>
+                                    </button>
+                                </div>
+                
+                                <div class="input-group my-1">
+                                    <div class="input-group-prepend">
+                                        <code class="input-group-text">
+                                            <small><b>Period&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></small>
+                                        </code>
+                                    </div>
+                                    <input type="number" class="form-control form-control-lg text-center" id="p_p" placeholder="???"
+                                        readonly>
+                                </div>
+                
+                            </div>
+                        </div>
+                
+                        <div class="col-sm-6 col-lg-8">
+                            <canvas id="p_canvas" class="canvas-chart"></canvas>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -288,7 +345,7 @@ date: 2021-05-08
 <!-- js -->
 <script>
     // array of groups of elements
-    let elementsLists = ['fv', 'pv', 'r']
+    let elementsLists = ['fv', 'pv', 'r', 'p']
 
     // get elements
     let elementsGroups = getElement()
