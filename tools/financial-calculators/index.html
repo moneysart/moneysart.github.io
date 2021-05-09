@@ -1,7 +1,7 @@
 ---
 title: เครื่องคิดเลขการเงิน, financial calculators
 layout: tool
-description: เครื่องคิดเลขการเงิน, financial calculators
+description: เครื่องคิดเลขการเงิน, มูลค่าปัจจุบัน, มูลค่าอนาคต, อัตราคิดลด, อัตราผลตอบแทน, ระยะเวลา | financial calculators, present value, future value, discount rate, yield rate, period
 category: tools
 canonical_url: /tools/financial-calculators/
 date: 2021-05-08
@@ -91,7 +91,7 @@ date: 2021-05-08
                                 </div>
                 
                                 <div class="card border-0 text-center mt-2">
-                                    <button type="button" class="btn btn-success" id="fv-button">
+                                    <button type="button" class="btn btn-success" id="fv_button">
                                         <h5 class="my-auto">คำนวณ</h5>
                                     </button>
                                 </div>
@@ -110,15 +110,72 @@ date: 2021-05-08
                         </div>
                 
                         <div class="col-sm-6 col-lg-8">
-                            <canvas id="fv-canvas" class="canvas-chart"></canvas>
+                            <canvas id="fv_canvas" class="canvas-chart"></canvas>
                         </div>
                     </div>
                 
                 </div>
 
-                <!-- tab for Future Value calculation -->
+                <!-- tab for Present Value calculation -->
                 <div class="tab-pane fade" id="presentVal" role="tabpanel" aria-labelledby="presentVal-tab">
-                    Present Val
+                    <div class="row">
+                
+                        <div class="col-sm-6 col-lg-4">
+                            <div class="card border-0 text-center mb_2">
+                
+                                <div class="input-group my-1">
+                                    <div class="input-group-prepend">
+                                        <code class="input-group-text">
+                                            <small>Future Value&nbsp;</small>
+                                        </code>
+                                    </div>
+                                    <input type="number" class="form-control form-control-lg text-center" id="pv_fv" placeholder="100"
+                                        value=100>
+                                </div>
+                
+                                <div class="input-group my-1">
+                                    <div class="input-group-prepend">
+                                        <code class="input-group-text">
+                                            <small>Period&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</small>
+                                        </code>
+                                    </div>
+                                    <input type="number" class="form-control form-control-lg text-center" id="pv_p" placeholder="10"
+                                        value=10>
+                                </div>
+                
+                                <div class="input-group my-1">
+                                    <div class="input-group-prepend">
+                                        <code class="input-group-text">
+                                            <small>Int. Rate (%)</small>
+                                        </code>
+                                    </div>
+                                    <input type="number" class="form-control form-control-lg text-center" id="pv_r" placeholder="5"
+                                        value=5>
+                                </div>
+                
+                                <div class="card border-0 text-center mt-2">
+                                    <button type="button" class="btn btn-success" id="pv_button">
+                                        <h5 class="my-auto">คำนวณ</h5>
+                                    </button>
+                                </div>
+                
+                                <div class="input-group my-1">
+                                    <div class="input-group-prepend">
+                                        <code class="input-group-text">
+                                            <small><b>Present Value</b></small>
+                                        </code>
+                                    </div>
+                                    <input type="number" class="form-control form-control-lg text-center" id="pv_pv" placeholder="???"
+                                        readonly>
+                                </div>
+                
+                            </div>
+                        </div>
+                
+                        <div class="col-sm-6 col-lg-8">
+                            <canvas id="pv_canvas" class="canvas-chart"></canvas>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- tab for Interest Rate (%) calculation -->
@@ -174,12 +231,17 @@ date: 2021-05-08
 <!-- js -->
 <script>
     // canvas for different tabs
-    let ctx_fv = document.getElementById("fv-canvas")
-    // let ctx_pv = document.getElementById("canvas-pv")
+    let ctx_fv = document.getElementById("fv_canvas")
+    let ctx_pv = document.getElementById("pv_canvas")
     // let ctx_r = document.getElementById("canvas-r")
     // let ctx_p = document.getElementById("canvas-p")
 
-    // let range = (start, stop, step) => Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + (i * step))
+    let elementGroups = getElement()
+
+    // add event on click
+    Object.keys(elementGroups).forEach(key => elementGroups[key]['button'].addEventListener("click", calculate))
+
+    let range = (start, stop, step) => Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + (i * step))
 
     init()
 </script>
