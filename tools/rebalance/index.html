@@ -1,0 +1,194 @@
+---
+title: เครื่องมือ ปรับพอร์ต, portfolio rebalancing
+layout: tool
+description: เครื่องมือ ปรับพอร์ต, portfolio rebalancing
+category: tools
+canonical_url: /tools/rebalance/
+date: 2021-06-01
+---
+
+
+<div class="container">
+
+    <!-- chart -->
+    <div class="mt-4">
+        <h2 class="text-primary">เครื่องมือ ปรับพอร์ต, (Portfolio Rebalancing)</h2>
+        <span class="fb-share-button ml-1" data-href="{{ page.canonical_url | prepend: site.base_canonical }}"
+        data-layout="button" data-size="small"><a target="_blank"
+            href="{{ page.canonical_url | prepend: site.base_canonical }}"
+            class="fb-xfbml-parse-ignore">Share</a></span>
+        <!-- <canvas id="canvas" class="canvas-chart"></canvas> -->
+    </div>
+
+    <!-- form for user's input -->
+    <div class="row my-2">
+
+        <div class="col-8 col-md-8">
+            <div class="card border-0 text-center">
+                <h5 class="text-black">ชื่อ Portfolio</h5>
+                <div class="input-group">
+                    <!-- <div class="input-group-prepend">
+                        <span class="input-group-text">ชื่อแผน</span>
+                    </div> -->
+                    <input class="form-control form-control-lg text-center text-info" type="text" value="Port นี้ดี เติบโต มั่นคง"
+                    placeholder="ชื่อแผนลงทุนของคุณ">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4 col-md-4">
+            <div class="card border-0 text-center mb_2">
+                <h5 class="text-black">จำนวนสินทรัพย์</h5>
+                <div class="input-group">
+                    <div class="input-group-prepend" id="asset__remove">
+                        <span class="input-group-text"><b>-</b></span>
+                    </div>
+                    <input type="number" class="form-control form-control-lg text-center" id="asset__num" placeholder="3" value=3 readonly style="background-color: white;">
+                    <div class="input-group-append" id="asset__add">
+                        <span class="input-group-text"><b>+</b></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="col-6 col-md-8">
+            <div class="card border-0 text-center mb_2">
+                <h5 class="text-black">เงินทุน</h5>
+                <div class="input-group">
+                    <input id="capital" class="form-control form-control-lg text-center" type="number" value="1000000"
+                    placeholder="เงินทุนทั้งหมด เช่น 1000, 1000000">
+                </div>
+            </div>
+        </div> -->
+
+    </div>
+
+    <!-- <hr> -->
+
+    <!-- form for user's input -->
+    <div class="row mb-2">
+
+        <div class="col-sm-3 col-md-3">
+            <div class="card border-0 text-center mb_2 asset__list">
+                <h5 class="text-black">รายชื่อสินทรัพย์</h5>
+                <input id="asset-1" class="form-control text-center my-1 asset__item" type="text" value=""
+                    placeholder="ชื่อสินทรัพย์ เช่น กองทุน หุ้น">
+                <input id="asset-2" class="form-control text-center my-1 asset__item" type="text" value="สินทรัพย์นี้ดี-2"
+                    placeholder="ชื่อสินทรัพย์ เช่น กองทุน หุ้น">
+                <input id="asset-3" class="form-control text-center my-1 asset__item" type="text" value="สินทรัพย์นี้ดี-3"
+                    placeholder="ชื่อสินทรัพย์ เช่น กองทุน หุ้น">
+            </div>
+        </div>
+
+        <div class="col-sm-3 col-md-2">
+            <div class="card border-0 text-center mb_2 pct__list">
+                <h5 class="text-black">มูลค่าปัจจุบัน</h5>
+                <input id="pct-1" class="form-control text-center my-1 pct__item" type="number"
+                    value="30000" placeholder="มูลค่า">
+                <input id="pct-2" class="form-control text-center my-1 pct__item" type="number"
+                    value="30000" placeholder="มูลค่า">
+                <input id="pct-3" class="form-control text-center my-1 pct__item" type="number"
+                    value="40000" placeholder="มูลค่า">
+            </div>
+            <div class="card border-0 text-center my-2">
+                <input id="pct-sum" class="form-control text-center my-1" type="number"
+                    value="100000" placeholder="มูลค่ารวม" readonly>
+            </div>
+        </div>
+
+        <div class="col-sm-3 col-md-2">
+            <div class="card border-0 text-center mb_2 pct__list">
+                <h5 class="text-black">% เป้าหมาย</h5>
+                <input id="pct-1" class="form-control text-center my-1 pct__item" type="number" min=0 max=100
+                    value="25" placeholder="สัดส่วน เป็น %">
+                <input id="pct-2" class="form-control text-center my-1 pct__item" type="number" min=0 max=100
+                    value="25" placeholder="สัดส่วน เป็น %">
+                <input id="pct-3" class="form-control text-center my-1 pct__item" type="number" min=0 max=100
+                    value="50" placeholder="สัดส่วน เป็น %">
+            </div>
+            <div class="card border-0 text-center my-2">
+                <input id="pct-sum" class="form-control text-center my-1" type="number"
+                    value="100" placeholder="สัดส่วนรวม เป็น %" readonly>
+            </div>
+        </div>
+
+        <div class="col-sm-3 col-md-2">
+            <div class="card border-0 text-center mb_2 pct__list">
+                <h5 class="text-black">มูลค่าเป้าหมาย</h5>
+                <input id="pct-1" class="form-control text-center my-1 pct__item" type="number" min=0
+                    placeholder="???" readonly style="background-color: white;">
+                <input id="pct-2" class="form-control text-center my-1 pct__item" type="number" min=0
+                    placeholder="???" readonly style="background-color: white;">
+                <input id="pct-3" class="form-control text-center my-1 pct__item" type="number" min=0
+                    placeholder="???" readonly style="background-color: white;">
+            </div>
+            <div class="card border-0 text-center my-2">
+                <input id="pct-sum" class="form-control text-center my-1" type="number"
+                    value="100000" placeholder="มูลค่ารวม" readonly>
+            </div>
+        </div>
+
+        <div class="col-sm-3 col-md-3">
+            <div class="card border-0 text-center mb-2 amt__list">
+                <h5 class="text-success">สิ่งที่ต้องทำ</h5>
+                <div class="input-group my-1">
+                    <div class="input-group-prepend" id="act-1">
+                        <code class="input-group-text">B/S?</code>
+                    </div>
+                    <input type="number" class="form-control text-center" id="actVal-1" placeholder="???" readonly>
+                </div>
+                <div class="input-group my-1">
+                    <div class="input-group-prepend" id="act-2">
+                        <code class="input-group-text">B/S?</code>
+                    </div>
+                    <input type="number" class="form-control text-center" id="actVal-2" placeholder="???" readonly>
+                </div>
+                <div class="input-group my-1">
+                    <div class="input-group-prepend" id="act-3">
+                        <code class="input-group-text">B/S?</code>
+                    </div>
+                    <input type="number" class="form-control text-center" id="actVal-3" placeholder="???" readonly>
+                </div>
+            </div>
+            <div class="card border-0 text-center my-2" id="allocate">
+                <button type="button" class="btn btn-lg btn-success"><h5 class="my-auto">Re-balance</h5></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- back to /tools -->
+    <div class="align-items-center">
+        <p class="text-center mt-4">
+            <a href="{{ site.baseurl }}/tools/" class="btn btn-info btn-lg">ALL TOOLS</a>
+        </p>
+    </div>
+    
+    <!-- Behind the scene -->
+    <div class="row">
+        <div class="col-12 accordion px-0" id="accordion">
+            <div class="card">
+                <div class="card-header" id="headingBehindScene">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#behindScene"
+                            aria-expanded="true" aria-controls="behindScene">
+                            กดเพื่ออ่านคำอธิบาย
+                        </button>
+                    </h2>
+                </div>
+                <div id="behindScene" class="collapse" aria-labelledby="headingBehindScene"
+                    data-parent="#accordion">
+                    <div class="card-body">
+
+                        อยู่ระหว่างจัดทำ. โปรดติดตาม.
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- load supporting js -->
+<script type="text/javascript" src="{{ site.baseurl }}/tools/asset-allocation/support.js"></script>
