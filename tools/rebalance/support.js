@@ -13,6 +13,7 @@ let UIController = (function () {
         assetItem: '.asset__item',
         cValItem: '.cVal__item',
         percentItem: '.pct__item',
+        tValItem: '.tVal__item',
         // amountItem: '.amt__item',
         cValSum: '#cVal-sum',
         percentSum: '#pct-sum',
@@ -195,34 +196,38 @@ let allocationCalculator = (function () {
     }
 
     return {
-        allocateAsset: function (DOMpercentSum, DOMamountItem, lastID) {
+        rebalanceAsset: function (DOMpercentSum, DOMtargetValItem, lastID) {
             // get sum of target allocation
             let sumAlct = getSumAllocation(DOMpercentSum)
 
             // alert if total pct allocation !== 100, then exist calculation
             if (sumAlct !== 100) {
                 alertAllocation(sumAlct, lastID)
-                let elementAmt = document.querySelectorAll(DOMamountItem)
+                let elementAmt = document.querySelectorAll(DOMtargetValItem)
                 elementAmt.forEach((e) => {
-                    e.value = "???"
+                    e.value = ""
                 })
                 return;
             }
 
-            // calculate amount to allocate
-            let capital = Number(document.querySelector('#capital').value)
-            let items = document.querySelectorAll(DOMamountItem)
+            // calculate amount to rebalance
+            let capital = Number(document.querySelector('#cVal-sum').value)
+            let targetVals = document.querySelectorAll(DOMtargetValItem)
             let temp = 0
 
-            // update with pct until last #amt-id
-            Array.from(items).slice(0, -1).forEach((e, i) => {
+            // get target values by pct until last #tVal-id
+            Array.from(targetVals).slice(0, -1).forEach((e, i) => {
                 let targetPct = Number(document.getElementById('pct-' + (i + 1)).value)
                 let amt = Math.round(capital * targetPct / 100)
                 e.value = amt
                 temp = temp + amt
             })
             // update last #amt-id 
-            items[lastID - 1].value = capital - temp
+            targetVals[lastID - 1].value = capital - temp
+
+            // update sum of target values 
+            tValSum = Array.from(targetVals).map(e => parseInt(e.value)).reduce((acc, cur) => acc + cur)
+            document.querySelector('#tVal-sum').value = tValSum
         }
     }
 })()
@@ -231,8 +236,8 @@ let allocationCalculator = (function () {
 let controller = (function (UICtrl, allocationCal) {
 
     // allocate assets according to target % allocation
-    let allocateAssets = function () {
-        allocationCal.allocateAsset(UICtrl.DOMStrings.percentSum, UICtrl.DOMStrings.amountItem, UICtrl.getNumAsset())
+    let rebalanceAsset = function () {
+        allocationCal.rebalanceAsset(UICtrl.DOMStrings.percentSum, UICtrl.DOMStrings.tValItem, UICtrl.getNumAsset())
     }
 
     // function to add event listeners to HTML elements
@@ -256,7 +261,7 @@ let controller = (function (UICtrl, allocationCal) {
         elementAssetAdd.addEventListener('click', UICtrl.addAsset)
         elementAssetRemove.addEventListener('click', UICtrl.removeAsset)
         // allocate assets when click button
-        elementAllocate.addEventListener('click', allocateAssets)
+        elementAllocate.addEventListener('click', rebalanceAsset)
     }
 
     return {
