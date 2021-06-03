@@ -17,6 +17,7 @@ let UIController = (function () {
         // amountItem: '.amt__item',
         cValSum: '#cVal-sum',
         percentSum: '#pct-sum',
+        tValSum: '#tVal-sum',
         allocateButton: '#allocate'
     }
 
@@ -51,6 +52,13 @@ let UIController = (function () {
         document.querySelector(DOMStrings.cValSum).value = cValSum
     }
 
+    let sumTargetVal = function () {
+        let tValElements = document.querySelectorAll(DOMStrings.tValItem)
+        let tValSum = Array.from(tValElements).map(e => parseInt(e.value)).reduce((acc, cur) => acc + cur)
+        
+        document.querySelector(DOMStrings.tValSum).value = tValSum
+    }
+
     return {
         DOMStrings,
 
@@ -61,6 +69,8 @@ let UIController = (function () {
         sumPct,
 
         sumCurVal,
+
+        sumTargetVal,
 
         addAsset: function () {
 
@@ -160,9 +170,10 @@ let UIController = (function () {
                 // update number of assets
                 document.querySelector(DOMStrings.assetNum).value = id - 1
 
-                // update #pct-sum, #cVal-sum
+                // update #pct-sum, #cVal-sum, #tVal-sum
                 sumPct()
                 sumCurVal()
+                sumTargetVal()
             }
         }
     }
@@ -197,17 +208,21 @@ let allocationCalculator = (function () {
     }
 
     return {
-        rebalanceAsset: function (DOMpercentSum, DOMtargetValItem, lastID) {
+        rebalanceAsset: function (DOMpercentSum, DOMtargetValItem, DOMtargetValSum, lastID) {
             // get sum of target allocation
             let sumAlct = getSumAllocation(DOMpercentSum)
 
-            // alert if total pct allocation !== 100, then exist calculation
+            // alert if total pct allocation !== 100, then exist calculation -- set target values columns to blank
             if (sumAlct !== 100) {
                 alertAllocation(sumAlct, lastID)
+                // set target values to ""
                 let elementAmt = document.querySelectorAll(DOMtargetValItem)
                 elementAmt.forEach((e) => {
                     e.value = ""
                 })
+                // set target sum to blank
+                console.log(DOMtargetValSum)
+                document.querySelector(DOMtargetValSum).value = ""
                 return;
             }
 
@@ -265,7 +280,7 @@ let controller = (function (UICtrl, allocationCal) {
 
     // allocate assets according to target % allocation
     let rebalanceAsset = function () {
-        allocationCal.rebalanceAsset(UICtrl.DOMStrings.percentSum, UICtrl.DOMStrings.tValItem, UICtrl.getNumAsset())
+        allocationCal.rebalanceAsset(UICtrl.DOMStrings.percentSum, UICtrl.DOMStrings.tValItem, UICtrl.DOMStrings.tValSum, UICtrl.getNumAsset())
     }
 
     // function to add event listeners to HTML elements
