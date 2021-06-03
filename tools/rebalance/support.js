@@ -108,15 +108,16 @@ let UIController = (function () {
                     <div class="input-group-prepend" id="order-%id%">
                         <code class="input-group-text">B/S?</code>
                     </div>
-                    <input type="number" class="form-control text-center" id="actVal-%id%" placeholder="???" readonly>
+                    <input type="number" class="form-control text-center" id="actVal-%id%" placeholder="???" readonly style="background-color: white;">
                 </div>
                 `,
                 ]
 
                 // insert HTML in DOM
                 for (let i = 0; i < parentElement.length; i++) {
-                    // replace placeholder text with actual data 
-                    let newHtml = html[i].replace('%id%', id).replace('%id%', id)
+                    // replace placeholder text with actual data -- .replace modifies only first match
+                    // .replaceAll() is supported by modern browsers as of 2020, will check that later
+                    let newHtml = html[i].replace('%id%', id).replace('%id%', id).replace('%id%', id)
 
                     // insert as a child, and at the end of the selected element
                     document.querySelector(parentElement[i]).insertAdjacentHTML('beforeend', newHtml)
@@ -228,6 +229,33 @@ let allocationCalculator = (function () {
             // update sum of target values 
             tValSum = Array.from(targetVals).map(e => parseInt(e.value)).reduce((acc, cur) => acc + cur)
             document.querySelector('#tVal-sum').value = tValSum
+
+            // update actions -- order type and value
+            for (let id = 1; id <= lastID; id++) {
+                // get elements
+                orderItem = document.getElementById('order-' + id)
+                actValItem = document.getElementById('actVal-' + id)
+
+                // calculate amount for action
+                actVal = Number(document.getElementById('tVal-' + id).value) - Number(document.getElementById('cVal-' + id).value)
+                
+                // set order type
+                if (actVal > 0) 
+                {
+                    // orderItem.classList.add("text-success")
+                    orderItem.innerHTML = "<code class=\"input-group-text text-success font-weight-bold\">BUY&nbsp;</code>"
+                } else if (actVal < 0) {
+                    // orderItem.classList.add("text-danger")
+                    orderItem.innerHTML = "<code class=\"input-group-text text-danger font-weight-bold\">SELL</code>"
+                }
+                else {
+                    orderItem.classList.add("text-mute")
+                    orderItem.innerHTML = "<code class=\"input-group-text\">----</code>"
+                }
+                
+                // display value
+                actValItem.value = Math.abs(actVal)
+            }
         }
     }
 })()
