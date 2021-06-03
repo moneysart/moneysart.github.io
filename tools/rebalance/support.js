@@ -11,8 +11,10 @@ let UIController = (function () {
         actionList: '.act__list',
         // amountList: '.amt__list',
         assetItem: '.asset__item',
+        cValItem: '.cVal__item',
         percentItem: '.pct__item',
         // amountItem: '.amt__item',
+        cValSum: '#cVal-sum',
         percentSum: '#pct-sum',
         allocateButton: '#allocate'
     }
@@ -41,6 +43,13 @@ let UIController = (function () {
         document.querySelector(DOMStrings.percentSum).value = pctSum
     }
 
+    let sumCurVal = function () {
+        let cValElements = document.querySelectorAll(DOMStrings.cValItem)
+        let cValSum = Array.from(cValElements).map(e => parseInt(e.value)).reduce((acc, cur) => acc + cur)
+        
+        document.querySelector(DOMStrings.cValSum).value = cValSum
+    }
+
     return {
         DOMStrings,
 
@@ -49,6 +58,8 @@ let UIController = (function () {
         roundPct,
 
         sumPct,
+
+        sumCurVal,
 
         addAsset: function () {
 
@@ -77,7 +88,7 @@ let UIController = (function () {
                 <input id="cVal-%id%"
                 class="form-control text-center my-1 cVal__item" 
                 type="number"
-                value="0" 
+                value="0" step=1000
                 placeholder="มูลค่า">
                 `,
                     `
@@ -114,6 +125,9 @@ let UIController = (function () {
                 document.querySelector('#pct-' + id).addEventListener('change', roundPct)
                 document.querySelector('#pct-' + id).addEventListener('change', sumPct)
 
+                // add addEventListener sumCurVal to new #cVal-id
+                document.querySelector('#cVal-' + id).addEventListener('change', sumCurVal)
+
                 // update number of assets
                 document.querySelector(DOMStrings.assetNum).value = id
             }
@@ -144,8 +158,9 @@ let UIController = (function () {
                 // update number of assets
                 document.querySelector(DOMStrings.assetNum).value = id - 1
 
-                // update #pct-sum
+                // update #pct-sum, #cVal-sum
                 sumPct()
+                sumCurVal()
             }
         }
     }
@@ -224,6 +239,7 @@ let controller = (function (UICtrl, allocationCal) {
     let setupEventListeners = function () {
         // get elements
         let elementPctVal = document.querySelectorAll(UICtrl.DOMStrings.percentItem)
+        let elementCurrentVal = document.querySelectorAll(UICtrl.DOMStrings.cValItem)
 
         let elementAssetAdd = document.querySelector(UICtrl.DOMStrings.assetAdd)
         let elementAssetRemove = document.querySelector(UICtrl.DOMStrings.assetRemove)
@@ -234,6 +250,8 @@ let controller = (function (UICtrl, allocationCal) {
         // roundPct and sumPct for initial .pct__item
         elementPctVal.forEach(e => e.addEventListener('change', UICtrl.roundPct))
         elementPctVal.forEach(e => e.addEventListener('change', UICtrl.sumPct))
+        // add sumCurVal
+        elementCurrentVal.forEach(e => e.addEventListener('change', UICtrl.sumCurVal))
         // add/remove asset
         elementAssetAdd.addEventListener('click', UICtrl.addAsset)
         elementAssetRemove.addEventListener('click', UICtrl.removeAsset)
