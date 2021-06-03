@@ -5,11 +5,14 @@ let UIController = (function () {
         assetAdd: '#asset__add',
         assetRemove: '#asset__remove',
         assetList: '.asset__list',
+        cValList: '.cVal__list',
         percentList: '.pct__list',
-        amountList: '.amt__list',
+        tValList: '.tVal__list',
+        actionList: '.act__list',
+        // amountList: '.amt__list',
         assetItem: '.asset__item',
         percentItem: '.pct__item',
-        amountItem: '.amt__item',
+        // amountItem: '.amt__item',
         percentSum: '#pct-sum',
         allocateButton: '#allocate'
     }
@@ -55,7 +58,12 @@ let UIController = (function () {
             // do not overdo it
             if (id <= 20) {
                 // elements to insert form fields for asset's info 
-                let parentElement = [DOMStrings.assetList, DOMStrings.percentList, DOMStrings.amountList]
+                let parentElement = [DOMStrings.assetList, 
+                    DOMStrings.cValList, 
+                    DOMStrings.percentList, 
+                    DOMStrings.tValList,
+                    DOMStrings.actionList
+                ]
 
                 // html text to insert
                 let html = [`
@@ -66,19 +74,30 @@ let UIController = (function () {
                 >
                 `,
                     `
-                <input id="pct-%id%" 
-                class="form-control text-center my-1 pct__item" 
-                type="number" 
-                min=0 max= 100 value="0" 
-                placeholder="สัดส่วน เป็น %"" 
-                >
+                <input id="cVal-%id%"
+                class="form-control text-center my-1 cVal__item" 
+                type="number"
+                value="0" 
+                placeholder="มูลค่า">
                 `,
                     `
-                <input id="amt-%id%" 
-                class="form-control text-center my-1 amt__item" 
-                type="text" placeholder="???"
-                readonly
-                >
+                <input id="pct-%id%" class="form-control text-center my-1 pct__item" 
+                type="number" 
+                min=0 max=100 value="0" 
+                placeholder="สัดส่วน เป็น %">
+                `,
+                    `
+                <input id="tVal-%id%" class="form-control text-center my-1 tVal__item" 
+                type="number" min=0 placeholder="???" 
+                readonly style="background-color: white;">
+                `,
+                    `
+                <div id="act-%id%" class="input-group my-1">
+                    <div class="input-group-prepend" id="order-%id%">
+                        <code class="input-group-text">B/S?</code>
+                    </div>
+                    <input type="number" class="form-control text-center" id="actVal-%id%" placeholder="???" readonly>
+                </div>
                 `,
                 ]
 
@@ -111,8 +130,10 @@ let UIController = (function () {
                 // delete an item based on asset-id
                 let elements = [
                     document.getElementById("asset-" + id),
+                    document.getElementById("cVal-" + id),
                     document.getElementById("pct-" + id),
-                    document.getElementById("amt-" + id)
+                    document.getElementById("tVal-" + id),
+                    document.getElementById("act-" + id)
                 ]
 
                 // JS does not allow remove an element directly
@@ -159,14 +180,14 @@ let allocationCalculator = (function () {
     }
 
     return {
-        allocateAsset: function (DOMpercentSum, DOMSamountItem, lastID) {
+        allocateAsset: function (DOMpercentSum, DOMamountItem, lastID) {
             // get sum of target allocation
             let sumAlct = getSumAllocation(DOMpercentSum)
 
             // alert if total pct allocation !== 100, then exist calculation
             if (sumAlct !== 100) {
                 alertAllocation(sumAlct, lastID)
-                let elementAmt = document.querySelectorAll(DOMSamountItem)
+                let elementAmt = document.querySelectorAll(DOMamountItem)
                 elementAmt.forEach((e) => {
                     e.value = "???"
                 })
@@ -175,7 +196,7 @@ let allocationCalculator = (function () {
 
             // calculate amount to allocate
             let capital = Number(document.querySelector('#capital').value)
-            let items = document.querySelectorAll(DOMSamountItem)
+            let items = document.querySelectorAll(DOMamountItem)
             let temp = 0
 
             // update with pct until last #amt-id
