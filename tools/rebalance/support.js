@@ -219,8 +219,18 @@ let allocationCalculator = (function () {
                     e.value = ""
                 })
                 // set target sum to blank
-                console.log(DOMtargetValSum)
                 document.querySelector(DOMtargetValSum).value = ""
+
+                // reset actions -- order type and value
+                for (let id = 1; id <= lastID; id++) {
+                    // get elements
+                    orderItem = document.getElementById('order-' + id)
+                    actValItem = document.getElementById('actVal-' + id)
+
+                    orderItem.innerHTML = "<code class=\"input-group-text\">B/S?</code>"
+                    actValItem.value = ""
+                }
+
                 return;
             }
 
