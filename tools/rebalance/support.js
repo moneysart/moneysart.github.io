@@ -109,14 +109,14 @@ let UIController = (function () {
                     `
                 <input id="tVal-%id%" class="form-control text-center my-1 tVal__item" 
                 type="number" min=0 placeholder="???" 
-                readonly style="background-color: white;">
+                readonly>
                 `,
                     `
                 <div id="act-%id%" class="input-group my-1">
                     <div class="input-group-prepend" id="order-%id%">
                         <code class="input-group-text">B/S?</code>
                     </div>
-                    <input type="number" class="form-control text-center" id="actVal-%id%" placeholder="???" readonly style="background-color: white;">
+                    <input type="number" class="form-control text-center" id="actVal-%id%" placeholder="???" readonly>
                 </div>
                 `,
                 ]
