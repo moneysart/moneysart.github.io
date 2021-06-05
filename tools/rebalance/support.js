@@ -210,7 +210,8 @@ let allocationCalculator = (function () {
             // get sum of target allocation
             let sumAlct = getSumAllocation(DOMpercentSum)
 
-            // alert if total pct allocation !== 100, then exist calculation -- set target values columns to blank
+            // alert if total pct allocation !== 100, then exist calculation
+            // reset target values, action type, and action value columns to default
             if (sumAlct !== 100) {
                 alertAllocation(sumAlct, lastID)
                 // set target values to ""
