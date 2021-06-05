@@ -1,7 +1,7 @@
 ---
 title: FINNOMENA ฉลองครบ 5 ปี, มอบของขวัญชิ้นพิเศษให้แก่นักลงทุน
 layout: weekly
-description: ข่าวสาร ข้อมูล สิทธิประโยชน์ สำหรับนักลงทุน
+description: ข่าวสาร ข้อมูล สิทธิประโยชน์ สำหรับนักลงทุน, ประชาสัมพันธ์โครงการฉลองครบรอบ 5 ปี Finnomena
 category: weekly
 tag: [announcement, Y2021Q1]
 canonical_url: /weekly/announcement/2021-03-20/
