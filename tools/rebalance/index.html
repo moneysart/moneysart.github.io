@@ -1,7 +1,7 @@
 ---
 title: เครื่องมือ ปรับพอร์ต, portfolio rebalancing
 layout: tool
-description: เครื่องมือช่วยปรับพอร์ตการลงทุน แบบ interactive ช่วยวางแผนการซื้อขาย เพื่อคงสัดส่วนพอร์ตลงทุนให้เหมาะสมด้วยหลักการ rebalance ใช้ง่าย ทำได้ด้วยตัวเอง ปรับตัวแปรได้ตามความต้องการของผู้ใช้.
+description: เครื่องมือช่วย rebalance พอร์ตการลงทุน แบบ interactive ช่วยวางแผนการซื้อขาย เพื่อคงสัดส่วนพอร์ตลงทุนให้เหมาะสมด้วยหลักการ rebalance ใช้ง่าย ทำได้ด้วยตัวเอง ปรับตัวแปรได้ตามความต้องการของผู้ใช้.
 category: tools
 canonical_url: /tools/rebalance/
 date: 2021-06-01
@@ -18,6 +18,53 @@ date: 2021-06-01
         data-layout="button" data-size="small"><a target="_blank"
             href="{{ page.canonical_url | prepend: site.base_canonical }}"
             class="fb-xfbml-parse-ignore">Share</a></span>
+
+        <div class="col-12 accordion px-0" id="accordion">
+            <div class="card">
+                <div class="card-header" id="headingIntro">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#intro"
+                            aria-expanded="true" aria-controls="intro">
+                            Rebalance คืออะไร?
+                        </button>
+                    </h2>
+                </div>
+                <div id="intro" class="collapse" aria-labelledby="headingIntro"
+                    data-parent="#accordion">
+                    <div class="card-body text-center">
+                        <p>
+                            การ rebalance พอร์ต คือ การปรับสมดุลพอร์ตการลงทุนที่เปลี่ยนไปตามสภาพตลาด <br>
+                            ให้กลับมาอยู่ในสัดส่วนที่เราตั้งใจลงทุนไว้ในตอนแรก <br>
+                            เพื่อรักษาผลตอบแทนคาดหวัง และความผันผวน ในระดับที่ตั้งใจไว้
+                        </p>
+                        <p>
+                            โดยหลักการ คือ ขายสินทรัพย์ที่ปรับตัวขึ้นมาแพงแล้ว มาซื้อสินทรัพย์ที่ยังถูกนั่นเอง
+                        </p>
+                        <p>
+                            เช่น หากเราตั้งใจลงทุนในหุ้น 50% และตราสารหนี้ 50% ผ่านไปหนึ่งปี <br>
+                            สัดส่วนการลงทุนกลับกลายเป็น หุ้น 80% ตราสารหนี้ 20% เนื่องจากตลาดหุ้นปรับตัวขึ้นมามาก 
+                        </p>
+                        <p>
+                            การ rebalance ก็คือ เราขายสัดส่วนหุ้นออก ไปซื้อตราสารหนี้ <br>
+                            ให้พอร์ตกลับมามีสินทรัพย์ทั้งสองเท่าๆ กัน ซึ่งในกรณีนี้ ยังช่วยให้เราล๊อคกำไรออกมาจากสินทรัพย์เสี่ยงที่ปรับตัวขึ้นมามากกว่าด้วย
+                        </p>
+                        <hr>
+                        <p>
+                            นักลงทุนอาจพิจารณาทำ rebalance ปีละ 1-2 ครั้ง เพื่อรักษาความสมดุลของพอร์ต
+                        </p>
+                        <p>
+                            แต่จะต้องขายตัวไหน และไปซื้อตัวไหนเพิ่ม อย่างละเท่าไหร่ล่ะ? <br>
+                            ความรู้สึกยุ่งยากนี้ อาจเกิดกับนักลงทุน โดยเฉพาะท่านที่ลงทุนในสินทรัพย์หลายตัว <br>
+                            เพื่อให้นักลงทุนไม่ต้องปวดหัวอีกต่อไป admin เลยทำเครื่องมือช่วย rebalance พอร์ต ให้ท่านได้ไปใช้กันที่นี่ได้เลย
+                        </p>
+                        <p>
+                            หวังว่าจะช่วยให้คุณมีสุขภาพการเงินที่ดีขึ้นครับ.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- <canvas id="canvas" class="canvas-chart"></canvas> -->
     </div>
 
