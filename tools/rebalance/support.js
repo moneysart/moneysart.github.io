@@ -225,8 +225,8 @@ let allocationCalculator = (function () {
                 // reset actions -- order type and value
                 for (let id = 1; id <= lastID; id++) {
                     // get elements
-                    orderItem = document.getElementById('order-' + id)
-                    actValItem = document.getElementById('actVal-' + id)
+                    let orderItem = document.getElementById('order-' + id)
+                    let actValItem = document.getElementById('actVal-' + id)
 
                     orderItem.innerHTML = "<code class=\"input-group-text\">B/S?</code>"
                     actValItem.value = ""
@@ -255,14 +255,24 @@ let allocationCalculator = (function () {
             document.querySelector('#tVal-sum').value = tValSum
 
             // update actions -- order type and value
+            let sumActVal = 0
             for (let id = 1; id <= lastID; id++) {
                 // get elements
-                orderItem = document.getElementById('order-' + id)
-                actValItem = document.getElementById('actVal-' + id)
+                let orderItem = document.getElementById('order-' + id)
+                let actValItem = document.getElementById('actVal-' + id)
 
                 // calculate amount for action
-                actVal = Number(document.getElementById('tVal-' + id).value) - Number(document.getElementById('cVal-' + id).value)
-                
+                let actVal
+                if (id < lastID) {
+                    actVal = Number(document.getElementById('tVal-' + id).value) - Number(document.getElementById('cVal-' + id).value)
+                }
+                else {
+                    // last action will balance all action value to 0
+                    actVal = 0 - sumActVal
+                }
+                actVal = Math.ceil(actVal / 100) * 100  // round to 100
+                sumActVal = sumActVal + actVal // note running sum of action values 
+
                 // set order type
                 if (actVal > 0) 
                 {
