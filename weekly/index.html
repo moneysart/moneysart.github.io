@@ -34,17 +34,67 @@ canonical_url: /weekly/
             
             
             <small class="text-muted">Click เพื่อซ่อน/แสดง</small>
-            <!-- first quarter -->
+            <!-- 2021Q3 quarter -->
+            <div class="card">
+                <div class="card-header" id="headingY2021Q3">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#Y2021Q3"
+                            aria-expanded="true" aria-controls="Y2021Q3">
+                            2021-Q3
+                        </button>
+                    </h2>
+                </div>
+                <div id="Y2021Q3" class="collapse show" aria-labelledby="headingY2021Q3" data-parent="#weeklyAccordion">
+                    <div class="card-body">
+
+                        <!-- weekly summary -->
+                        <h5 class="text-success py-2">ประเด็นการลงทุนรายสัปดาห์</h5>
+                        {% for post in site.tags.Y2021Q3 %}
+                            {% if post.tag contains "summary" %}
+                                <li class="list-group-item">
+                                    {% capture title_full %}{{ post.title }}{% endcapture %}
+                                    {% assign title_lines = title_full | split: ", " %}
+                                    {{ post.date | date_to_string }} <i class="fas fa-angle-double-right"></i>
+                                    สรุป{{ title_lines[1] }} --
+                                    <a href="{{ post.permalink | prepend: site.baseurl }}">
+                                        link <i class="far fa-file-alt"></i>
+                                    </a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+
+                        <!-- others -->
+                        <h5 class="text-success py-2 mt-4">ประกาศอื่นๆ</h5>
+                        <li class="list-group-item">ยังไม่มีประกาศอื่น</li>
+                        <!-- {% for post in site.tags.Y2021Q3 %}
+                            {% if post.tag contains "announcement" %}
+                                <li class="list-group-item">
+                                    {% capture title_full %}{{ post.title }}{% endcapture %}
+                                    {{ post.date | date_to_string }} <i class="fas fa-angle-double-right"></i>
+                                    {{ title_full }} --
+                                    <a href="{{ post.permalink | prepend: site.baseurl }}">
+                                        link <i class="far fa-file-alt"></i>
+                                    </a>
+                                </li>
+                            {% endif %}
+                        {% endfor %} -->
+                        
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- 2021Q2 quarter -->
             <div class="card">
                 <div class="card-header" id="headingY2021Q2">
                     <h2 class="mb-0">
-                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#Y2021Q2"
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#Y2021Q2"
                             aria-expanded="true" aria-controls="Y2021Q2">
                             2021-Q2
                         </button>
                     </h2>
                 </div>
-                <div id="Y2021Q2" class="collapse show" aria-labelledby="headingY2021Q2" data-parent="#weeklyAccordion">
+                <div id="Y2021Q2" class="collapse" aria-labelledby="headingY2021Q2" data-parent="#weeklyAccordion">
                     <div class="card-body">
 
                         <!-- weekly summary -->
@@ -84,7 +134,7 @@ canonical_url: /weekly/
             </div>
 
 
-            <!-- second quarter -->
+            <!-- 2021Q1 quarter -->
             <div class="card">
                 <div class="card-header" id="headingY2021Q1">
                     <h2 class="mb-0">
