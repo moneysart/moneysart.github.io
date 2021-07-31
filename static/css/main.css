@@ -93,7 +93,13 @@ hr.light {
 .blog-footer p:last-child {
   margin-bottom: 0;
 }
-
+/* Facebook Like Button */
+.fb_iframe_widget span {
+  vertical-align: top !important;
+}
+.fb_iframe_widget span iframe {
+  width: 90px !important;
+}
 
 
 
@@ -194,10 +200,3 @@ Large (lg) devices (desktops, 992px and up)
 Extra (xl) large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) { ... }
 */
-
-
-
-
-
-
-

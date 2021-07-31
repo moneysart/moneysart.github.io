@@ -16,6 +16,13 @@ canonical_url: /tools/
                 ตั้งแต่ความรู้พื้นฐาน จนถึงตัวช่วยบริหารพอร์ต. <br>
                 พร้อมอธิบายหลักการคำนวณ.
             </p>
+            <p class="lead">
+                ร่วมแบ่งปันความรู้ ให้คนที่คุณห่วงใย 
+                <span class="fb-share-button ml-1" data-href="{{ page.canonical_url | prepend: site.base_canonical }}" data-layout="button"
+                    data-size="large"><a target="_blank"
+                        href="{{ page.canonical_url | prepend: site.base_canonical }}"
+                        class="fb-xfbml-parse-ignore">Share</a></span>
+            </p>
         </div>
     </div>
 </div>
@@ -23,7 +30,7 @@ canonical_url: /tools/
 
 <!-- main container -->
 <div class="container">
-    
+
     <!-- tool set -->
     <div class="text-left">
         <h3 class="d-inline-block mb-2 text-black">พื้นฐาน</h3>
@@ -36,14 +43,14 @@ canonical_url: /tools/
                 <div class="card-header text-center pb-2">
                     <h5>คำนวณ การเติบโตของ DCA <br>(DCA calculator)</h5>
                 </div>
-                <img class="card-img-top border-bottom" src="{{ site.baseurl}}/tools/dca/cover.png" alt="Card image cap">
+                <img class="card-img-top border-bottom" src="{{ site.baseurl}}/tools/dca/card.png"
+                    alt="Card image cap">
                 <div class="card-body d-flex flex-column pb-0">
                     <p class="card-text mb-0">
                         แสดงการเติบโตของเงินสะสม ตามเงินต้น เงินออมรายเดือน ระยะเวลา และผลตามผลตอบแทนคาดหวัง.
                     </p>
 
-                    <a href="{{ site.baseurl}}/tools/dca/" 
-                    class="btn btn-lg btn-block btn-success mt-auto mb-4">
+                    <a href="{{ site.baseurl}}/tools/dca/" class="btn btn-lg btn-block btn-success mt-auto mb-4">
                         ลองดูกันเลย. <i class="fas fa-calculator"></i>
                     </a>
                 </div>
@@ -55,14 +62,15 @@ canonical_url: /tools/
                 <div class="card-header text-center pb-2">
                     <h5>คำนวณ ดอกเบี้ยทบต้น <br>(compound interest calculator)</h5>
                 </div>
-                <img class="card-img-top border-bottom" src="{{ site.baseurl}}/tools/compound-interest/cover.png" alt="Card image cap">
+                <img class="card-img-top border-bottom" src="{{ site.baseurl}}/tools/compound-interest/card.png"
+                    alt="Card image cap">
                 <div class="card-body d-flex flex-column pb-0">
                     <p class="card-text mb-0">
                         แสดงการเติบโตของเงินต้น ตามระยะเวลา และผลตามผลตอบแทนคาดหวัง.
                     </p>
 
-                    <a href="{{ site.baseurl}}/tools/compound-interest/" 
-                    class="btn btn-lg btn-block btn-success mt-auto mb-4">
+                    <a href="{{ site.baseurl}}/tools/compound-interest/"
+                        class="btn btn-lg btn-block btn-success mt-auto mb-4">
                         ลองดูกันเลย. <i class="fas fa-calculator"></i>
                     </a>
                 </div>
@@ -84,14 +92,15 @@ canonical_url: /tools/
                 <div class="card-header text-center pb-2">
                     <h5>วางแผนเกษียณ แบบง่าย <br>(simple retirement planning)</h5>
                 </div>
-                <img class="card-img-top border-bottom" src="{{ site.baseurl}}/tools/retirement-plan-simple/cover.png" alt="Card image cap">
+                <img class="card-img-top border-bottom" src="{{ site.baseurl}}/tools/retirement-plan-simple/card.png"
+                    alt="Card image cap">
                 <div class="card-body d-flex flex-column pb-0">
                     <p class="card-text mb-0">
                         คำนวณสินทรัพย์สะสม โดยใช้อายุเป้าหมาย เงินตั้งต้น รายรับ รายจ่าย และผลตอบแทนคาดหวัง.
                     </p>
 
-                    <a href="{{ site.baseurl}}/tools/retirement-plan-simple/" 
-                    class="btn btn-lg btn-block btn-success mt-auto mb-4">
+                    <a href="{{ site.baseurl}}/tools/retirement-plan-simple/"
+                        class="btn btn-lg btn-block btn-success mt-auto mb-4">
                         ลองดูกันเลย. <i class="fas fa-calculator"></i>
                     </a>
                     <!-- <button type="button" class="btn btn-lg btn-block btn-success mt-auto mb-4">ลองดูกันเลย. <i class="fas fa-calculator"></i></button> -->
@@ -104,14 +113,16 @@ canonical_url: /tools/
                 <div class="card-header text-center pb-2">
                     <h5>วางแผนเกษียณ แบบละเอียด <br>(complex retirement planning)</h5>
                 </div>
-                <img class="card-img-top border-bottom" src="{{ site.baseurl}}/tools/retirement-plan-complex/cover.png" alt="Card image cap">
+                <img class="card-img-top border-bottom" src="{{ site.baseurl}}/tools/retirement-plan-complex/card.png"
+                    alt="Card image cap">
                 <div class="card-body d-flex flex-column pb-0">
                     <p class="card-text mb-0">
-                        คำนวณสินทรัพย์สะสม โดยใช้อายุเป้าหมาย เงินตั้งต้น รายรับ รายจ่าย การเติบโต เงินเฟ้อ และผลตอบแทนคาดหวัง.
+                        คำนวณสินทรัพย์สะสม โดยใช้อายุเป้าหมาย เงินตั้งต้น รายรับ รายจ่าย การเติบโต เงินเฟ้อ
+                        และผลตอบแทนคาดหวัง.
                     </p>
 
-                    <a href="{{ site.baseurl}}/tools/retirement-plan-complex/" 
-                    class="btn btn-lg btn-block btn-success mt-auto mb-4">
+                    <a href="{{ site.baseurl}}/tools/retirement-plan-complex/"
+                        class="btn btn-lg btn-block btn-success mt-auto mb-4">
                         ลองดูกันเลย. <i class="fas fa-calculator"></i>
                     </a>
                     <!-- <button type="button" class="btn btn-lg btn-block btn-success mt-auto mb-4">ลองดูกันเลย. <i class="fas fa-calculator"></i></button> -->
@@ -121,7 +132,7 @@ canonical_url: /tools/
     </div>
 
 
-    
+
     <!-- tool set -->
     <div class="text-left">
         <h3 class="d-inline-block mb-2 text-blakc">บริหารพอร์ตลงทุน</h3>
@@ -134,17 +145,18 @@ canonical_url: /tools/
                 <div class="card-header text-center pb-2">
                     <h5>ตัวช่วย จัดสรรสินทรัพย์ <br>(asset allocation)</h5>
                 </div>
-                <img class="card-img-top border-bottom" src="{{ site.baseurl}}/tools/asset-allocation/cover.png" alt="Card image cap">
+                <img class="card-img-top border-bottom" src="{{ site.baseurl}}/tools/asset-allocation/card.png"
+                    alt="Card image cap">
                 <div class="card-body d-flex flex-column pb-0">
                     <p class="card-text mb-0">
                         คำนวณส่วนแบ่งการลงทุน ตามเงินลงทุน และสัดส่วนเป้าหมาย.
                     </p>
 
-                    <a href="{{ site.baseurl}}/tools/asset-allocation/" 
-                    class="btn btn-lg btn-block btn-success mt-auto mb-4">
+                    <a href="{{ site.baseurl}}/tools/asset-allocation/"
+                        class="btn btn-lg btn-block btn-success mt-auto mb-4">
                         ลองดูกันเลย. <i class="fas fa-calculator"></i>
                     </a>
-                </div>                
+                </div>
             </div>
         </div>
 
@@ -153,7 +165,8 @@ canonical_url: /tools/
                 <div class="card-header text-center pb-2">
                     <h5>อยู่ระหว่างจัดทำเพิ่ม <br>(Under constuction)</h5>
                 </div>
-                <img class="card-img-top border-bottom" src="{{ site.baseurl}}/static/img/placeholder_card.png" alt="Card image cap">
+                <img class="card-img-top border-bottom" src="{{ site.baseurl}}/static/img/placeholder_card.png"
+                    alt="Card image cap">
                 <div class="card-body d-flex flex-column pb-0">
                     <p class="card-text mb-0">
                         โปรดติดตาม.
@@ -163,7 +176,8 @@ canonical_url: /tools/
                     class="btn btn-lg btn-block btn-success mt-auto mb-4" disabled>
                         ลองดูกันเลย. <i class="fas fa-calculator"></i>
                     </a> -->
-                    <button type="button" class="btn btn-lg btn-block btn-secondary mt-auto mb-4" disabled>โปรดติดตาม.</button>
+                    <button type="button" class="btn btn-lg btn-block btn-secondary mt-auto mb-4"
+                        disabled>โปรดติดตาม.</button>
                 </div>
             </div>
         </div>
