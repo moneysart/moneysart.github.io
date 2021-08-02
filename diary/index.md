@@ -9,15 +9,16 @@ canonical_url: /diary/
 ### QUESTIONS TO ASK FOR NEXT INVESTMENT
 * Is the business a spawner -- compounding machine?
 * Does the business have a long runway? Can it maintain growth momentum after 5 years? Is it in a sunrise industry?
-* Does the business have the mindset of continuous improvement/learning e.g. research, new products, new partnership, expanding market?
+* Does the business have the mindset of continuous improvement/learning e.g. research, new products, acquisition, new partnership, expanding market?
 * Does the business have durable competitive advantages -- broad and deep moats -- e.g. IP, switching cost, brand?
 * Is the management team trustworthy and capable -- in many aspects e.g. research, marketing, capital management, and connections?
+* Is the management team working on diversification or diworsification?
 * What are their advantages (and disadvantages) over competitors?
 * How stable are income and cash flow?
-* What is ROE? It it high quality e.g. growing or stable at high level?
+* What is ROE? Is it high quality e.g. growing or stable at high level?
 * Debt level?
 * How does the business manage excess cash -- dividen, share buy-back?
-* Is the price reasonable?
+* Is the price reasonable -- complies with your target return rate and provides a good margin of safety?
 * What can go wrong? What would you do?
 * Do you want to own this business? At least for the next 5 years?
 
@@ -95,12 +96,13 @@ Although until July, I will never get +10% from my enry point. But I would not l
 * Understand when you use a suggestion from another person. What are the differences in their objective and yours.
 * Do not let fear take over. Keep your rational sense.  
 I did okay at first trying to come up with an exit plan when things started to not look like what I hoped for.  
-But I also let fear to make mt set an order sooner than I should have.
-* Be responsible for your trade. Stick with your plan.  
+But I also let fear to make me set an order sooner than I should have.
+* Be responsible for your trade. Study your tool well to execute your plan as accurately as possible.  
 Do not be lazy and do whatever easier to do.  
-Study your trading tool and use it to execute your plan as accurately as possible.
 * Do not trade a leveraged ticker until you plan both good and bad scenarios.  
 Probably better not to trade a leveraged ticker (for me).
+* Doing some research on stop loss and ETFs after exited CHAU also points out that I should not use stop loss here either.  
+Error in this trade is due to both (a) my negligence toward my trading tool, and (b) my lack of understanding of how to trade an ETF.
 
 
 ##### [CHAU](https://finance.yahoo.com/quote/CHAU)
@@ -132,6 +134,16 @@ The stop order was triggered.
 I should be more cautious about derivative tickers that traded at different timezones.  
 People seem to use CSI300 (or China A50) future as a reference in this case.
 * CHAU jumped back +9% next day. Oh well.
+* CHAU continued to gain, on 2021-08-02 getting to -4% of my exit price.
+* Further research reveals that setting a stop loss on an ETF is not a good idea. Even worse for a leveraged ETF.  
+Since ETFs track an index, a strong drop in an ETF is likely due to an error in a bearish and illiquid environment.  
+It will probably move back up to its real value soon.   
+In such a time, you would want to increase your position, not sell. If you're using a stop loss, then you lock in losses.  
+Worse, leveraged ETFs tend to open with a big gap on such days. Force you to sell below your stop loss price.
+* Some good read here: [Are Stop-Loss Orders Good When Trading ETFs?](https://www.investopedia.com/articles/active-trading/121815/are-stoploss-orders-and-etfs-good-idea.asp), [3X leveraged ETF with stop loss, am I missing something?](https://www.reddit.com/r/investing/comments/8nvr0c/3x_leveraged_etf_with_stop_loss_am_i_missing/), [What is the stop-loss strategy for a leveraged ETF?](https://www.quora.com/What-is-the-stop-loss-strategy-for-a-leveraged-ETF), [Is it possible to put a stop loss on an ETF?](https://www.reddit.com/r/investing/comments/3tm4h5/is_it_possible_to_put_a_stop_loss_on_an_etf/), [some extra](https://seekingalpha.com/article/4351712-stop-loss-danger-to-levered-funds), [another extra](https://seekingalpha.com/article/133634-trading-leveraged-etfs-its-all-about-the-stops)  
+* ([QUOTE](https://www.investopedia.com/articles/active-trading/121815/are-stoploss-orders-and-etfs-good-idea.asp)) ETF Stop Loss Equals Big Risk, Individual Stock Stop Loss Equals Reduced Risk  
+*The Bottom Line* -- When it comes to stop-loss orders, your approach should depend on whether or not you’re trading ETFs or individual stocks. With a typical ETF, a short-term plunge is the absolute worst time to have a stop-loss in place if you have the trend correct. Instead, this is where you want to step up and buy more.  
+* That was quite a pricy lesson. It's time to suck it up and move on.
 
 **Lessons**:  
 * I think I did well sticking with the plan this time.  
@@ -147,6 +159,9 @@ Damaging your trade plan.
 You also do not know actual value of the thing you hold. Only rely on a set target for stop loss (or take profit).  
 * Next time stick with investing in a business you really want to own and grow with.  
 This way, if an unexpected event happens, you can evaluate your business more reasonably and act more logically.
+* Make sure you understand your instrument well.  
+My research on stop loss and ETFs says the main cause of error this time is I do not understand the instrument.  
+Although I did well on sticking with the plan, I set a stop loss where I should not.  
 
 ---
 
@@ -211,6 +226,10 @@ This way, if an unexpected event happens, you can evaluate your business more re
 **Journey**: 
 
 ##### SINOTRUK
+**Intro**:  
+**Journey**: 
+
+##### Precision Tsugami
 **Intro**:  
 **Journey**: 
 
