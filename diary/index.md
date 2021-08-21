@@ -13,14 +13,16 @@ canonical_url: /diary/
 * Does the business have durable competitive advantages -- broad and deep moats -- e.g. IP, switching cost, brand?
 * Is the management team trustworthy and capable -- in many aspects e.g. research, marketing, capital management, and connections?
 * Is the management team working on diversification or diworsification?
+* Are founders still around? How much shares owned by insiders?
 * What are their advantages (and disadvantages) over competitors?
 * How stable are income and cash flow?
-* What is ROE? Is it high quality e.g. growing or stable at high level?
+* What is ROE? Is it high quality e.g. growing or stable at high level?  Your long term return will be ~ROE (or ROIC).
 * Debt level?
 * How does the business manage excess cash -- dividen, share buy-back?
 * Is the price reasonable -- complies with your target return rate and provides a good margin of safety?
 * What can go wrong? What would you do?
 * Do you want to own this business? At least for the next 5 years?
+* Timing (easier to guess for small cap stocks)? Try to buy when a stock is *light* -- low trade volume. If a stock is on a downtrend, wait for a drop to stagnant by observing trade volume. 
 
 ---
 
@@ -193,7 +195,7 @@ Although I did well on sticking with the plan, I set a stop loss where I should 
 
 ##### ALIBABA
 **Intro**:  
-**Buy date**: 2021-06-10 (at 206 HKD)  
+**Buy date**: 2021-06-10 (at 206 HKD), 2021-08-09 (at 185.4 HKD)  
 **Journey**:
 
 ##### PING AN
