@@ -1,7 +1,7 @@
 ---
 title: เครื่องมือวางแผนเกษียณ แบบง่าย, simple retirement planning tool
 layout: tool
-description: จำลองแผนเกษียณเบื้องต้น เข้าใจง่ายด้วยกราฟ interactive ปรับตัวแปรได้ตามความต้องการของผู้ใช้ คำนวณสินทรัพย์สะสม โดยใช้อายุเป้าหมาย เงินตั้งต้น รายรับ รายจ่าย และผลตอบแทนคาดหวัง ช่วยให้วางแผนการเงินได้ง่ายขึ้น ด้วยตัวเอง.
+description: ตัวช่วยจำลองแผนเกษียณเบื้องต้น เข้าใจง่ายด้วยกราฟ interactive ปรับตัวแปรได้ตามความต้องการของผู้ใช้ คำนวณสินทรัพย์สะสม โดยใช้อายุเป้าหมาย เงินตั้งต้น รายรับ รายจ่าย และผลตอบแทนคาดหวัง ช่วยให้วางแผนการเงินได้ง่ายขึ้น ด้วยตัวเอง.
 category: tools
 canonical_url: /tools/retirement-plan-simple/
 date: 2021-04-03
@@ -17,6 +17,40 @@ date: 2021-04-03
         data-layout="button" data-size="small"><a target="_blank"
             href="{{ page.canonical_url | prepend: site.base_canonical }}"
             class="fb-xfbml-parse-ignore">Share</a></span>
+
+        <div class="col-12 accordion px-0" id="accordion">
+            <div class="card">
+                <div class="card-header" id="headingIntro">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#intro"
+                            aria-expanded="true" aria-controls="intro">
+                            ตัวช่วย วางแผนการเงิน เพื่อเกษียณ?
+                        </button>
+                    </h2>
+                </div>
+                <div id="intro" class="collapse" aria-labelledby="headingIntro"
+                    data-parent="#accordion">
+                    <div class="card-body">
+                        <p>
+                            หลายคน อยากวางแผน ว่าต้องออมเงินเท่าไหร่ ถึงจะสามารถใช้ชีวิตแบบที่ต้องการยามเกษียณได้ <br>
+                            แต่ไม่รู้จะเริ่มต้นอย่างไร เพราะมีตัวแปรมากมาย
+
+                            ต้องมีรายได้เท่าไหร่? ควบคุมรายจ่ายอย่างไร? <br>
+                            และถ้านำเงินไปลงทุน จะต้องคาดหวังผลตอบแทนเท่าไหร่? <br>
+                        </p>
+                        <p>
+                            เครื่องมือ วางแผนเกษียณ ของเรา ให้คุณจำลอง สถานะเงินออมของคุณ ตั้งแต่ปัจจุบัน ไปจนถึงวัยเกษียณ <br>
+                            โดยใช้อายุเป้าหมาย เงินตั้งต้น รายรับ รายจ่าย และผลตอบแทนคาดหวัง <br>
+                            ซึ่งจะช่วยให้คุณวางแผนการเงิน เพื่อไปสู่เป้าหมายการเกษียณของคุณได้อย่างมั่นใจ
+                        </p>
+                        <p>
+                            หวังว่าจะช่วยให้คุณมีสุขภาพการเงินที่ดีขึ้นครับ.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <canvas id="canvas" class="canvas-chart"></canvas>
     </div>
 
