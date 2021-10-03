@@ -17,6 +17,42 @@ date: 2021-04-13
         data-layout="button" data-size="small"><a target="_blank"
             href="{{ page.canonical_url | prepend: site.base_canonical }}"
             class="fb-xfbml-parse-ignore">Share</a></span>
+
+        <div class="col-12 accordion px-0" id="accordion">
+            <div class="card">
+                <div class="card-header" id="headingIntro">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#intro"
+                            aria-expanded="true" aria-controls="intro">
+                            ตัวช่วย วางแผนการเงิน เพื่อเกษียณ แบบครอบคลุม?
+                        </button>
+                    </h2>
+                </div>
+                <div id="intro" class="collapse" aria-labelledby="headingIntro"
+                    data-parent="#accordion">
+                    <div class="card-body">
+                        <p>
+                            แบบจำลองนี้ ต่อยอดมาจาก 
+                            <a href="{{ site.baseurl}}/tools/retirement-plan-simple/">
+                                เครื่องมือ วางแผนเกษียณ แบบง่าย (simple retirement planning).
+                            </a> <br> 
+                            ที่ใช้ อายุเป้าหมาย เงินตั้งต้น รายรับ รายจ่าย และผลตอบแทนคาดหวัง <br>
+                        </p>
+                        <p>
+                            โดยมีการเพิ่มเติม ตัวแปรทางด้านการเติบโตของรายได้, เงินเฟ้อ, และค่าใช้จ่ายที่เปลี่ยนไปหลังเกษียณด้วย
+                        </p>
+                        <p>
+                            การจำลอง แผนการเกษียณ นี้ ช่วยให้คุณเห็นภาพสถานะเงินออมของคุณ ชัดเจนขึ้น <br>
+                            และช่วยให้คุณวางแผนการเงิน เพื่อไปสู่เป้าหมายการเกษียณของคุณได้อย่างมั่นใจ
+                        </p>
+                        <p>
+                            หวังว่าจะช่วยให้คุณมีสุขภาพการเงินที่ดีขึ้นครับ.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <canvas id="canvas" class="canvas-chart"></canvas>
         <small class="text-muted">
             * คลิกที่คำอธิบายกราฟ (legend) เพื่อเลือกการแสดง/ซ่อนผล.
