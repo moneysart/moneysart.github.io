@@ -1,17 +1,17 @@
-title: เรื่องเงิน สำคัญ (Money Matters)
-suffix: Money Matters Thailand
+title: Money ศาสตร์
+suffix: 
 description: website ช่วยวางแผนทางการเงิน การลงทุน การเกษียณ ด้วยเครื่องมือคำนวณ และสรุปข้อมูลข่าวสารการลงทุนรายสัปดาห์
 
-name: moneymattersthailand
-url: "https://www.moneymattersthailand.com"
+name: Money ศาสตร์
+url: "https://www.moneysart.com"
 baseurl: ""
-base_canonical: "https://www.moneymattersthailand.com"
+base_canonical: "https://www.moneysart.com"
 permalink: 
 
 social:
-   facebook: https://www.facebook.com/moneymattersthailand
+   facebook: https://www.facebook.com/moneysart
    line:
-   github: https://github.com/moneymattersthailand/moneymattersthailand.github.io
+   github: https://github.com/moneysart/moneysart.github.io
    email: chatdanai.l@gmail.com
 
 google_analytics: "G-47WXWD20WW"
