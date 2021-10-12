@@ -30,3 +30,5 @@
 - Add open graph tags to customize link previews
 - Add Facebook's Pixel base code
 <!-- - Add Facebook Messenger Plugin -->
+### v.1.2
+- Change organization/repo/domain to `moneysart (money ศาสตร์)`
