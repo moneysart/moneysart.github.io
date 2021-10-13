@@ -3,9 +3,9 @@ suffix: Money ศาสตร์
 description: website ช่วยวางแผนทางการเงิน การลงทุน การเกษียณ ด้วยเครื่องมือคำนวณ และสรุปข้อมูลข่าวสารการลงทุนรายสัปดาห์
 
 name: Money ศาสตร์
-url: "https://www.moneysart.com"
+url: "https://moneysart.com"
 baseurl: ""
-base_canonical: "https://www.moneysart.com"
+base_canonical: "https://moneysart.com"
 permalink: 
 
 social:
