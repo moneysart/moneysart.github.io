@@ -1,8 +1,8 @@
-# About [moneymattersthailand.com](https://www.moneymattersthailand.com/) :moneybag:
+# About [Money ศาสตร์](https://www.moneysart.com/) :moneybag:
 
-ยินดีต้อนรับสู่ [website](https://www.moneymattersthailand.com/) ช่วยวางแผนทางการเงิน. <br>
-เรามีเครื่องมือที่ช่วยคุณวางแผนทางการเงิน การลงทุน การเกษียณ ได้ง่ายขึ้น ([ที่นี่](https://www.moneymattersthailand.com/tools/)). <br>
-รวมถึงมีสรุปข้อมูลข่าวสารการลงทุนรายสัปดาห์ ([ที่นี่](https://www.moneymattersthailand.com/weekly/)).
+ยินดีต้อนรับสู่ [website](https://www.moneysart.com/) ช่วยวางแผนทางการเงิน. <br>
+เรามีเครื่องมือที่ช่วยคุณวางแผนทางการเงิน การลงทุน การเกษียณ ได้ง่ายขึ้น ([ที่นี่](https://www.moneysart.com/tools/)). <br>
+รวมถึงมีสรุปข้อมูลข่าวสารการลงทุนรายสัปดาห์ ([ที่นี่](https://www.moneysart.com/weekly/)).
 
 # Changelog
 ## v.0-skeleton
@@ -30,3 +30,5 @@
 - Add open graph tags to customize link previews
 - Add Facebook's Pixel base code
 <!-- - Add Facebook Messenger Plugin -->
+### v.1.2
+- Change organization/repo/domain to `moneysart (money ศาสตร์)`
