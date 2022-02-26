@@ -195,7 +195,7 @@ Although I did well on sticking with the plan, I set a stop loss where I should 
 
 ##### ALIBABA
 **Intro**:  
-**Buy date**: 2021-06-10 (at 206 HKD), 2021-08-09 (at 185.4 HKD)  
+**Buy date**: 2021-06-10 (at 206 HKD), 2021-08-09 (at 185.4 HKD), 2022-02-22 (at 109 HKD)   
 **Journey**:
 
 ##### PING AN
