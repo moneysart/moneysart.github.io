@@ -190,7 +190,7 @@ Although I did well on sticking with the plan, I set a stop loss where I should 
 
 ##### ASIAINFO
 **Intro**:  
-**Buy date**: 2021-06-01 (at 12.66 HKD), 2021-07-21 (at 12.00 HKD), 2021-07-30 (at 11.50 HKD)   
+**Buy date**: 2021-06-01 (at 12.66 HKD), 2021-07-21 (at 12.00 HKD), 2021-07-30 (at 11.50 HKD), 2022-03-15 (at 12.10 HKD)   
 **Journey**:
 
 ##### ALIBABA
