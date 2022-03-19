@@ -20,7 +20,9 @@ canonical_url: /diary/
 * Debt level?
 * How does the business manage excess cash -- dividen, share buy-back?
 * Is the price reasonable -- complies with your target return rate and provides a good margin of safety?
-* What can go wrong? What would you do?
+* What can go wrong in my assumptions? What can make the buniness crumble? 
+* Can the management team get the business pass unexpected downturns?
+* What would you do if business deteriorate?
 * Do you want to own this business? At least for the next 5 years?
 * Timing (easier to guess for small cap stocks)? Try to buy when a stock is *light* -- low trade volume. If a stock is on a downtrend, wait for a drop to stagnant by observing trade volume. 
 
