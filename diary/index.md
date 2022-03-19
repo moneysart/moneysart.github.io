@@ -211,6 +211,10 @@ Although I did well on sticking with the plan, I set a stop loss where I should 
 **Intro**:  
 **Journey**: 
 
+##### BEIJING CHUNLIZHENGDA MEDICAL INSTRUMENTS
+**Intro**:  
+**Journey**: 
+
 ##### XINGFA
 **Intro**:  
 **Journey**: 
