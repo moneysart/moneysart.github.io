@@ -187,7 +187,7 @@ Although I did well on sticking with the plan, I set a stop loss where I should 
 
 ##### ESSEX
 **Intro**:  
-**Buy date**: 2021-01-28 (at 3.89 HKD), 2021-05-24 (at 5.10 HKD)  
+**Buy date**: 2021-01-28 (at 3.89 HKD), 2021-05-24 (at 5.10 HKD), 2022-03-25 (at 4.15 HKD)  
 **Journey**:
 
 ##### ASIAINFO
