@@ -6,6 +6,83 @@ category: diary
 canonical_url: /diary/
 ---
 
+### INVESTING RULES
+
+#### Legend: Warren Buffett
+1. Never lose money
+2. Never forget rule No. 1
+
+#### Legend: Charlie Munger
+- Do not go where you are going to die.
+
+#### My rules
+1. Do not act upon your immediate fear
+2. Be patient; Do not play a game you are at a disadvantage
+3. Make sure enough time and liquidity to fill your order
+4. Do not set up an order when the market is open
+5. Do not set up a trade when your are mentally unstable 
+6. Never lose money
+   
+* In the end, these rules are my baby steps toward Charlie's and Warren's wisdom. 
+
+##### Expansion of rules
+1. **<u>Fear is not uncertainty</u>**.  
+   Fear is short term. Uncertainty is long term. Long term uncertainty is normal. Just make sure there is enough margin of safety.  
+   Common fear in trading: I will miss the train (price going up), exchange rate is moving to an unfavorable direction.  
+2. It is better to not play the game entirely when you are at a disadvantage.  
+   Do not let fear drive you to act.  
+   Be patient and wait, opportunities will come again. It is favorable to be a waiter not a price follower.  
+   Examples of disadvantageous conditions: exchange rate is above your comfortable level, trying to catch a stock that its price is moving up from your buy target.
+3. Otherwise you risk losing minimum trading fee while can only fill part of your order.  
+   This could accumulate to big losses. Deteriorate your return.
+4. This greatly helps reduce the chance of you being controlled by fear.  
+   Unless you review the first 3 rules and are confident that they complie. 
+   Please consider delaying the act.
+5. This help reduce the chance of making a series of bad decisions.  
+   Especially when you are anxious, depressed, have recently made a series of misssteps.  
+   It'd better not to risk feeling even worse with a bad trade setup.
+6. You are already doing fine. Do not put yourself at risk needlessly.  
+   The larger you have tirelessly saved up, the larger losses even with small bad decisions.
+   
+   
+##### Hard learned lessons
+- **<u>Do not lose money</u>**  
+  I made a series of bad decisions in two weeks between `2022-07-25` and `2022-08-05` that caused at least ~400 USD and mental distress.  
+  Not super big money but still significant considering it should have been prevented. 
+  Nevertheless, they teach me a very good first-hand lesson. I am grateful for it. <br> 
+
+  First, USD was getting stronger in the past few months. It was ~36.x THB/USD. Significantly beyond my comfortable exchange rate of ~33-34 THB/USD. I missed not DCAing THB to USD in the past few months because I was waiting to accumulate saving before exchange at once. Once I collected enough, I `feared` USD will get stronger. So I converted to USD at the peak THB/USD. Looking back `I should not play this game and just wait. I was at a currency disadvantage`. <br>
+
+  Second, I was `too focused on and hoping for` US market contraction so I converted to USD (eyeing GITLAB at 40USD, was ~60USD). But that week another position I liked (Asininfo) started to drop to <13 HKD (my buy price is ~12HKD). Looking back I should have converted to HKD because Asiainfo was closer to my target price. `I should take likelihood of events into account`. <br>
+
+  Third, I converted USD to HKD to buy Asiainfo when it dropped closer to 12HKD. However the conversion finished with less than 30 minutes before the market close. I rushed in `fearing` the price will go up. `Driven by fear, I was pushed to be at a disadvantage`. I immediate set up my trade order. `Did not think through if the order can be filled in time`. A very small fraction of my order was filled. I was `anxious`. Even worse, this added to my mental distress that had been going on in the past few days. I did not modify the order and let the remaining to get partially filled again the next day. `Losing minimum fees twice` without fullfilling my trade. Looking back, `I should not rush in` on the first day. I would set a much better order at night and will be likely to have it filled on the second day. It will still be better mentally even if the entire order is not filled on the second day and `keep all my money instead of losing to fees unnecessarily`. <br>
+
+  In hindsight, exchange rate improved ~200USD (~2%) less than two weeks later, and I would gain ~260USD in few days if the intended position is filled properly (paying ~25USD trade fee). Only 1/3 of the intended position was filled and I paid trade fees twice. Hence, ~400USD loss. Not counting potential gain of shares in the future. More importantly, this series of mistakes caused me mental distress for almost a week. The only good thing is, I managed to reflect on them and learn a lesson.
+- **<u>Whisper stocks</u>**  
+  xxxxxxxxxxxxxxxxx
+- **<u>Always be ready, at least continue to prepare for it</u>**  
+  DCA when something has already in the target (Pax, GTLB) to get ready and conditions are ok e.g. exchange rate
+  xxxxxxxxxxxxxxxxx
+- **<u>Be courageous</u>**  
+  Ready to act
+
+
+
+
+- do not wait for exchange rate (Pax, GTLB)
+Maybe DCA if you have something close to a target price
+- be ready to buy when the stock hit your target price, do not wait for it to bottom again (GTLB)
+Maybe find your target price with respect to recent bottoms (e.g. 10%-20% higher)
+- Essex's profit warning
+- prepare more strategies
+- lesson of whisper stocks
+- do not lose money
+- set auto-trade to take profit / stop loss
+- HK stock that up a lot but didn't buy
+
+
+---
+
 ### QUESTIONS TO ASK FOR NEXT INVESTMENT
 * Is the business a spawner -- compounding machine?
 * Does the business have a long runway? Can it maintain growth momentum after 5 years? Is it in a sunrise industry?
@@ -192,7 +269,7 @@ Although I did well on sticking with the plan, I set a stop loss where I should 
 
 ##### ASIAINFO
 **Intro**:  
-**Buy date**: 2021-06-01 (at 12.66 HKD), 2021-07-21 (at 12.00 HKD), 2021-07-30 (at 11.50 HKD), 2022-03-15 (at 12.10 HKD)   
+**Buy date**: 2021-06-01 (at 12.66 HKD), 2021-07-21 (at 12.00 HKD), 2021-07-30 (at 11.50 HKD), 2022-03-15 (at 12.10 HKD), 2022-08-02 (at 12 HKD, 400 shares), 2022-08-03 (at 12 HKD, 1600 shares)   
 **Journey**:
 
 ##### ALIBABA
@@ -209,11 +286,19 @@ Although I did well on sticking with the plan, I set a stop loss where I should 
 
 ### WATCHLIST
 
-##### AK MEDICAL
+##### GITLAB
+**Intro**:  
+**Journey**: 
+
+##### PAX GLOBAL
 **Intro**:  
 **Journey**: 
 
 ##### BEIJING CHUNLIZHENGDA MEDICAL INSTRUMENTS
+**Intro**:  
+**Journey**: 
+
+##### AK MEDICAL
 **Intro**:  
 **Journey**: 
 
@@ -238,14 +323,6 @@ Although I did well on sticking with the plan, I set a stop loss where I should 
 **Journey**: 
 
 ##### Precision Tsugami
-**Intro**:  
-**Journey**: 
-
-##### ECOGREEN
-**Intro**:  
-**Journey**: 
-
-##### DREAM INTERNATIONAL
 **Intro**:  
 **Journey**: 
 
