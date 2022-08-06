@@ -58,8 +58,23 @@ canonical_url: /diary/
   Third, I converted USD to HKD to buy Asiainfo when it dropped closer to 12HKD. However the conversion finished with less than 30 minutes before the market close. I rushed in `fearing` the price will go up. `Driven by fear, I was pushed to be at a disadvantage`. I immediate set up my trade order. `Did not think through if the order can be filled in time`. A very small fraction of my order was filled. I was `anxious`. Even worse, this added to my mental distress that had been going on in the past few days. I did not modify the order and let the remaining to get partially filled again the next day. `Losing minimum fees twice` without fullfilling my trade. Looking back, `I should not rush in` on the first day. I would set a much better order at night and will be likely to have it filled on the second day. It will still be better mentally even if the entire order is not filled on the second day and `keep all my money instead of losing to fees unnecessarily`. <br>
 
   In hindsight, exchange rate improved ~200USD (~2%) less than two weeks later, and I would gain ~260USD in few days if the intended position is filled properly (paying ~25USD trade fee). Only 1/3 of the intended position was filled and I paid trade fees twice. Hence, ~400USD loss. Not counting potential gain of shares in the future. More importantly, this series of mistakes caused me mental distress for almost a week. The only good thing is, I managed to reflect on them and learn a lesson.
+
 - **<u>Whisper stocks</u>**  
-  xxxxxxxxxxxxxxxxx
+  This type of stocks has been warned by Peter Lynch to avoid. I learned a lesson not following his wisdom. <br> 
+
+  A good friend of mine shared a shortlist of stocks that insiders secretly mentioned they will go up roungly 20% after quarterly earnings in the coming months. I decided to join the party. Greed had lured me to ignore Lynch's warning. <br> 
+
+  At first I bought only a little. Just to join the party with friends (all of us were cautious). But greed had won me and I doubled down the following week. <br>
+  
+  The stocks were mostly flat at first. Then came their earnings. All were good except the stocks did not go up. They came down. It could be partly because the market also was going down. But these stocks suffered even more. <br>
+
+  In the end, I decided to cut loss at ~25% down or 1500USD. That was a big lesson for me. <br>
+  
+  A friend who shared still own the stocks after all of us decided to realize the damage.
+  Not blaming anyone. Good friends just like sharing and having fun. We all knew it was not a good approach to invest. But still ... <br> 
+  
+  Charlie's `Do not go where you are going to die` hits me at the time of writing this.
+  
 - **<u>Always be ready, at least continue to prepare for it</u>**  
   DCA when something has already in the target (Pax, GTLB) to get ready and conditions are ok e.g. exchange rate
   xxxxxxxxxxxxxxxxx
@@ -78,7 +93,7 @@ Maybe find your target price with respect to recent bottoms (e.g. 10%-20% higher
 - lesson of whisper stocks
 - do not lose money
 - set auto-trade to take profit / stop loss
-- HK stock that up a lot but didn't buy
+- HK stock that up a lot but didn't buy (Modern Dental Group)
 
 
 ---
@@ -309,6 +324,16 @@ Although I did well on sticking with the plan, I set a stop loss where I should 
 ---
 
 ### TO STUDY
+
+##### T-MOBILE and VERIZON (for 5G network providers in US, expanding to wireless home internet)
+https://open.spotify.com/episode/1JJbxjrDZKcrn6sUFKqCmI?si=dc61750780104974  
+**Intro**:  
+**Journey**: 
+
+##### gig economy companies Uber, Lyft, DoorDash, Grab, ... 
+https://www.cnbc.com/2022/08/05/uber-and-lyft-stocks-had-their-best-week-ever.html  
+**Intro**:  
+**Journey**: 
 
 ##### NETDRAGON
 **Intro**:  
