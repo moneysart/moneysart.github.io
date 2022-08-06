@@ -60,24 +60,24 @@ canonical_url: /diary/
   In hindsight, exchange rate improved ~200USD (~2%) less than two weeks later, and I would gain ~260USD in few days if the intended position is filled properly (paying ~25USD trade fee). Only 1/3 of the intended position was filled and I paid trade fees twice. Hence, ~400USD loss. Not counting potential gain of shares in the future. More importantly, this series of mistakes caused me mental distress for almost a week. The only good thing is, I managed to reflect on them and learn a lesson.
 
 - **<u>Whisper stocks</u>**  
-  This type of stocks has been warned by Peter Lynch to avoid. I learned a lesson not following his wisdom. <br> 
+  This type of stocks had been warned by Peter Lynch to avoid. I learned a lesson not following his wisdom. <br> 
 
   A good friend of mine shared a shortlist of stocks that insiders secretly mentioned they will go up roungly 20% after quarterly earnings in the coming months. I decided to join the party. Greed had lured me to ignore Lynch's warning. <br> 
 
   At first I bought only a little. Just to join the party with friends (all of us were cautious). But greed had won me and I doubled down the following week. <br>
   
-  The stocks were mostly flat at first. Then came their earnings. All were good except the stocks did not go up. They came down. It could be partly because the market also was going down. But these stocks suffered even more. <br>
+  The stocks were mostly flat in the beginning. Then came their earnings. All were good except the stocks did not go up. They came down. It could be partly because the market also was going down. But these stocks suffered even more. <br>
 
-  In the end, I decided to cut loss at ~25% down or 1500USD. That was a big lesson for me. <br>
+  In the end, I decided to cut loss at ~25% down (~1500USD). That was a big lesson for me. <br>
   
-  A friend who shared still own the stocks after all of us decided to realize the damage.
-  Not blaming anyone. Good friends just like sharing and having fun. We all knew it was not a good approach to invest. But still ... <br> 
+  Not blaming anyone. Good friends just like sharing and having fun. A friend who shared still own the stocks after all of us decided to realize the damage. We all knew it was not a good approach to invest. But still ... <br> 
   
   Charlie's `Do not go where you are going to die` hits me at the time of writing this.
   
 - **<u>Always be ready, at least continue to prepare for it</u>**  
   DCA when something has already in the target (Pax, GTLB) to get ready and conditions are ok e.g. exchange rate
   xxxxxxxxxxxxxxxxx
+
 - **<u>Be courageous</u>**  
   Ready to act
 
