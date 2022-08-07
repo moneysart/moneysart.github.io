@@ -75,13 +75,23 @@ canonical_url: /diary/
   Charlie's `Do not go where you are going to die` hits me at the time of writing this.
   
 - **<u>Always be ready, at least continue to prepare for it</u>**  
-  DCA when something has already in the target (Pax, GTLB) to get ready and conditions are ok e.g. exchange rate
-  xxxxxxxxxxxxxxxxx
+  Because it is imposible to have all favorable conditions met at the same time, namely, fund for order, exchange rate, price target, macro environment (not super importnat but should think about). It is better to start preparing when some condition has already hit the target.
+
+  For example, in mid 2022 I should have DCA on currency exchange when my target stocks moved close to a target range and the currency rate was good / acceptable. I was interested in Beijing Chunli, Pax Global, and Gitlab. I had done projection for all of them and already had a target buy price in mind. The stocks were already below that level.
+
+  I did not have enough saving to buy. I decided to wait all together until I would save enough. Looking back, I should have DCA some on currency exchange, and also buy some shares even if wanted to buy more. A few months later when the saving was sufficient for one of them, the THB/USD exchange rate was more than 10% weaker and the stocks moved up significantly from their low after their good earnings calls (20%-50%). Not talking about their bottom. Just their average lows that maintained for a few weeks / months. 
+
+  As of 2022-08, the price windows are no longer reasonable for me to invest. I `regret not making a better preparation to be as ready as possible`. 
 
 - **<u>Be courageous</u>**  
-  Ready to act
+  This lesson is connected to the previous one. Although I did not have enough free saving to act, I had a choice to withdraw capital from my mutual fund that I started to have less confidence in. I was not courageous enough. 
 
+  Another lesson is that. I should `be more courageous to act`. Be courageous to switch from something I believe less in to something that is based on my own analysis.
 
+  To add to this lesson, in early 2021 I did an in-depth research on Modern Dental Group but I decided to wait for their earnings call and bought shares of a more well-known company (Ping An). The earning was good. But I no longer had capital. The stock eventually went 7x after ~6 months. In the end it came down to ~3x. Although I doubt I will make 7x if I buy the stock, mostly will be 2-3x.
+  Still, it was another `big lesson learned from not being courageous to act after a careful analysis`. 
+
+- **<u>Do not wait for bottom</u>**  
 
 
 - do not wait for exchange rate (Pax, GTLB)
@@ -90,8 +100,7 @@ Maybe DCA if you have something close to a target price
 Maybe find your target price with respect to recent bottoms (e.g. 10%-20% higher)
 - Essex's profit warning
 - prepare more strategies
-- lesson of whisper stocks
-- do not lose money
+
 - set auto-trade to take profit / stop loss
 - HK stock that up a lot but didn't buy (Modern Dental Group)
 
