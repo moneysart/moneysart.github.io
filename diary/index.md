@@ -92,18 +92,18 @@ canonical_url: /diary/
   Still, it was another `big lesson learned from not being courageous to act after a careful analysis`. 
 
 - **<u>Do not wait for bottom</u>**  
+  This lesson is linked to the previous one. People always want to buy at the bottom. In reality no one knows where is the bottom. 
 
+  Although I did not have capital to buy. I follow stocks in my list regularly. I will use Gitlab as an example. In mid-2022 the stock was traded ~40USD, roughly my target price, after an earlier bottom. I think I would not buy the stock even if I had capital but rather wait for it to come back closer to the previous bottom. It did briefly then rose back to 40USD. If I had capital at the time, I will then again wait for it to come closer to the previous bottom. In the end, when I had capital around 2022-08, the stock is trading at ~60USD.
 
-- do not wait for exchange rate (Pax, GTLB)
-Maybe DCA if you have something close to a target price
-- be ready to buy when the stock hit your target price, do not wait for it to bottom again (GTLB)
-Maybe find your target price with respect to recent bottoms (e.g. 10%-20% higher)
+  Relfecting back, it will be much better to act rationally rather than to wish for it to bottom again. I think `when the stock is already below your target price and the market's sentiment is bearish, try setting an order (as a waiting order) at ~10%-20% higher than the previous bottom` should be good enough. For your long term return and your short term anxiousness.
+  
+  `If the market's sentiment is bullish, just set an order at your target price`. You will more likely to be happier in the long run.
+
+---
+
 - Essex's profit warning
-- prepare more strategies
-
 - set auto-trade to take profit / stop loss
-- HK stock that up a lot but didn't buy (Modern Dental Group)
-
 
 ---
 
