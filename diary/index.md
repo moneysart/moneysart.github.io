@@ -75,7 +75,7 @@ canonical_url: /diary/
   Charlie's `Do not go where you are going to die` hits me at the time of writing this.
   
 - **<u>Always be ready, at least continue to prepare for it</u>**  
-  Because it is imposible to have all favorable conditions met at the same time, namely, fund for order, exchange rate, price target, macro environment (not super importnat but should think about). It is better to start preparing when some condition has already hit the target.
+  Because it is imposible to have all favorable conditions met at the same time, namely, fund for order, exchange rate, price target, macro environment (not super importnat but should think about). It is better to start preparing when some condition has already hit the target. 
 
   For example, in mid 2022 I should have DCA on currency exchange when my target stocks moved close to a target range and the currency rate was good / acceptable. I was interested in Beijing Chunli, Pax Global, and Gitlab. I had done projection for all of them and already had a target buy price in mind. The stocks were already below that level.
 
@@ -102,8 +102,20 @@ canonical_url: /diary/
 
 ---
 
-- Essex's profit warning
+- Essex's profit warning, 1st half of 2022
+
+  Not good. Lockdown and Russia-Ukraine.  
+  But seeing company repurchase shares more aggressively. I wish they buy more though.  
+  
+  I should actually sell some when I was about breakeven. It actually was expected in early 2022 that lockdown in China and Russia-Ukraine will put pressure to earnings in next 6-12 months at least. 
+  
+  Guess it is too late now. Let's continue to hold it. The stock is still very cheap though. But I lost an opportunity to put the money elsewhere. 
+
 - set auto-trade to take profit / stop loss
+  
+  Should have done this when a stock is close to my target exit price. For example, I got 100% return on Essex last year. However I did not sell it. Now I am a bag holder.
+
+  Or something I am not confident to hold long term. For example, those whisper stocks. Well, I will not invesnt in any whisper stocks anymore anyway.
 
 ---
 
