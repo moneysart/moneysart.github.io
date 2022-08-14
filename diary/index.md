@@ -305,7 +305,7 @@ Although I did well on sticking with the plan, I set a stop loss where I should 
 
 ##### ASIAINFO
 **Intro**:  
-**Buy date**: 2021-06-01 (at 12.66 HKD), 2021-07-21 (at 12.00 HKD), 2021-07-30 (at 11.50 HKD), 2022-03-15 (at 12.10 HKD), 2022-08-02 (at 12 HKD, 400 shares), 2022-08-03 (at 12 HKD, 1600 shares)   
+**Buy date**: 2021-06-01 (at 12.66 HKD), 2021-07-21 (at 12.00 HKD), 2021-07-30 (at 11.50 HKD), 2022-03-15 (at 12.10 HKD), 2022-08-02 (at 12 HKD, 400 shares), 2022-08-03 (at 12 HKD, 1600 shares), 2022-08-08 (at 12.04 HKD, 400 shares), 2022-08-09 (at 12.1 HKD, 800 shares), 2022-08-10 (at 12.1 HKD, 4400 shares)   
 **Journey**:
 
 ##### ALIBABA
@@ -323,6 +323,10 @@ Although I did well on sticking with the plan, I set a stop loss where I should 
 ### WATCHLIST
 
 ##### GITLAB
+**Intro**:  
+**Journey**: 
+
+##### ATKORE
 **Intro**:  
 **Journey**: 
 
