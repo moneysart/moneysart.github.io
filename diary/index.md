@@ -330,6 +330,18 @@ Although I did well on sticking with the plan, I set a stop loss where I should 
 **Intro**:  
 **Journey**: 
 
+##### Absolute Software Corporation
+**Intro**:  
+**Journey**: 
+
+##### Magnet Forensics Inc.
+**Intro**:  
+**Journey**: 
+
+##### HDFC Bank Limited (NYSE: HDB)
+**Intro**:  
+**Journey**: 
+
 ##### PAX GLOBAL
 **Intro**:  
 **Journey**: 
