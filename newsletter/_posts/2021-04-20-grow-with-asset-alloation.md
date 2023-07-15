@@ -4,8 +4,8 @@ layout: weekly
 description: ความรู้การลงทุน, จัดพอร์ตให้เติบโตแบบมั่นคง ด้วย Asset Allocation
 category: weekly
 tag: [announcement, knowledge, Y2021Q2]
-canonical_url: /weekly/knowledge/2021-04-20/
-permalink: /weekly/knowledge/2021-04-20/
+canonical_url: /newsletter/knowledge/2021-04-20/
+permalink: /newsletter/knowledge/2021-04-20/
 date: 2021-04-20
 ---
 
