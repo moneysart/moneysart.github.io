@@ -34,7 +34,7 @@ function calculate(elements) {
     let period = parseInt(elements[2].value);
     let elementFinal = elements[3]
 
-    // calculate time and vaues arrays
+    // calculate time and values arrays
     time = range(0, period, 1)
     values = Array.from(time, t => capital * Math.pow(r, t))
 
