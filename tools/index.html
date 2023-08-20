@@ -33,30 +33,59 @@ canonical_url: /tools/
 
     <!-- tool set -->
     <div class="text-left">
-        <h3 class="d-inline-block mb-2 text-black">พื้นฐาน</h3>
+        <h3 class="d-inline-block mb-2 text-black">สารบัญ</h3>
+    </div>
+
+    <div class="row mb-2">
+        <!-- buttons -->
+        <!-- <div class="col-12 p-0">
+            <p class="text-center">
+                <a href="#basic" class="btn btn-info btn-lg my-1">พื้นฐาน</a>
+                <a href="#loan" class="btn btn-info btn-lg my-1">จัดการหนี้</a>
+                <a href="#retirement" class="btn btn-info btn-lg my-1">วางแผนเกษียณ</a>
+                <a href="#portfolio" class="btn btn-info btn-lg my-1">บริหารพอร์ตลงทุน</a>
+            </p>
+        </div> -->
+        <!-- list -->
+        <div class="col-12 p-0">
+            <ul class="list-group-flush px-0">
+                <li class="list-group-item">
+                    <i class="fas fa-angle-double-right"></i> พื้นฐาน
+                    <a href="#basic">
+                        link <i class="far fa-file-alt"></i>
+                    </a>
+                </li>
+                <li class="list-group-item">
+                    <i class="fas fa-angle-double-right"></i> จัดการหนี้
+                    <a href="#loan">
+                        link <i class="far fa-file-alt"></i>
+                    </a>
+                </li>
+                <li class="list-group-item">
+                    <i class="fas fa-angle-double-right"></i> วางแผนเกษียณ
+                    <a href="#retirement">
+                        link <i class="far fa-file-alt"></i>
+                    </a>
+                </li>
+                <li class="list-group-item">
+                    <i class="fas fa-angle-double-right"></i> บริหารพอร์ตลงทุน
+                    <a href="#portfolio">
+                        link <i class="far fa-file-alt"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <!-- tool set -->
+    <div class="text-left">
+        <h3 id="basic" class="d-inline-block mb-2 text-black">พื้นฐาน</h3>
     </div>
 
     <div class="row mb-2">
         <!-- list -->
-        <div class="col-md-6 col-xl-4">
-            <div class="card mb-4 box-shadow h-100 flex-column border border-dark">
-                <div class="card-header text-center pb-2">
-                    <h5>เครื่องคิดเลขการเงิน <br>(finance calculator)</h5>
-                </div>
-                <img class="card-img-top border-bottom" src="{{ site.baseurl}}/tools/finance-calculator/card.png"
-                    alt="Card image cap">
-                <div class="card-body d-flex flex-column pb-0">
-                    <p class="card-text mb-0">
-                        มูลค่าปัจจุบัน (Present Value), มูลค่าอนาคต (Future Value), อัตราผลตอบแทน (Interest Rate), ระยะเวลา (Periods).
-                    </p>
-
-                    <a href="{{ site.baseurl}}/tools/finance-calculator/" class="btn btn-lg btn-block btn-success mt-auto mb-4">
-                        ลองดูกันเลย. <i class="fas fa-calculator"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-
         <div class="col-md-6 col-xl-4">
             <div class="card mb-4 box-shadow h-100 flex-column border border-dark">
                 <div class="card-header text-center pb-2">
@@ -95,30 +124,20 @@ canonical_url: /tools/
                 </div>
             </div>
         </div>
-    </div>
-    
-    
 
-    <!-- tool set -->
-    <div class="text-left">
-        <h3 class="d-inline-block mb-2 text-black">จัดการหนี้</h3>
-    </div>
-
-    <div class="row mb-2">
-        <!-- list -->
         <div class="col-md-6 col-xl-4">
             <div class="card mb-4 box-shadow h-100 flex-column border border-dark">
                 <div class="card-header text-center pb-2">
-                    <h5>คิดดอกเบี้ยเงินกู้ แบบลดต้นลดดอก <br>(effective interest rate)</h5>
+                    <h5>เครื่องคิดเลขการเงิน <br>(finance calculator)</h5>
                 </div>
-                <img class="card-img-top border-bottom" src="{{ site.baseurl}}/tools/loan-interest-effective/card.png"
+                <img class="card-img-top border-bottom" src="{{ site.baseurl}}/tools/finance-calculator/card.png"
                     alt="Card image cap">
                 <div class="card-body d-flex flex-column pb-0">
                     <p class="card-text mb-0">
-                        loan-interest-effective.
+                        มูลค่าปัจจุบัน (Present Value), มูลค่าอนาคต (Future Value), อัตราผลตอบแทน (Interest Rate), ระยะเวลา (Periods).
                     </p>
 
-                    <a href="{{ site.baseurl}}/tools/loan-interest-effective/" class="btn btn-lg btn-block btn-success mt-auto mb-4">
+                    <a href="{{ site.baseurl}}/tools/finance-calculator/" class="btn btn-lg btn-block btn-success mt-auto mb-4">
                         ลองดูกันเลย. <i class="fas fa-calculator"></i>
                     </a>
                 </div>
@@ -130,7 +149,55 @@ canonical_url: /tools/
 
     <!-- tool set -->
     <div class="text-left">
-        <h3 class="d-inline-block mb-2 text-black">วางแผนเกษียณ</h3>
+        <h3 id="loan" class="d-inline-block mb-2 text-black">จัดการหนี้</h3>
+    </div>
+
+    <div class="row mb-2">
+        <!-- list -->
+        <div class="col-md-6 col-xl-4">
+            <div class="card mb-4 box-shadow h-100 flex-column border border-dark">
+                <div class="card-header text-center pb-2">
+                    <h5>ดอกเบี้ยเงินกู้ แบบเงินต้นคงที่ <br>(flat-rate loan calculator)</h5>
+                </div>
+                <img class="card-img-top border-bottom" src="{{ site.baseurl}}/tools/loan-calculator-flat/card.png"
+                    alt="Card image cap">
+                <div class="card-body d-flex flex-column pb-0">
+                    <p class="card-text mb-0">
+                        loan-calculator-flat.
+                    </p>
+
+                    <a href="{{ site.baseurl}}/tools/loan-calculator-flat/" class="btn btn-lg btn-block btn-success mt-auto mb-4">
+                        ลองดูกันเลย. <i class="fas fa-calculator"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-xl-4">
+            <div class="card mb-4 box-shadow h-100 flex-column border border-dark">
+                <div class="card-header text-center pb-2">
+                    <h5>ดอกเบี้ยเงินกู้ แบบลดต้นลดดอก <br>(effective-rate loan calculator)</h5>
+                </div>
+                <img class="card-img-top border-bottom" src="{{ site.baseurl}}/tools/loan-calculator-effective/card.png"
+                    alt="Card image cap">
+                <div class="card-body d-flex flex-column pb-0">
+                    <p class="card-text mb-0">
+                        loan-calculator-effective.
+                    </p>
+
+                    <a href="{{ site.baseurl}}/tools/loan-calculator-effective/" class="btn btn-lg btn-block btn-success mt-auto mb-4">
+                        ลองดูกันเลย. <i class="fas fa-calculator"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <!-- tool set -->
+    <div class="text-left">
+        <h3 id="retirement" class="d-inline-block mb-2 text-black">วางแผนเกษียณ</h3>
     </div>
 
     <div class="row mb-2">
@@ -183,7 +250,7 @@ canonical_url: /tools/
 
     <!-- tool set -->
     <div class="text-left">
-        <h3 class="d-inline-block mb-2 text-blakc">บริหารพอร์ตลงทุน</h3>
+        <h3 id="portfolio" class="d-inline-block mb-2 text-blakc">บริหารพอร์ตลงทุน</h3>
     </div>
 
     <div class="row mb-2">
@@ -252,6 +319,9 @@ canonical_url: /tools/
 
 <!-- back to home -->
 <div class="container align-items-center">
+    <p class="text-center mt-4">
+        <a href="#" class="btn btn-secondary btn-lg">BACK TO TOP</a>
+    </p>
     <p class="text-center mt-4">
         <a href="{{ site.baseurl }}/" class="btn btn-secondary btn-lg">BACK TO HOME</a>
     </p>
