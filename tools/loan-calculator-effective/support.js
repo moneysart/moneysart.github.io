@@ -75,6 +75,19 @@ function calculate(elements) {
     let paymentMade = Array.from({ length: time.length })
     let principalPaid = Array.from({ length: time.length })
     let principalRemain = Array.from({ length: time.length })
+
+    // explicit calculation below offers very minor improvement 
+    // on accuracy of the last `defaultPaymentPaidForPeriod` and `interestSaved`
+    // by capturing rounding of the very small digits
+    // because `payPeriodBase` is already a closed form
+    // let defaultInterestForPeriod = Array.from({ length: time.length })
+    // let defaultPaymentPaidForPeriod = Array.from({ length: time.length })
+    // let defaultPrincipalPaidForPeriod = Array.from({ length: time.length })
+    // let defaultInterestPaid = Array.from({ length: time.length })
+    // let defaultPaymentMade = Array.from({ length: time.length })
+    // let defaultPrincipalPaid = Array.from({ length: time.length })
+    // let defaultPrincipalRemain = Array.from({ length: time.length })
+    
     for (const i in time) {
         if (i == 0) {
             interestForPeriod[i] = undefined
@@ -84,6 +97,14 @@ function calculate(elements) {
             principalPaid[i] = 0
             paymentMade[i] = 0
             principalRemain[i] = principal
+
+            // defaultInterestForPeriod[i] = undefined
+            // defaultPaymentPaidForPeriod[i] = undefined
+            // defaultPrincipalPaidForPeriod[i] = undefined
+            // defaultInterestPaid[i] = 0
+            // defaultPrincipalPaid[i] = 0
+            // defaultPaymentMade[i] = 0
+            // defaultPrincipalRemain[i] = principal
         }
         else {
             interestForPeriod[i] = principalRemain[i-1] * interestRate * 1 / 12
@@ -93,6 +114,14 @@ function calculate(elements) {
             paymentMade[i] = paymentMade[i-1] + paymentPaidForPeriod[i]
             principalPaid[i] = principalPaid[i-1] + principalPaidForPeriod[i]
             principalRemain[i] = principalRemain[i-1] - principalPaidForPeriod[i]
+
+            // defaultInterestForPeriod[i] = defaultPrincipalRemain[i-1] * interestRate * 1 / 12
+            // defaultPaymentPaidForPeriod[i] = Math.min(payPeriodBase, defaultPrincipalRemain[i-1] + defaultInterestForPeriod[i])
+            // defaultPrincipalPaidForPeriod[i] = defaultPaymentPaidForPeriod[i] - defaultInterestForPeriod[i]
+            // defaultInterestPaid[i] = defaultInterestPaid[i-1] + defaultInterestForPeriod[i]
+            // defaultPaymentMade[i] = defaultPaymentMade[i-1] + defaultPaymentPaidForPeriod[i]
+            // defaultPrincipalPaid[i] = defaultPrincipalPaid[i-1] + defaultPrincipalPaidForPeriod[i]
+            // defaultPrincipalRemain[i] = defaultPrincipalRemain[i-1] - defaultPrincipalPaidForPeriod[i]
         }
 
     }
@@ -108,6 +137,9 @@ function calculate(elements) {
     let interestTotal = Math.max(...interestPaid)
     let paymentTotal = principal + interestTotal
     let interestSaved = Math.max(0, payPeriodBase * termTarget - paymentTotal)
+    // let defaultInterestTotal = Math.max(...defaultInterestPaid)
+    // let defaultPaymentTotal = principal + defaultInterestTotal
+    // let interestSaved = Math.max(0, defaultPaymentTotal - paymentTotal)
     let termActual = paymentPaidForPeriod.filter(x => x > 0).length
     let termSaved = termTarget - termActual
     elementPayPeriodBase.value = payPeriodBase.toFixed(0)
