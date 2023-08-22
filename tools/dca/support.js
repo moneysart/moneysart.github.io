@@ -49,7 +49,7 @@ function calculate(elements) {
         savingGrowth = 12 * saving * r_half
         values[i + 1] = capitalGrowth + savingGrowth
     })
-    console.log(values)
+    // console.log(values)
 
 
     // update final amount
