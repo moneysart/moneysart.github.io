@@ -4,13 +4,20 @@ layout: tool
 description: จำลองการเติบโตของการลงทุนแบบ DCA แบบ interactive ปรับตัวแปรได้ตามความต้องการของผู้ใช้ โดยมีกราฟช่วยแสดงผลการเติบโตของเงินลงทุน ตามเงินต้น เงินออมรายเดือน ระยะเวลา และผลตามผลตอบแทนคาดหวัง ช่วยให้วางแผนการเงินได้ง่ายขึ้น ด้วยตัวเอง.
 category: tools
 canonical_url: /tools/dca/
+url_th: /tools/dca/
+url_en: /en/tools/dca/
+url_x-default: /en/tools/dca/
 date: 2021-04-15
 ---
 
 
 <div class="container">
+    <!-- language selections -->
+    <a href="{{ page.url_en | prepend: site.baseurl }}" class="btn btn-info btn my-1">ENGLISH</a>
+    <a href="{{ page.url_th | prepend: site.baseurl }}" class="btn btn-info btn my-1">ภาษาไทย</a>
+
     <!-- chart -->
-    <div class="mt-4">
+    <div class="mt-2">
         <h2 class="text-primary">เครื่องคิดเลข คำนวณการเติบโต ของการลงทุนแบบ DCA</h2>
         <small class="font-italic text-muted">แนะนำใช้หน้าจอแนวนอน สำหรับมือถือจอเล็ก</small>
         <span class="fb-share-button ml-1" data-href="{{ page.canonical_url | prepend: site.base_canonical }}"
