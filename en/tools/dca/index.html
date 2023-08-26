@@ -1,0 +1,205 @@
+---
+title: DCA calculator, dollar-cost averaging (DCA)
+layout: tool
+description: simulate growth of capital in DCA investment, interactive fashion with adjustable parameters, with graph visualization to help your financial planning.
+category: tools
+canonical_url: /en/tools/dca/
+url_th: /tools/dca/
+url_en: /en/tools/dca/
+url_x-default: /en/tools/dca/
+date: 2023-08-27
+---
+
+
+<div class="container">
+    <!-- language selections -->
+    <a href="{{ page.url_en | prepend: site.baseurl }}" class="btn btn-info btn my-1">ENGLISH</a>
+    <a href="{{ page.url_th | prepend: site.baseurl }}" class="btn btn-info btn my-1">ภาษาไทย</a>
+
+    <!-- chart -->
+    <div class="mt-2">
+        <h2 class="text-primary">DCA calculator (dollar-cost averaging)</h2>
+        <small class="font-italic text-muted">Recommend landscape mode for small screen.</small>
+        <span class="fb-share-button ml-1" data-href="{{ page.canonical_url | prepend: site.base_canonical }}"
+        data-layout="button" data-size="small"><a target="_blank"
+            href="{{ page.canonical_url | prepend: site.base_canonical }}"
+            class="fb-xfbml-parse-ignore">Share</a></span>
+
+        <div class="col-12 accordion px-0" id="accordion">
+            <div class="card">
+                <div class="card-header" id="headingIntro">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#intro"
+                            aria-expanded="true" aria-controls="intro">
+                            What is DCA?
+                        </button>
+                    </h2>
+                </div>
+                <div id="intro" class="collapse" aria-labelledby="headingIntro"
+                    data-parent="#accordion">
+                    <div class="card-body">
+                        <p>
+                            DCA is a style of investment with equal recurring contribution, e.g., <br>
+                            monthly recurring investment over a long period of time. <br>
+                            Consistency is key in the success of DCA.
+                        </p>
+                        <p>
+                            DCA investing offers several advantages, such as,
+                            <ol>
+                                <li>
+                                    Reduce volatility risk. <br>
+                                    Many investors wait to buy low but no one can predict the market. <br>
+                                    DCA helps average your investing capital over volatility of a market.
+                                </li>
+                                <li>
+                                    Minimize opportunity loss due to market timing. <br>
+                                    Time in the market is more important than timing the market.
+                                </li>
+                                <li>
+                                    Build investment discipline. DCA investors can decide an invesment pattern that suits them best. <br>
+                                    For example, every month on payday.
+                                </li>
+                                <li>
+                                    Reduce market anxiety and over-thinking. <br>
+                                    Because DCA helps eliminate emotional reactions from market actions.
+                                </li>
+                                <li>
+                                    Last but not least, DCA in an asset with consistent performance over the long term <br>
+                                    allows better estimation of the investment outcome. <br>
+                                    For example, monthly investment of $1250 in S&P500 ETF over a 20-year period would lead to $1 million <br>
+                                    (based on 11% annual return rate from 01/2010 to 01/2020).
+                                </li>
+                            </ol>
+                        </p>
+                        <p>
+                            Try simulate your DCA plan using our tool here.
+                        </p>
+                        <p>
+                            May your financial health be as strong as ever.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <canvas id="canvas" class="canvas-chart"></canvas>
+    </div>
+
+    <!-- form for user's input -->
+    <div class="row">
+
+        <div class="col-12 my-2 text-primary py-0">
+            <h5>Variables and result</h5>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3 form-group py-0">
+            <label for="capital">Initial capital</label>
+            <input id="capital" placeholder="e.g. 10000, 100000."
+                        class="form-control" type="number" min="0" value="10000" step="1000">
+            <small id="capitalHelp" class="form-text text-muted">e.g. 10000, 100000.</small>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3 form-group py-0">
+            <label for="saving">Monthly investment</label>
+            <input id="saving" placeholder="e.g. 500, 1000."
+                        class="form-control" type="number" min="0" value="1000" step="100">
+            <small id="savingHelp" class="form-text text-muted">e.g. 500, 1000.</small>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3 form-group py-0">
+            <label for="returnRate">Annual return (%)</label>
+            <input id="returnRate" placeholder="e.g. 3%, 5%, 10%."
+                        class="form-control" type="number" value="8">
+            <small id="returnRateHelp" class="form-text text-muted">e.g. 3%, 5%, 10%.</small>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3 form-group py-0">
+            <label for="period">Period (year)</label>
+            <input id="period" placeholder="e.g. 5 years, 10 years."
+                        class="form-control" type="number" min="1" value="20">
+            <small id="periodHelp" class="form-text text-muted">e.g. 5 years, 10 years.</small>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3 form-group py-0">
+            <label for="final" class="text-success"><b>Final asset</b></label>
+            <input id="final" class="form-control" type="number" readonly>
+        </div>
+
+    </div>
+
+    <!-- info -->
+    <div class="text-center">
+
+        <p class="lead text-muted pt-4">
+            DCA is a simple investment style, re-investing in a well selected asset.
+            <br>
+            Discipline, compound interest, and investment horizon are drivers for growth.
+            <br>
+            Its effectiveness could surprise even veteran investors.
+            <br>
+            <small class="font-italic">* Given the selected asset produces a consistent return over a target period.</small>
+        </p>
+
+    </div>
+
+    <!-- back to /tools -->
+    <div class="align-items-center">
+        <hr>
+        <p class="lead text-muted text-center mt-4">
+            Our toolkit (translation in progress)
+        </p>
+        <p class="text-center">
+            <a href="{{ site.baseurl }}/tools/" class="btn btn-info btn-lg my-1">ALL TOOLS</a>
+            <a href="{{ site.baseurl }}/tools/retirement-plan-complex/" class="btn btn-info btn-lg my-1">Retirement plan</a>
+            <a href="{{ site.baseurl }}/tools/dca/" class="btn btn-info btn-lg my-1">DCA calculator</a>
+            <a href="{{ site.baseurl }}/tools/compound-interest/" class="btn btn-info btn-lg my-1">Compound interest</a>
+        </p>
+    </div>
+
+    <!-- Behind the scene -->
+    <div class="row">
+        <div class="col-12 accordion px-0" id="accordion">
+            <div class="card">
+                <div class="card-header" id="headingBehindScene">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#behindScene"
+                            aria-expanded="true" aria-controls="behindScene">
+                            Click to learn more
+                        </button>
+                    </h2>
+                </div>
+                <div id="behindScene" class="collapse" aria-labelledby="headingBehindScene" data-parent="#accordion">
+                    <div class="card-body">
+
+                        <!-- อยู่ระหว่างจัดทำ. โปรดติดตาม. -->
+                        (Asset this year end) = (Asset previous year end) * (1 + Annual return) + 12 * (Monthly investment) * (1 + (Annual return)/2)
+                        <br>
+                        <small class="font-italic text-muted">
+                            Asset from previous year grows according to the annual return rate, where cumulative monthly investment throughout the year grows at half the rate. 
+                        </small>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- load supporting js -->
+<script type="text/javascript" src="{{ site.baseurl }}/en/tools/dca/support.js"></script>
+<!-- js -->
+<script>
+    let time, values, final
+    let ctx = document.getElementById("canvas")
+    let elements = getElement() 
+
+    // no need to track change of elementFinal
+    elements.slice(0, -1).map(e => e.addEventListener("change", validateVal))
+    elements.slice(0, -1).map(e => e.addEventListener("change", rePlot))
+
+    let range = (start, stop, step) => Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + (i * step))
+
+    init()
+</script>
