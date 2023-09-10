@@ -1,7 +1,7 @@
 ---
-title: จัดการหนี้ สินเชื่อ เงินกู้ ดอกเบี้ย แบบเงินต้นคงที่, flat rate loan calculator
+title: โปรแกรมคำนวณเงินกู้ สินเชื่อ ดอกเบี้ย แบบคงที่, flat rate loan calculator
 layout: tool
-description: เครื่องคิดเลข วางแผน การกู้ยืมและจัดการหนี้ คิด คำนวณ เงินต้นคงที่ เข้าใจง่ายด้วยกราฟ interactive ปรับตัวแปรได้ด้วยตัวเอง ตามความต้องการของผู้ใช้.
+description: เครื่องคิดเลข เครื่องคำนวณ วางแผน จัดการ การกู้ยืม บริหารหนี้ สินเชื่อ ดอกเบี้ยคงที่ เงินต้นคงที่ เข้าใจง่ายด้วยกราฟ interactive ปรับตัวแปรได้ด้วยตัวเอง ตามความต้องการของผู้ใช้.
 category: tools
 canonical_url: /tools/loan-calculator-flat/
 date: 2023-08-20
@@ -11,7 +11,7 @@ date: 2023-08-20
 <div class="container">
     <!-- chart -->
     <div class="mt-4">
-        <h2 class="text-primary">จัดการหนี้/สินเชื่อ/เงินกู้ ดอกเบี้ยแบบเงินต้นคงที่</h2>
+        <h2 class="text-primary">โปรแกรมคำนวณสินเชื่อ/เงินกู้ ดอกเบี้ยแบบคงที่</h2>
         <small class="font-italic text-muted">แนะนำใช้หน้าจอแนวนอน สำหรับมือถือจอเล็ก</small>
         <span class="fb-share-button ml-1" data-href="{{ page.canonical_url | prepend: site.base_canonical }}"
         data-layout="button" data-size="small"><a target="_blank"
@@ -24,7 +24,7 @@ date: 2023-08-20
                     <h2 class="mb-0">
                         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#intro"
                             aria-expanded="true" aria-controls="intro">
-                            ดอกเบี้ยเงินกู้ แบบเงินต้นคงที่ คืออะไร?
+                            ดอกเบี้ยเงินกู้ แบบคงที่ คืออะไร?
                         </button>
                     </h2>
                 </div>
@@ -32,7 +32,7 @@ date: 2023-08-20
                     data-parent="#accordion">
                     <div class="card-body">
                         <p>
-                            xxxx
+                            ดอกเบี้ยเงินกู้แบบคงที่ หรือ ดอกเบี้ยเงินกู้แบบเงินต้นคงที่ นั้น เป็นชื่อเรียกของสินเชื่อประเภทเดียวกัน
                         </p>
                         <p>
                             xxxx
@@ -120,6 +120,8 @@ date: 2023-08-20
             <a href="{{ site.baseurl }}/tools/" class="btn btn-info btn-lg my-1">ALL TOOLS</a>
             <a href="{{ site.baseurl }}/tools/retirement-plan-complex/" class="btn btn-info btn-lg my-1">วางแผนเกษียณ</a>
             <a href="{{ site.baseurl }}/tools/dca/" class="btn btn-info btn-lg my-1">คำนวณ DCA</a>
+            <a href="{{ site.baseurl }}/tools/loan-calculator-effective/" class="btn btn-info btn-lg my-1">สินเชื่อ ลดต้นลดดอก</a>
+            <a href="{{ site.baseurl }}/tools/loan-calculator-flat/" class="btn btn-info btn-lg my-1">สินเชื่อ ดอกเบี้ยคงที่</a>
             <a href="{{ site.baseurl }}/tools/compound-interest/" class="btn btn-info btn-lg my-1">ดอกเบี้ยทบต้น</a>
         </p>
     </div>
@@ -143,7 +145,8 @@ date: 2023-08-20
                         <p class="my-2">
                             เราใช้สมมติฐาน ว่างวดชำระนับเป็นรายเดือน และแต่ละงวดการชำระมีจำนวนวันเท่ากัน <br>
                             โดยในความเป็นจริง ผู้ให้สินเชื่อบางแห่งอาจใช้การคำนวณแบบนับจำนวนวันจริงในแต่ละงวด <br>
-                            ผลลัพธ์ที่เราแสดงจึงอาจแตกต่างจากการคำนวณแบบละเอียดอยู่เล็กน้อย
+                            ผลลัพธ์ที่เราแสดงจึงอาจแตกต่างจากการคำนวณแบบละเอียดอยู่เล็กน้อย <br>
+                            วิธีการคิดอ้างอิงจาก ธนาคารแห่งประเทศไทย -- <a href="https://www.bot.or.th/th/satang-story/rights-responsibility/flat-effective.html">link</a>
                         </p>
                         <hr>
                         ดอกเบี้ยรวม = เงินต้น * ดอกเบี้ยรายปี * (จำนวนเดือนที่ผ่อนชำระ / 12)
@@ -172,7 +175,8 @@ date: 2023-08-20
 <script type="text/javascript" src="{{ site.baseurl }}/tools/loan-calculator-flat/support.js"></script>
 <!-- js -->
 <script>
-    // let time, principalRemain
+    let time, paymentMade, interestPaid, principalPaid, principalRemain
+
     let ctx = document.getElementById("canvas")
     let elements = getElement()
     elements.map(e => e.addEventListener("change", validateVal))

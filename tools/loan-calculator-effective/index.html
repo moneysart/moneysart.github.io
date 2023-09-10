@@ -1,7 +1,7 @@
 ---
-title: จัดการหนี้ สินเชื่อ เงินกู้ ดอกเบี้ย แบบลดต้นลดดอก, effective rate loan calculator
+title: โปรแกรมคำนวณเงินกู้ สินเชื่อ ดอกเบี้ย แบบลดต้นลดดอก, effective rate loan calculator
 layout: tool
-description: เครื่องคิดเลข วางแผน การกู้ยืมและจัดการหนี้ คิด คำนวณ ลดต้นลดดอก เข้าใจง่ายด้วยกราฟ interactive ปรับตัวแปรได้ด้วยตัวเอง ตามความต้องการของผู้ใช้.
+description: เครื่องคิดเลข เครื่องคำนวณ วางแผน จัดการ การกู้ยืม บริหารหนี้ สินเชื่อ ลดต้นลดดอก เข้าใจง่ายด้วยกราฟ interactive ปรับตัวแปรได้ด้วยตัวเอง ตามความต้องการของผู้ใช้.
 category: tools
 canonical_url: /tools/loan-calculator-effective/
 date: 2023-08-20
@@ -11,7 +11,7 @@ date: 2023-08-20
 <div class="container">
     <!-- chart -->
     <div class="mt-4">
-        <h2 class="text-primary">จัดการหนี้/สินเชื่อ/เงินกู้ ดอกเบี้ยแบบลดต้นลดดอก</h2>
+        <h2 class="text-primary">โปรแกรมคำนวณสินเชื่อ/เงินกู้ ดอกเบี้ยแบบลดต้นลดดอก</h2>
         <small class="font-italic text-muted">แนะนำใช้หน้าจอแนวนอน สำหรับมือถือจอเล็ก</small>
         <span class="fb-share-button ml-1" data-href="{{ page.canonical_url | prepend: site.base_canonical }}"
         data-layout="button" data-size="small"><a target="_blank"
@@ -141,6 +141,8 @@ date: 2023-08-20
             <a href="{{ site.baseurl }}/tools/" class="btn btn-info btn-lg my-1">ALL TOOLS</a>
             <a href="{{ site.baseurl }}/tools/retirement-plan-complex/" class="btn btn-info btn-lg my-1">วางแผนเกษียณ</a>
             <a href="{{ site.baseurl }}/tools/dca/" class="btn btn-info btn-lg my-1">คำนวณ DCA</a>
+            <a href="{{ site.baseurl }}/tools/loan-calculator-effective/" class="btn btn-info btn-lg my-1">สินเชื่อ ลดต้นลดดอก</a>
+            <a href="{{ site.baseurl }}/tools/loan-calculator-flat/" class="btn btn-info btn-lg my-1">สินเชื่อ ดอกเบี้ยคงที่</a>
             <a href="{{ site.baseurl }}/tools/compound-interest/" class="btn btn-info btn-lg my-1">ดอกเบี้ยทบต้น</a>
         </p>
     </div>
@@ -164,22 +166,29 @@ date: 2023-08-20
                         <p class="my-2">
                             เราใช้สมมติฐาน ว่างวดชำระนับเป็นรายเดือน และแต่ละงวดการชำระมีจำนวนวันเท่ากัน <br>
                             โดยในความเป็นจริง ผู้ให้สินเชื่อบางแห่งอาจใช้การคำนวณแบบนับจำนวนวันจริงในแต่ละงวด <br>
-                            ผลลัพธ์ที่เราแสดงจึงอาจแตกต่างจากการคำนวณแบบละเอียดอยู่เล็กน้อย
+                            ผลลัพธ์ที่เราแสดงจึงอาจแตกต่างจากการคำนวณแบบละเอียดอยู่เล็กน้อย <br>
+                            วิธีการคิดอ้างอิงจาก ธนาคารแห่งประเทศไทย -- <a href="https://www.bot.or.th/th/satang-story/rights-responsibility/effectiverate.html">link</a>
                         </p>
                         <hr>
-                        ดอกเบี้ยรวม = เงินต้น * ดอกเบี้ยรายปี * (จำนวนเดือนที่ผ่อนชำระ / 12)
+                        ยอดชำระขั้นต่ำ = (เงินต้น / (1 - 1 / (1 + (อัตราดอกเบี้ยต่อปี / 12))^จำนวนงวดผ่อนชำระตามสัญญา)) * (อัตราดอกเบี้ยต่อปี / 12)
                         <br>
                         <br>
-                        ภาระการชำระต่อเดือน = (เงินต้น + ดอกเบี้ยรวม ) / จำนวนเดือนที่ผ่อนชำระ
+                        <i>หลังจากนั้นคิดรายละเอียดการชำระแยกตามงวด</i>
                         <br>
                         <br>
-                        ยอดชำระดอกเบี้ยสำหรับแต่ละเดือน = ดอกเบี้ยรวม / จำนวนเดือนที่ผ่อนชำระ
+                        ยอดชำระสำหรับงวด = ยอดชำระขั้นต่ำ + ยอดโปะเพิ่ม
                         <br>
                         <br>
-                        ยอดชำระเงินต้นสำหรับแต่ละเดือน = ภาระการชำระต่อเดือน -  ยอดชำระดอกเบี้ยสำหรับแต่ละเดือน
+                        ยอดชำระดอกเบี้ยรายงวด = เงินต้นคงเหลืองวดก่อนหน้า * (อัตราดอกเบี้ยต่อปี / 12)
                         <br>
                         <br>
-                        เงินต้นคงเหลือ = เงินต้นที่เหลือจากงวดก่อนหน้า - ยอดชำระเงินต้นสำหรับแต่ละเดือน                        
+                        ยอดชำระเงินต้นรายงวด = ยอดชำระสำหรับงวด - ยอดชำระดอกเบี้ยรายงวด
+                        <br>
+                        <br>
+                        เงินต้นคงเหลืองวดนั้น = เงินต้นคงเหลืองวดก่อนหน้า - ยอดชำระเงินต้นรายงวด
+                        <br>
+                        <br>
+                        ดอกเบี้ยรวม = รวม(ยอดชำระดอกเบี้ยรายงวด จากทุกงวด) 
                     </div>
                 </div>
             </div>
@@ -193,7 +202,10 @@ date: 2023-08-20
 <script type="text/javascript" src="{{ site.baseurl }}/tools/loan-calculator-effective/support.js"></script>
 <!-- js -->
 <script>
-    // let time, principalRemain
+    let time
+    let interestForPeriod, paymentPaidForPeriod, principalPaidForPeriod
+    let paymentMade, interestPaid, principalPaid, principalRemain
+
     let ctx = document.getElementById("canvas")
     let elements = getElement()
     elements.map(e => e.addEventListener("change", validateVal))

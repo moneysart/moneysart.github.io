@@ -55,11 +55,11 @@ function calculate(elements) {
     let paymentTotal = principal + interestTotal
     
     // range values
-    let time = range(0, termTarget, 1)
-    let paymentMade = Array.from({ length: time.length })
-    let interestPaid = Array.from({ length: time.length })
-    let principalPaid = Array.from({ length: time.length })
-    let principalRemain = Array.from({ length: time.length })
+    time = range(0, termTarget, 1)
+    paymentMade = Array.from({ length: time.length })
+    interestPaid = Array.from({ length: time.length })
+    principalPaid = Array.from({ length: time.length })
+    principalRemain = Array.from({ length: time.length })
     for (const i in time) {
         if (i == 0) {
             paymentMade[i] = 0
@@ -91,11 +91,130 @@ function rePlot() {
 
     calculate(elements)
 
+    chart.data.labels = time
+    chart.data.datasets[0].data = principalRemain
+    chart.data.datasets[1].data = interestPaid
+    chart.update()
+
 }
 
 
 function init() {
 
     calculate(elements)
+
+    chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: time,
+          datasets: [{
+            data: principalRemain,
+            label: "เงินต้นคงเหลือ",
+            backgroundColor: 'rgba(0, 255, 0, 0.2)',
+            fill: true,
+            yAxisID: 'y'
+          },
+          {
+            data: interestPaid,
+            label: "รวมดอกเบี้ยจ่าย",
+            backgroundColor: 'rgba(255, 0, 0, 0.5)',
+            fill: false,
+            yAxisID: 'y2'
+          }]
+        },
+        options: {
+          scales: {
+              x: {
+                  title: {
+                      display: false,
+                      text: "งวดชำระ (เดือน)",
+                  }
+              },
+              y: {
+                  title: {
+                      display: true,
+                      text: "เงินต้นคงเหลือ"
+                  },
+                  ticks: {
+                      // Re-label tick
+                      callback: function(value, index, values) {
+                          let mil = 1000000
+                          if (Math.abs(value) >= mil) {
+                          return Number(value / mil) + 'Mil'
+                          }
+  
+                          let k = 1000
+                          if (Math.abs(value) >= k) {
+                          return Number(value / k) + 'k'
+                          }
+                          
+                          return Number(value).toFixed(0)
+                      }
+                  }
+              },
+              y2: {
+                title: {
+                    display: true,
+                    text: "รวมดอกเบี้ยจ่าย"
+                },
+                position: 'right',
+                ticks: {
+                    // Re-label tick
+                    callback: function(value, index, values) {
+                        let mil = 1000000
+                        if (Math.abs(value) >= mil) {
+                        return Number(value / mil) + 'Mil'
+                        }
+  
+                        let k = 1000
+                        if (Math.abs(value) >= k) {
+                        return Number(value / k) + 'k'
+                        }
+                        
+                        return Number(value).toFixed(0)
+                    }
+                },
+                // grid line settings
+                grid: {
+                  drawOnChartArea: false, // only want the grid lines for one axis to show up
+                }
+              }
+          },
+          plugins: {
+              tooltip: {
+                  callbacks: {
+                      // re-label tooltip
+                      label: function (context) {
+                          let y_value = context.parsed.y
+                        
+                          let mil = 1000000
+                          if (Math.abs(y_value) >= mil) {
+                              return Number(y_value / mil).toFixed(2) + ' Million'
+                          }
+          
+                          let k = 1000
+                          if (Math.abs(y_value) >= k) {
+                              return Number(y_value / k).toFixed(1) + 'k'
+                          }
+                        
+                          return Number(y_value).toFixed(0)
+                      },
+                      // re-label tooltip
+                      title: function(context) {
+                          return 'งวดชำระ: ' + context[0].label
+                      }
+                  }
+              },
+              legend: {
+                  display: true,
+                  position: 'bottom',
+                  align: 'start'
+              }
+          },
+          // responsive: true,
+          aspectRatio: 3,
+          maintainAspectRatio: true,
+        }
+    })
 
 }
