@@ -1,0 +1,416 @@
+---
+title: เครื่องคิดเลข ภาษีเงินได้ ลดหย่อนภาษี, tax calculator
+layout: tool
+description: จำลองการคิดภาษี และใช้สิทธิ์ลดหย่อน แบบ interactive ช่วยให้จำลองการคิดภาษีเงินได้ ด้วยตัวเอง.
+category: tools
+canonical_url: /tools/tax-calculator/
+date: 2023-09-23
+---
+
+
+<div class="container">
+
+    <!-- chart -->
+    <div class="mt-4">
+        <h2 class="text-primary">เครื่องคิดเลข ภาษีเงินได้ และ ลดหย่อนภาษี (Tax calculator)</h2>
+        <span class="fb-share-button ml-1" data-href="{{ page.canonical_url | prepend: site.base_canonical }}"
+        data-layout="button" data-size="small"><a target="_blank"
+            href="{{ page.canonical_url | prepend: site.base_canonical }}"
+            class="fb-xfbml-parse-ignore">Share</a></span>
+    </div>
+
+    <!-- form for user's input -->
+    <div class="row">
+
+        <div class="col-12 pb-0">
+            <p>
+                คำนวณการจ่ายภาษีเงินได้ และการประหยัดภาษี สำหรับปี 2566 <br>
+                อ้างอิงข้อมูลจาก <a href="https://www.finnomena.com/z-admin/tax-deduction-2/">Finnomena</a>
+            </p>
+            <h5 class="text-primary">วิธีใช้งาน</h5>
+            <ul>
+                <li>ใส่จำนวนเงินได้ทั้งปี</li> 
+                <li>เพิ่มรายการลดหย่อนภาษี ตามหมวดต่างๆ</li>
+                <li>ตรวจสอบรายการลดหย่อนภาษี โดยการกดปุ่มเช็ครายละเอียด ในแต่ละหมวด</li>
+                <li>คำนวณภาษีเงินได้ และการประหยัดภาษีจากรายการลดหย่อน โดยกด คำนวณภาษี</li>
+            </ul>
+        </div>
+
+        <div class="col-12 pb-0">
+            <canvas id="canvas" class="canvas-chart"></canvas>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-12 my-2 text-primary py-0">
+            <h5>รายการมาตรฐาน</h5>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3 form-group py-0">
+            <label for="capital">เงินได้</label>
+            <input id="capital" placeholder="เงินได้ ตลอดปี." class="form-control" type="number" min="0"
+                value="500000">
+            <small id="capitalHelp" class="form-text text-muted">เช่น 500000 บาท, 1000000 บาท.</small>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3 form-group py-0">
+            <label for="returnRate">คำนวณภาษี</label><br>
+            <button type="button" class="btn btn-success" id="fv_button">
+                <h5 class="my-auto">ลองดูกันเลย !</i></h5>
+            </button>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-2 form-group py-0">
+            <label for="final" class="text-success"><b>ภาษีก่อนลดหย่อน</b></label>
+            <input id="final" class="form-control" type="number" readonly>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-2 form-group py-0">
+            <label for="final" class="text-success"><b>ภาษีหลังลดหย่อน</b></label>
+            <input id="final" class="form-control" type="number" readonly>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-2 form-group py-0">
+            <label for="final" class="text-success"><b>ภาษีที่ประหยัดได้</b></label>
+            <input id="final" class="form-control" type="number" readonly>
+        </div>
+    </div>
+
+    <hr>
+    
+    <!-- tabs navigator -->
+    <div class="row">    
+        <div class="col-12 my-2 text-primary py-0">
+            <h5>เพิ่มรายการลดหย่อนภาษี</h5>
+        </div>
+
+        <div class="col-12 pb-0">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="futureVal-tab" data-toggle="tab" href="#futureVal" role="tab" aria-controls="futureVal"
+                        aria-selected="true">ลดหย่อนทั่วไป</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="presentVal-tab" data-toggle="tab" href="#presentVal" role="tab" aria-controls="presentVal"
+                        aria-selected="false">ประกันและการลงทุน</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="intRate-tab" data-toggle="tab" href="#intRate" role="tab" aria-controls="intRate"
+                        aria-selected="true">เงินบริจาค</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="periods-tab" data-toggle="tab" href="#periods" role="tab" aria-controls="periods"
+                        aria-selected="true">มาตรการพิเศษของรัฐ</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- tab content -->
+        <div class="col-12 my-2">
+            <div class="tab-content">
+
+                <!-- tab for Future Value calculation -->
+                <div class="tab-pane fade show active" id="futureVal" role="tabpanel" aria-labelledby="futureVal-tab">
+                    <div class="row">
+                
+                        <div class="col-sm-6 col-lg-4">
+                            <div class="card border-0 text-center mb_2">
+                
+                                <div class="input-group my-1">
+                                    <div class="input-group-prepend">
+                                        <code class="input-group-text">
+                                            <small>Present Value</small>
+                                        </code>
+                                    </div>
+                                    <input type="number" class="form-control form-control-lg text-center" id="fv_pv" placeholder="100"
+                                        value=100>
+                                </div>
+                
+                                <div class="input-group my-1">
+                                    <div class="input-group-prepend">
+                                        <code class="input-group-text">
+                                            <small>Period&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</small>
+                                        </code>
+                                    </div>
+                                    <input type="number" class="form-control form-control-lg text-center" id="fv_p" placeholder="10"
+                                        value=10 min=0>
+                                </div>
+                
+                                <div class="input-group my-1">
+                                    <div class="input-group-prepend">
+                                        <code class="input-group-text">
+                                            <small>Int. Rate (%)</small>
+                                        </code>
+                                    </div>
+                                    <input type="number" class="form-control form-control-lg text-center" id="fv_r" placeholder="5"
+                                        value=5>
+                                </div>
+                
+                                <div class="card border-0 text-center mt-2">
+                                    <button type="button" class="btn btn-success" id="fv_button">
+                                        <h5 class="my-auto">คำนวณ</h5>
+                                    </button>
+                                </div>
+                
+                                <div class="input-group my-1">
+                                    <div class="input-group-prepend">
+                                        <code class="input-group-text">
+                                            <small><b>Future Value&nbsp;</b></small>
+                                        </code>
+                                    </div>
+                                    <input type="number" class="form-control form-control-lg text-center" id="fv_fv" placeholder="???"
+                                        readonly>
+                                </div>
+                
+                            </div>
+                        </div>
+                
+                        <div class="col-sm-6 col-lg-8">
+                            <canvas id="fv_canvas" class="canvas-chart"></canvas>
+                        </div>
+                    </div>
+                
+                </div>
+
+                <!-- tab for Present Value calculation -->
+                <div class="tab-pane fade" id="presentVal" role="tabpanel" aria-labelledby="presentVal-tab">
+                    <div class="row">
+                
+                        <div class="col-sm-6 col-lg-4">
+                            <div class="card border-0 text-center mb_2">
+                
+                                <div class="input-group my-1">
+                                    <div class="input-group-prepend">
+                                        <code class="input-group-text">
+                                            <small>Future Value&nbsp;</small>
+                                        </code>
+                                    </div>
+                                    <input type="number" class="form-control form-control-lg text-center" id="pv_fv" placeholder="100"
+                                        value=100>
+                                </div>
+                
+                                <div class="input-group my-1">
+                                    <div class="input-group-prepend">
+                                        <code class="input-group-text">
+                                            <small>Period&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</small>
+                                        </code>
+                                    </div>
+                                    <input type="number" class="form-control form-control-lg text-center" id="pv_p" placeholder="10"
+                                        value=10 min=0>
+                                </div>
+                
+                                <div class="input-group my-1">
+                                    <div class="input-group-prepend">
+                                        <code class="input-group-text">
+                                            <small>Int. Rate (%)</small>
+                                        </code>
+                                    </div>
+                                    <input type="number" class="form-control form-control-lg text-center" id="pv_r" placeholder="5"
+                                        value=5>
+                                </div>
+                
+                                <div class="card border-0 text-center mt-2">
+                                    <button type="button" class="btn btn-success" id="pv_button">
+                                        <h5 class="my-auto">คำนวณ</h5>
+                                    </button>
+                                </div>
+                
+                                <div class="input-group my-1">
+                                    <div class="input-group-prepend">
+                                        <code class="input-group-text">
+                                            <small><b>Present Value</b></small>
+                                        </code>
+                                    </div>
+                                    <input type="number" class="form-control form-control-lg text-center" id="pv_pv" placeholder="???"
+                                        readonly>
+                                </div>
+                
+                            </div>
+                        </div>
+                
+                        <div class="col-sm-6 col-lg-8">
+                            <canvas id="pv_canvas" class="canvas-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- tab for Interest Rate (%) calculation -->
+                <div class="tab-pane fade" id="intRate" role="tabpanel" aria-labelledby="intRate-tab">
+                    <div class="row">
+                
+                        <div class="col-sm-6 col-lg-4">
+                            <div class="card border-0 text-center mb_2">
+                
+                                <div class="input-group my-1">
+                                    <div class="input-group-prepend">
+                                        <code class="input-group-text">
+                                            <small>Present Value</small>
+                                        </code>
+                                    </div>
+                                    <input type="number" class="form-control form-control-lg text-center" id="r_pv" placeholder="100"
+                                        value=100>
+                                </div>
+                                
+                                <div class="input-group my-1">
+                                    <div class="input-group-prepend">
+                                        <code class="input-group-text">
+                                            <small>Future Value&nbsp;</small>
+                                        </code>
+                                    </div>
+                                    <input type="number" class="form-control form-control-lg text-center" id="r_fv" placeholder="170"
+                                        value=170>
+                                </div>
+                
+                                <div class="input-group my-1">
+                                    <div class="input-group-prepend">
+                                        <code class="input-group-text">
+                                            <small>Period&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</small>
+                                        </code>
+                                    </div>
+                                    <input type="number" class="form-control form-control-lg text-center" id="r_p" placeholder="10"
+                                        value=10 min=0>
+                                </div>
+                
+                                <div class="card border-0 text-center mt-2">
+                                    <button type="button" class="btn btn-success" id="r_button">
+                                        <h5 class="my-auto">คำนวณ</h5>
+                                    </button>
+                                </div>
+                
+                                <div class="input-group my-1">
+                                    <div class="input-group-prepend">
+                                        <code class="input-group-text">
+                                            <small><b>Int. Rate (%)</b></small>
+                                        </code>
+                                    </div>
+                                    <input type="number" class="form-control form-control-lg text-center" id="r_r" placeholder="???"
+                                        readonly>
+                                </div>
+                
+                            </div>
+                        </div>
+                
+                        <div class="col-sm-6 col-lg-8">
+                            <canvas id="r_canvas" class="canvas-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- tab for Periods calculation -->
+                <div class="tab-pane fade" id="periods" role="tabpanel" aria-labelledby="periods-tab">
+                    <div class="row">
+                
+                        <div class="col-sm-6 col-lg-4">
+                            <div class="card border-0 text-center mb_2">
+                
+                                <div class="input-group my-1">
+                                    <div class="input-group-prepend">
+                                        <code class="input-group-text">
+                                            <small>Present Value</small>
+                                        </code>
+                                    </div>
+                                    <input type="number" class="form-control form-control-lg text-center" id="p_pv" placeholder="100"
+                                        value=100>
+                                </div>
+                                
+                                <div class="input-group my-1">
+                                    <div class="input-group-prepend">
+                                        <code class="input-group-text">
+                                            <small>Future Value&nbsp;</small>
+                                        </code>
+                                    </div>
+                                    <input type="number" class="form-control form-control-lg text-center" id="p_fv" placeholder="180"
+                                        value=180>
+                                </div>
+                
+                                <div class="input-group my-1">
+                                    <div class="input-group-prepend">
+                                        <code class="input-group-text">
+                                            <small>Int. Rate (%)</small>
+                                        </code>
+                                    </div>
+                                    <input type="number" class="form-control form-control-lg text-center" id="p_r" placeholder="7"
+                                        value=7>
+                                </div>
+                
+                                <div class="card border-0 text-center mt-2">
+                                    <button type="button" class="btn btn-success" id="p_button">
+                                        <h5 class="my-auto">คำนวณ</h5>
+                                    </button>
+                                </div>
+                
+                                <div class="input-group my-1">
+                                    <div class="input-group-prepend">
+                                        <code class="input-group-text">
+                                            <small><b>Period&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></small>
+                                        </code>
+                                    </div>
+                                    <input type="number" class="form-control form-control-lg text-center" id="p_p" placeholder="???"
+                                        readonly>
+                                </div>
+                
+                            </div>
+                        </div>
+                
+                        <div class="col-sm-6 col-lg-8">
+                            <canvas id="p_canvas" class="canvas-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- back to /tools -->
+    <div class="align-items-center">
+        <hr>
+        <p class="lead text-muted text-center mt-4">
+            เครื่องมืออื่นๆ ของเรา
+        </p>
+        <p class="text-center">
+            <a href="{{ site.baseurl }}/tools/" class="btn btn-info btn-lg my-1">ALL TOOLS</a>
+            <a href="{{ site.baseurl }}/tools/retirement-plan-complex/" class="btn btn-info btn-lg my-1">วางแผนเกษียณ</a>
+            <a href="{{ site.baseurl }}/tools/dca/" class="btn btn-info btn-lg my-1">คำนวณ DCA</a>
+            <a href="{{ site.baseurl }}/tools/loan-calculator-effective/" class="btn btn-info btn-lg my-1">สินเชื่อ ลดต้นลดดอก</a>
+            <a href="{{ site.baseurl }}/tools/loan-calculator-flat/" class="btn btn-info btn-lg my-1">สินเชื่อ ดอกเบี้ยคงที่</a>
+            <a href="{{ site.baseurl }}/tools/compound-interest/" class="btn btn-info btn-lg my-1">ดอกเบี้ยทบต้น</a>
+        </p>
+    </div>
+    
+    <!-- Behind the scene -->
+    <div class="row">
+        <div class="col-12 accordion px-0" id="accordion">
+            <div class="card">
+                <div class="card-header" id="headingBehindScene">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#behindScene"
+                            aria-expanded="true" aria-controls="behindScene">
+                            กดเพื่ออ่านคำอธิบาย
+                        </button>
+                    </h2>
+                </div>
+                <div id="behindScene" class="collapse" aria-labelledby="headingBehindScene"
+                    data-parent="#accordion">
+                    <div class="card-body">
+
+                        <!-- อยู่ระหว่างจัดทำ. โปรดติดตาม. -->
+                        $$ FV = PV * \biggl( 1 + \frac{R}{100} \biggr)^{P} $$
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- load supporting js -->
+<script type="text/javascript" src="{{ site.baseurl }}/tools/tax-calculator/support.js"></script>
+<!-- js -->
+<script>
+    let ctx = document.getElementById("canvas")
+    init()
+</script>
