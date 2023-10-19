@@ -3,8 +3,19 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
-<!-- Fontawesome kit code -->
-<script src="https://kit.fontawesome.com/c94fe05323.js" crossorigin="anonymous"></script>
+<!-- Load Fontawesome kit code, hacky way to bypass pageview limit, sorry will pay when start to monetize -->
+<script>
+    let kits = [
+        "c94fe05323",
+        "c195c05113"
+    ]
+    let kit = kits[Math.floor(Math.random() * kits.length)];
+
+    let scriptFas = document.createElement("script")
+    scriptFas.setAttribute("src", "https://kit.fontawesome.com/" + kit + ".js")
+    scriptFas.setAttribute("crossorigin", "anonymous")
+    document.body.appendChild(scriptFas)
+</script>
 
 <!-- Set .active to .nav-item -->
 <script>
