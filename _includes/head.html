@@ -6,6 +6,11 @@
 
 	<meta name="description" content="{{ page.description }}">
 
+	<!-- if redirect -->
+	{% if page.redirect_url %}
+		<meta http-equiv="refresh" content="0; url={{ page.redirect_url | prepend: site.base_canonical }}">
+	{% endif %}
+
 	<!-- add canonical -->
 	<link rel="canonical" href="{{ page.canonical_url | prepend: site.base_canonical }}">
 
@@ -43,14 +48,14 @@
 	<link rel="stylesheet" href="{{ site.baseurl }}/static/css/main.css">
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag() { dataLayer.push(arguments); }
 		gtag('js', new Date());
 
 		gtag('config', '{{ site.google_analytics }}');   
-	</script>
+	</script> -->
 
 	<!-- Google AdSense -->
 	<!-- <script data-ad-client="ca-pub-1469161366135496" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
