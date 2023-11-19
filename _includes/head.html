@@ -80,6 +80,8 @@
 			src="https://www.facebook.com/tr?id=534272884251315&ev=PageView&noscript=1" /></noscript>
 	<!-- End Facebook Pixel Code -->
 
-	<!-- Not an ideal way to specify content-language but leave it for now -->
-	<meta http-equiv="content-language" content="th, en">
+	{% if page.layout == 'tool' %}
+		<!-- Chart.js -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.1/chart.min.js"></script>
+	{% endif %}
 </head>
