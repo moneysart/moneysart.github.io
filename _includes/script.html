@@ -32,6 +32,48 @@
     }
 </script>
 
+{% if page.layout == "tool" %}
+    <script>
+        let parentElement = document.getElementById("example-tools")
+
+        let content
+        if ("{{ page.lang_tag }}" === "en") {
+            content = `
+                <hr>
+                <p class="lead text-muted text-center mt-4">
+                    Our toolkit (translation in progress)
+                </p>
+                <p class="text-center">
+                    <a href="{{ site.baseurl }}/tools/" class="btn btn-info btn-lg my-1">ALL TOOLS</a>
+                    <a href="{{ site.baseurl }}/tools/retirement-plan/" class="btn btn-info btn-lg my-1">Retirement plan</a>
+                    <a href="{{ site.baseurl }}/tools/dca/" class="btn btn-info btn-lg my-1">DCA calculator</a>
+                    <a href="{{ site.baseurl }}/tools/compound-interest/" class="btn btn-info btn-lg my-1">Compound interest</a>
+                    <a href="{{ site.baseurl }}/tools/loan-calculator-effective/" class="btn btn-info btn-lg my-1">Loan calculator</a>
+                    <a href="{{ site.baseurl }}/tools/loan-calculator-flat/" class="btn btn-info btn-lg my-1">Loan cauculator flat-rate</a>
+                </p>
+            `
+        } else {
+            content = `
+                <hr>
+                <p class="lead text-muted text-center mt-4">
+                    เครื่องมืออื่นๆ ของเรา
+                </p>
+                <p class="text-center">
+                    <a href="{{ site.baseurl }}/tools/" class="btn btn-info btn-lg my-1">ALL TOOLS</a>
+                    <a href="{{ site.baseurl }}/tools/retirement-plan/" class="btn btn-info btn-lg my-1">วางแผนเกษียณ</a>
+                    <a href="{{ site.baseurl }}/tools/dca/" class="btn btn-info btn-lg my-1">คำนวณ DCA</a>
+                    <a href="{{ site.baseurl }}/tools/loan-calculator-effective/" class="btn btn-info btn-lg my-1">สินเชื่อ ลดต้นลดดอก</a>
+                    <a href="{{ site.baseurl }}/tools/loan-calculator-flat/" class="btn btn-info btn-lg my-1">สินเชื่อ ดอกเบี้ยคงที่</a>
+                    <a href="{{ site.baseurl }}/tools/compound-interest/" class="btn btn-info btn-lg my-1">ดอกเบี้ยทบต้น</a>
+                </p>
+            `
+        }
+
+        parentElement.innerHTML = content
+
+    </script>
+{% endif %}
+
 <!-- facebook JS SDK -->
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous"
