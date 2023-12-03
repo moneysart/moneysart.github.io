@@ -1,10 +1,22 @@
 <!-- Messenger Chat Plugin Code -->
 <div id="fb-root"></div>
+
+<!-- Your Chat Plugin code -->
+<div id="fb-customer-chat" class="fb-customerchat">
+</div>
+
+<script>
+  var chatbox = document.getElementById('fb-customer-chat');
+  chatbox.setAttribute("page_id", "105767244947701");
+  chatbox.setAttribute("attribution", "biz_inbox");
+</script>
+
+<!-- Your SDK code -->
 <script>
   window.fbAsyncInit = function() {
     FB.init({
       xfbml            : true,
-      version          : 'v10.0'
+      version          : 'v18.0'
     });
   };
 
@@ -16,9 +28,3 @@
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
 </script>
-
-<!-- Your Chat Plugin code -->
-<div class="fb-customerchat"
-  attribution="page_inbox"
-  page_id="105767244947701">
-</div>
