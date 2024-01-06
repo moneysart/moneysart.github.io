@@ -32,6 +32,38 @@ canonical_url: /newsletter/
             
             
             <small class="text-muted">Click เพื่อซ่อน/แสดง</small>
+            <!-- 2024 -->
+            <div class="card">
+                <div class="card-header" id="headingY2023Q4">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#Y2024"
+                            aria-expanded="true" aria-controls="Y2024">
+                            2024
+                        </button>
+                    </h2>
+                </div>
+                <div id="Y2024" class="collapse show" aria-labelledby="headingY2024" data-parent="#weeklyAccordion">
+                    <div class="card-body">
+
+                        <!-- weekly summary -->
+                        <h5 class="text-success py-2">ประเด็นการลงทุนรายสัปดาห์</h5>
+                        {% for post in site.tags.Y2024 %}
+                            {% if post.tag contains "summary" %}
+                                <li class="list-group-item">
+                                    {% capture title_full %}{{ post.title }}{% endcapture %}
+                                    {% assign title_lines = title_full | split: ", " %}
+                                    {{ post.date | date_to_string }} <i class="fas fa-angle-double-right"></i>
+                                    สรุป{{ title_lines[1] }} --
+                                    <a href="{{ post.permalink | prepend: site.baseurl }}">
+                                        link <i class="far fa-file-alt"></i>
+                                    </a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
             <!-- 2023Q4 quarter -->
             <div class="card">
                 <div class="card-header" id="headingY2023Q4">
@@ -42,7 +74,7 @@ canonical_url: /newsletter/
                         </button>
                     </h2>
                 </div>
-                <div id="Y2023Q4" class="collapse show" aria-labelledby="headingY2023Q4" data-parent="#weeklyAccordion">
+                <div id="Y2023Q4" class="collapse" aria-labelledby="headingY2023Q4" data-parent="#weeklyAccordion">
                     <div class="card-body">
 
                         <!-- weekly summary -->
