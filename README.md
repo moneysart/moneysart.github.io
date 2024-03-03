@@ -32,3 +32,5 @@
 <!-- - Add Facebook Messenger Plugin -->
 ### v.1.2
 - Change organization/repo/domain to `moneysart (money ศาสตร์)`
+### v.1.3
+- Rebrand to `money's art (money is art)` to improve Search appearances and reach for non-Thai speakers
