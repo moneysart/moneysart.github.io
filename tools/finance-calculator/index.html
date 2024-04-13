@@ -13,8 +13,11 @@ date: 2021-05-08
     <!-- chart -->
     <div class="mt-4">
         <h2 class="text-primary">เครื่องคิดเลขการเงิน (Finance Calculator)</h2>
-        <span class="fb-share-button ml-1" data-href="{{ page.canonical_url | prepend: site.base_canonical }}"
-        data-layout="button" data-size="small"></span>
+        <a 
+            href="https://www.facebook.com/sharer/sharer.php?u={{ page.canonical_url | prepend: site.base_canonical }}" 
+            target="_black"
+            class="btn btn-outline-primary btn-xs"><i class="fab fa-facebook mr-1" style="color:#1A77F2;"></i>Share
+        </a>
         <!-- <canvas id="canvas" class="canvas-chart"></canvas> -->
     </div>
 
@@ -344,7 +347,7 @@ date: 2021-05-08
 
 
 <!-- Chart.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.1/chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.1/chart.min.js" integrity="sha512-2uu1jrAmW1A+SMwih5DAPqzFS2PI+OPw79OVLS4NJ6jGHQ/GmIVDDlWwz4KLO8DnoUmYdU8hTtFcp8je6zxbCg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!-- load supporting js -->
 <script type="text/javascript" src="{{ site.baseurl }}/tools/finance-calculator/support.js"></script>
 <!-- js -->

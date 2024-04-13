@@ -21,8 +21,11 @@ date: 2023-08-27
     <div class="mt-2">
         <h2 class="text-primary">DCA calculator (dollar-cost averaging)</h2>
         <small class="font-italic text-muted">Recommend landscape mode for small screen.</small>
-        <span class="fb-share-button ml-1" data-href="{{ page.canonical_url | prepend: site.base_canonical }}"
-        data-layout="button" data-size="small"></span>
+        <a 
+            href="https://www.facebook.com/sharer/sharer.php?u={{ page.canonical_url | prepend: site.base_canonical }}" 
+            target="_black"
+            class="btn btn-outline-primary btn-xs"><i class="fab fa-facebook mr-1" style="color:#1A77F2;"></i>Share
+        </a>
 
         <div class="col-12 accordion px-0" id="accordion">
             <div class="card">
@@ -178,7 +181,7 @@ date: 2023-08-27
 
 
 <!-- Chart.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.1/chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.1/chart.min.js" integrity="sha512-2uu1jrAmW1A+SMwih5DAPqzFS2PI+OPw79OVLS4NJ6jGHQ/GmIVDDlWwz4KLO8DnoUmYdU8hTtFcp8je6zxbCg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!-- load supporting js -->
 <script type="text/javascript" src="{{ site.baseurl }}/en/tools/dca/support.js"></script>
 <!-- js -->
