@@ -11,7 +11,7 @@ html {
 }
 
 .navbar {
-  padding: .8rem;
+  padding: 0.8rem;
 }
 .navbar-nav li {
   padding-right: 1.4rem;
@@ -19,26 +19,6 @@ html {
 .nav-link {
   font-size: 1.1em !important;
 }
-/* .carousel-inner img {
-  width: 100%;
-  height: 100%;
-}
-.carousel-caption {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.carousel-caption h1 {
-  font-size: 500%;
-  text-transform: uppercase;
-  text-shadow: 1px 1px 15px #000;
-}
-.carousel-caption h3 {
-  font-size: 200%;
-  font-weight: 500;
-  text-shadow: 1px 1px 10px #000;
-  padding-bottom: 0.5rem;
-} */
 .btn-primary {
   background-color: #6648b1;
   border: 1px solid #6648b1;
@@ -68,7 +48,7 @@ footer {
 hr.light {
   border-top: 1px solid #d5d5d5;
   width: 75%;
-  margin-top: .8rem; 
+  margin-top: 0.8rem;
   margin-bottom: 1rem;
 }
 /* Footer */
@@ -78,10 +58,6 @@ hr.light {
   /* background-color: #65fc79; */
   /* color: #242424; */
 }
-/* .footer-social a,
-.footer-social i {
-  color: rgb(100, 100, 100);
-} */
 .blog-footer hr {
   border-top: 1px solid #d5d5d5;
   width: 75%;
@@ -97,8 +73,6 @@ hr.light {
   width: 90px !important;
 }
 
-
-
 /*---Media Queries --*/
 @media (max-width: 992px) {
   .container {
@@ -110,21 +84,6 @@ hr.light {
   }
 }
 @media (max-width: 768px) {
-  .carousel-caption {
-    top: 45%;
-  }
-  .carousel-caption h1 {
-    font-size: 350%;
-  }
-  .carousel-caption h3 {
-    font-size: 140%;
-    font-weight: 400;
-    padding-bottom: 0.2rem;
-  }
-  .carousel-caption .btn {
-    font-size: 95%;
-    padding: 8px 14px;
-  }
   .display-4 {
     font-size: 250%;
   }
@@ -134,22 +93,6 @@ hr.light {
   }
 }
 @media (max-width: 576px) {
-  .carousel-caption {
-    top: 40%;
-  }
-  .carousel-caption h1 {
-    font-size: 250%;
-  }
-  .carousel-caption h3 {
-    font-size: 110%;
-  }
-  .carousel-caption .btn {
-    font-size: 90%;
-    padding: 4px 8px;
-  }
-  /* .carousel-indicators {
-    display: none;
-  } */
   .display-4 {
     font-size: 200%;
   }
@@ -173,13 +116,12 @@ hr.light {
 }
 /*--- Bootstrap Padding Fix --*/
 [class*="col-"] {
-    padding: 1rem;
+  padding: 1rem;
 }
-
 
 .video_wrapper {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9, for an aspect ratio of 1:1 change to this value to 100% */ 
+  padding-bottom: 56.25%; /* 16:9, for an aspect ratio of 1:1 change to this value to 100% */
 }
 
 iframe {
@@ -189,22 +131,3 @@ iframe {
   width: 100%;
   height: 100%;
 }
-
-
-
-/*
-Extra small (xs) devices (portrait phones, less than 576px)
-No media query since this is the default in Bootstrap
-
-Small (sm) devices (landscape phones, 576px and up)
-@media (min-width: 576px) { ... }
-
-Medium (md) devices (tablets, 768px and up)
-@media (min-width: 768px) { ... }
-
-Large (lg) devices (desktops, 992px and up)
-@media (min-width: 992px) { ... }
-
-Extra (xl) large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) { ... }
-*/
