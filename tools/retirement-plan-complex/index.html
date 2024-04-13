@@ -14,8 +14,11 @@ date: 2021-04-13
     <div class="mt-4">
         <h2 class="text-primary">เครื่องมือ วางแผนเกษียณ แบบละเอียด</h2>
         <small class="font-italic text-muted">แนะนำใช้หน้าจอแนวนอน สำหรับมือถือจอเล็ก</small>
-        <span class="fb-share-button ml-1" data-href="{{ page.canonical_url | prepend: site.base_canonical }}"
-        data-layout="button" data-size="small"></span>
+        <a 
+            href="https://www.facebook.com/sharer/sharer.php?u={{ page.canonical_url | prepend: site.base_canonical }}" 
+            target="_black"
+            class="btn btn-outline-primary btn-xs"><i class="fab fa-facebook mr-1" style="color:#1A77F2;"></i>Share
+        </a>
 
         <div class="col-12 accordion px-0" id="accordion">
             <div class="card">
