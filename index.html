@@ -60,42 +60,10 @@ canonical_url: /
 
 
 
-    <!-- title -->
-    <div class="text-left">
-        <h4 class="d-inline-block mb-2 text-black">
-            สรุปประเด็นการลงทุนล่าสุด
-            <a href="{{ site.baseurl }}/newsletter/">(ดูทั้งหมด)</a>
-        </h4>
-    </div>
-
-    <!-- items -->
-    <div class="row mb-2 pb-2">
-        <div class="col-12 p-0">
-            <ul class="list-group-flush px-0">
-                {% for post in site.tags.summary limit: 4 %}
-                <li class="list-group-item">
-                    {% capture title_full %}{{ post.title }}{% endcapture %}
-                    {% assign title_lines = title_full | split: ", " %}
-                    {{ post.date | date_to_string }} <i class="fas fa-angle-double-right"></i>
-                    สรุป{{ title_lines[1] }} --
-                    <a href="{{ post.permalink | prepend: site.baseurl }}">
-                        link <i class="far fa-file-alt"></i>
-                    </a>
-                </li>
-                {% endfor %}
-            </ul>
-        </div>
-    </div>
-
-
-
-    <hr class="pb-4">
-
-
-
     <!-- popular tools -->
     <div class="text-left">
         <h4 class="d-inline-block mb-2 text-black">
+            <i class="fa-solid fa-chart-line" style="color: #009f00;"></i>
             เครื่องมือยอดนิยม
             <a href="{{ site.baseurl }}/tools/">(ดูทั้งหมด)</a>
         </h4>
